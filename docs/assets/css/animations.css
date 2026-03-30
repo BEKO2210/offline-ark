@@ -1,0 +1,848 @@
+/* ==========================================================================
+   Offline Ark -- animations.css
+   Complete animation & effect library (CSS-only where possible)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   0. CUSTOM PROPERTIES (shared timing / easing tokens)
+   -------------------------------------------------------------------------- */
+:root {
+  --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-out-back: cubic-bezier(0.34, 1.56, 0.64, 1);
+  --ease-in-out:   cubic-bezier(0.45, 0, 0.55, 1);
+  --duration-fast:   150ms;
+  --duration-normal: 300ms;
+  --duration-slow:   600ms;
+
+  /* Category glow colors */
+  --glow-ai:            rgba(245, 158, 11, 0.55);
+  --glow-knowledge:     rgba(59, 130, 246, 0.55);
+  --glow-communication: rgba(168, 85, 247, 0.55);
+  --glow-navigation:    rgba(34, 197, 94, 0.55);
+  --glow-media:         rgba(236, 72, 153, 0.55);
+  --glow-productivity:  rgba(20, 184, 166, 0.55);
+  --glow-security:      rgba(239, 68, 68, 0.55);
+}
+
+/* --------------------------------------------------------------------------
+   1. STAGGERED FADE-IN ON PAGE LOAD  (.reveal + .delay-N)
+   -------------------------------------------------------------------------- */
+@keyframes revealFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.reveal {
+  opacity: 0;
+  animation: revealFadeIn 0.6s var(--ease-out-expo) forwards;
+}
+
+/* Animation-delay utilities: .delay-1 … .delay-10 at 0.1 s intervals */
+.delay-1  { animation-delay: 0.1s; }
+.delay-2  { animation-delay: 0.2s; }
+.delay-3  { animation-delay: 0.3s; }
+.delay-4  { animation-delay: 0.4s; }
+.delay-5  { animation-delay: 0.5s; }
+.delay-6  { animation-delay: 0.6s; }
+.delay-7  { animation-delay: 0.7s; }
+.delay-8  { animation-delay: 0.8s; }
+.delay-9  { animation-delay: 0.9s; }
+.delay-10 { animation-delay: 1.0s; }
+
+/* --------------------------------------------------------------------------
+   2. SCROLL-REVEAL ANIMATIONS
+   -------------------------------------------------------------------------- */
+.scroll-reveal {
+  opacity: 0;
+  transform: translateY(24px);
+  transition:
+    opacity 0.7s var(--ease-out-expo),
+    transform 0.7s var(--ease-out-expo);
+  will-change: opacity, transform;
+}
+
+.scroll-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Directional variants */
+.scroll-reveal.from-left {
+  transform: translateX(-32px);
+}
+.scroll-reveal.from-left.visible {
+  transform: translateX(0);
+}
+
+.scroll-reveal.from-right {
+  transform: translateX(32px);
+}
+.scroll-reveal.from-right.visible {
+  transform: translateX(0);
+}
+
+.scroll-reveal.scale-in {
+  transform: scale(0.92);
+}
+.scroll-reveal.scale-in.visible {
+  transform: scale(1);
+}
+
+/* --------------------------------------------------------------------------
+   3. CARD HOVER EFFECTS
+   -------------------------------------------------------------------------- */
+
+/* 3a. Subtle lift + shadow */
+.card,
+[class*="card"] {
+  transition:
+    transform var(--duration-normal) var(--ease-out-expo),
+    box-shadow var(--duration-normal) var(--ease-out-expo);
+}
+
+.card:hover,
+[class*="card"]:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 8px 24px rgba(0, 0, 0, 0.12),
+    0 2px 6px  rgba(0, 0, 0, 0.08);
+}
+
+/* 3b. Border-glow effect */
+.card.border-glow {
+  position: relative;
+}
+
+.card.border-glow::after {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: inherit;
+  border: 2px solid transparent;
+  opacity: 0;
+  transition: opacity var(--duration-normal) var(--ease-out-expo);
+  pointer-events: none;
+}
+
+.card.border-glow:hover::after {
+  opacity: 1;
+  border-color: currentColor;
+}
+
+/* --------------------------------------------------------------------------
+   4. CATEGORY-SPECIFIC GLOW COLORS ON HOVER
+   -------------------------------------------------------------------------- */
+.card.category-ai:hover {
+  box-shadow: 0 6px 28px var(--glow-ai);
+}
+.card.category-ai.border-glow:hover::after {
+  border-color: var(--glow-ai);
+}
+
+.card.category-knowledge:hover {
+  box-shadow: 0 6px 28px var(--glow-knowledge);
+}
+.card.category-knowledge.border-glow:hover::after {
+  border-color: var(--glow-knowledge);
+}
+
+.card.category-communication:hover {
+  box-shadow: 0 6px 28px var(--glow-communication);
+}
+.card.category-communication.border-glow:hover::after {
+  border-color: var(--glow-communication);
+}
+
+.card.category-navigation:hover {
+  box-shadow: 0 6px 28px var(--glow-navigation);
+}
+.card.category-navigation.border-glow:hover::after {
+  border-color: var(--glow-navigation);
+}
+
+.card.category-media:hover {
+  box-shadow: 0 6px 28px var(--glow-media);
+}
+.card.category-media.border-glow:hover::after {
+  border-color: var(--glow-media);
+}
+
+.card.category-productivity:hover {
+  box-shadow: 0 6px 28px var(--glow-productivity);
+}
+.card.category-productivity.border-glow:hover::after {
+  border-color: var(--glow-productivity);
+}
+
+.card.category-security:hover {
+  box-shadow: 0 6px 28px var(--glow-security);
+}
+.card.category-security.border-glow:hover::after {
+  border-color: var(--glow-security);
+}
+
+/* --------------------------------------------------------------------------
+   5. TYPING ANIMATION (terminal / command blocks)
+   -------------------------------------------------------------------------- */
+@keyframes typingCursor {
+  0%, 100% { border-right-color: transparent; }
+  50%      { border-right-color: currentColor; }
+}
+
+@keyframes typeIn {
+  from { max-width: 0; }
+  to   { max-width: 100%; }
+}
+
+.typing {
+  display: inline-block;
+  overflow: hidden;
+  white-space: nowrap;
+  max-width: 0;
+  border-right: 2px solid currentColor;
+  animation:
+    typeIn 2.5s steps(40, end) forwards,
+    typingCursor 0.75s step-end infinite;
+}
+
+.typing.fast {
+  animation:
+    typeIn 1.2s steps(24, end) forwards,
+    typingCursor 0.75s step-end infinite;
+}
+
+.typing.slow {
+  animation:
+    typeIn 4s steps(60, end) forwards,
+    typingCursor 0.75s step-end infinite;
+}
+
+/* After typing finishes the cursor blinks a few times then disappears */
+.typing.done {
+  max-width: 100%;
+  animation: typingCursor 0.75s step-end 4;
+  border-right-color: transparent;
+}
+
+/* --------------------------------------------------------------------------
+   6. COPY-BUTTON CHECKMARK FEEDBACK
+   -------------------------------------------------------------------------- */
+@keyframes copyCheck {
+  0%   { transform: scale(0) rotate(-45deg); opacity: 0; }
+  50%  { transform: scale(1.2) rotate(0deg); opacity: 1; }
+  100% { transform: scale(1) rotate(0deg);   opacity: 1; }
+}
+
+@keyframes copyFadeOut {
+  from { opacity: 1; }
+  to   { opacity: 0; }
+}
+
+.copy-btn {
+  position: relative;
+  transition: color var(--duration-fast) ease;
+}
+
+.copy-btn .icon-copy,
+.copy-btn .icon-check {
+  transition:
+    opacity var(--duration-fast) ease,
+    transform var(--duration-fast) ease;
+}
+
+.copy-btn .icon-check {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  transform: scale(0);
+}
+
+.copy-btn.copied .icon-copy {
+  opacity: 0;
+  transform: scale(0.6);
+}
+
+.copy-btn.copied .icon-check {
+  opacity: 1;
+  transform: scale(1);
+  animation: copyCheck 0.35s var(--ease-out-back);
+  color: #22c55e;
+}
+
+/* Auto-reset visual: after 2 s the check fades out */
+.copy-btn.copied .icon-check {
+  animation:
+    copyCheck 0.35s var(--ease-out-back),
+    copyFadeOut 0.3s ease 2s forwards;
+}
+
+/* --------------------------------------------------------------------------
+   7. PROGRESS BAR FILL ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes progressFill {
+  from { width: 0%; }
+}
+
+@keyframes progressStripes {
+  0%   { background-position: 1rem 0; }
+  100% { background-position: 0 0; }
+}
+
+.progress-bar {
+  overflow: hidden;
+  border-radius: 999px;
+  background: rgba(128, 128, 128, 0.15);
+}
+
+.progress-bar .fill {
+  height: 100%;
+  border-radius: inherit;
+  animation: progressFill 1s var(--ease-out-expo) forwards;
+  transition: width 0.5s var(--ease-out-expo);
+}
+
+/* Optional striped / animated variant */
+.progress-bar .fill.striped {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation:
+    progressFill 1s var(--ease-out-expo) forwards,
+    progressStripes 0.6s linear infinite;
+}
+
+/* --------------------------------------------------------------------------
+   8. CHECKBOX BOUNCE / CHECKMARK ANIMATION (checklists)
+   -------------------------------------------------------------------------- */
+@keyframes checkBounce {
+  0%   { transform: scale(0); }
+  50%  { transform: scale(1.25); }
+  70%  { transform: scale(0.9); }
+  100% { transform: scale(1); }
+}
+
+@keyframes checkStroke {
+  0%   { stroke-dashoffset: 24; }
+  100% { stroke-dashoffset: 0; }
+}
+
+.checkbox-animated {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.checkbox-animated input[type="checkbox"] {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 1.25em;
+  height: 1.25em;
+  border: 2px solid currentColor;
+  border-radius: 4px;
+  cursor: pointer;
+  transition:
+    background-color var(--duration-fast) ease,
+    border-color var(--duration-fast) ease;
+}
+
+.checkbox-animated input[type="checkbox"]:checked {
+  background-color: #3b82f6;
+  border-color: #3b82f6;
+  animation: checkBounce 0.4s var(--ease-out-back);
+}
+
+.checkbox-animated .checkmark {
+  position: absolute;
+  pointer-events: none;
+  width: 1.25em;
+  height: 1.25em;
+  opacity: 0;
+}
+
+.checkbox-animated input[type="checkbox"]:checked ~ .checkmark {
+  opacity: 1;
+}
+
+.checkbox-animated input[type="checkbox"]:checked ~ .checkmark path {
+  stroke-dasharray: 24;
+  stroke-dashoffset: 24;
+  animation: checkStroke 0.3s ease 0.15s forwards;
+}
+
+/* Plain CSS fallback when no SVG is provided */
+.checkbox-animated input[type="checkbox"]:checked::after {
+  content: "\2713";
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 0.75em;
+  animation: checkBounce 0.4s var(--ease-out-back);
+}
+
+/* --------------------------------------------------------------------------
+   9. TAB SWITCHING SLIDE TRANSITIONS
+   -------------------------------------------------------------------------- */
+.tabs {
+  position: relative;
+  overflow: hidden;
+}
+
+.tabs .tab-indicator {
+  position: absolute;
+  bottom: 0;
+  height: 2px;
+  background: currentColor;
+  transition:
+    left var(--duration-normal) var(--ease-out-expo),
+    width var(--duration-normal) var(--ease-out-expo);
+}
+
+.tab-panel {
+  animation: tabSlideIn 0.35s var(--ease-out-expo);
+}
+
+@keyframes tabSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(12px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes tabSlideOut {
+  from {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  to {
+    opacity: 0;
+    transform: translateX(-12px);
+  }
+}
+
+.tab-panel.exiting {
+  animation: tabSlideOut 0.25s var(--ease-in-out) forwards;
+}
+
+/* --------------------------------------------------------------------------
+   10. DARK / LIGHT TOGGLE -- SMOOTH COLOR TRANSITIONS
+   -------------------------------------------------------------------------- */
+:root,
+[data-theme] {
+  transition:
+    background-color 0.4s var(--ease-in-out),
+    color 0.4s var(--ease-in-out),
+    border-color 0.3s var(--ease-in-out),
+    box-shadow 0.3s var(--ease-in-out);
+}
+
+/* Apply to common elements so theme switches feel smooth */
+body,
+header, footer, nav,
+main, section, article, aside,
+.card, [class*="card"],
+input, textarea, select, button,
+.sidebar, .topbar, .navbar {
+  transition:
+    background-color 0.4s var(--ease-in-out),
+    color 0.4s var(--ease-in-out),
+    border-color 0.3s var(--ease-in-out),
+    box-shadow 0.3s var(--ease-in-out);
+}
+
+/* Theme toggle icon animation */
+@keyframes themeToggleSpin {
+  from { transform: rotate(0deg) scale(0.7); opacity: 0; }
+  to   { transform: rotate(360deg) scale(1); opacity: 1; }
+}
+
+.theme-toggle-icon {
+  animation: themeToggleSpin 0.5s var(--ease-out-expo);
+}
+
+/* --------------------------------------------------------------------------
+   11. CSS-ONLY FLOATING PARTICLES (landing page background)
+   -------------------------------------------------------------------------- */
+@keyframes particleFloat1 {
+  0%, 100% { transform: translate(0, 0)     rotate(0deg); }
+  25%      { transform: translate(80px, -60px) rotate(90deg); }
+  50%      { transform: translate(30px, -120px) rotate(180deg); }
+  75%      { transform: translate(-40px, -80px) rotate(270deg); }
+}
+
+@keyframes particleFloat2 {
+  0%, 100% { transform: translate(0, 0)      rotate(0deg); }
+  25%      { transform: translate(-60px, -90px) rotate(-90deg); }
+  50%      { transform: translate(-100px, -40px) rotate(-180deg); }
+  75%      { transform: translate(-30px, 20px)  rotate(-270deg); }
+}
+
+@keyframes particleFloat3 {
+  0%, 100% { transform: translate(0, 0)     rotate(0deg); }
+  33%      { transform: translate(50px, -100px) rotate(120deg); }
+  66%      { transform: translate(-70px, -50px) rotate(240deg); }
+}
+
+.particles {
+  position: absolute;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Generate particles with ::before and ::after plus background tricks.
+   We layer multiple box-shadows to create many dots from a single element. */
+.particles::before,
+.particles::after {
+  content: "";
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  opacity: 0.35;
+}
+
+.particles::before {
+  background: currentColor;
+  box-shadow:
+    80px  120px 0 0 currentColor,
+    200px 60px  0 0 currentColor,
+    350px 200px 0 0 currentColor,
+    500px 80px  0 0 currentColor,
+    650px 250px 0 0 currentColor,
+    120px 320px 0 0 currentColor,
+    400px 380px 0 0 currentColor,
+    750px 150px 0 0 currentColor,
+    900px 300px 0 0 currentColor,
+    1050px 100px 0 0 currentColor,
+    180px 450px 0 0 currentColor,
+    600px 420px 0 0 currentColor;
+  animation: particleFloat1 18s linear infinite;
+}
+
+.particles::after {
+  background: currentColor;
+  box-shadow:
+    40px  200px 0 0 currentColor,
+    160px 350px 0 0 currentColor,
+    280px 90px  0 0 currentColor,
+    430px 280px 0 0 currentColor,
+    570px 160px 0 0 currentColor,
+    700px 380px 0 0 currentColor,
+    850px 220px 0 0 currentColor,
+    1000px 50px 0 0 currentColor,
+    300px 500px 0 0 currentColor,
+    520px 450px 0 0 currentColor,
+    780px 480px 0 0 currentColor,
+    950px 400px 0 0 currentColor;
+  animation: particleFloat2 24s linear infinite;
+}
+
+/* Extra layer via a child element for more density */
+.particles .particle-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.particles .particle-layer::before,
+.particles .particle-layer::after {
+  content: "";
+  position: absolute;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  opacity: 0.2;
+  background: currentColor;
+}
+
+.particles .particle-layer::before {
+  box-shadow:
+    60px  180px 0 0 currentColor,
+    220px 30px  0 0 currentColor,
+    380px 320px 0 0 currentColor,
+    540px 110px 0 0 currentColor,
+    690px 270px 0 0 currentColor,
+    830px 50px  0 0 currentColor,
+    970px 340px 0 0 currentColor,
+    150px 480px 0 0 currentColor;
+  animation: particleFloat3 21s linear infinite;
+}
+
+.particles .particle-layer::after {
+  box-shadow:
+    100px 40px  0 0 currentColor,
+    250px 260px 0 0 currentColor,
+    410px 140px 0 0 currentColor,
+    580px 350px 0 0 currentColor,
+    720px 90px  0 0 currentColor,
+    870px 420px 0 0 currentColor,
+    1020px 200px 0 0 currentColor,
+    330px 440px 0 0 currentColor;
+  animation: particleFloat1 27s linear infinite reverse;
+}
+
+/* --------------------------------------------------------------------------
+   12. PULSE ANIMATION (badges / live indicators)
+   -------------------------------------------------------------------------- */
+@keyframes pulse {
+  0%, 100% { transform: scale(1);   opacity: 1; }
+  50%      { transform: scale(1.05); opacity: 0.85; }
+}
+
+@keyframes pulseRing {
+  0%   { transform: scale(1);   opacity: 0.6; }
+  100% { transform: scale(2.2); opacity: 0; }
+}
+
+.badge-pulse {
+  animation: pulse 2s var(--ease-in-out) infinite;
+}
+
+/* Live-dot with expanding ring */
+.live-indicator {
+  position: relative;
+  display: inline-block;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #22c55e;
+  animation: pulse 2s ease-in-out infinite;
+}
+
+.live-indicator::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 50%;
+  background: inherit;
+  animation: pulseRing 1.8s var(--ease-out-expo) infinite;
+}
+
+/* --------------------------------------------------------------------------
+   13. SHIELD / ARK ICON ANIMATION (hero section)
+   -------------------------------------------------------------------------- */
+@keyframes shieldFloat {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-8px); }
+}
+
+@keyframes shieldGlow {
+  0%, 100% { filter: drop-shadow(0 0 6px rgba(59, 130, 246, 0.3)); }
+  50%      { filter: drop-shadow(0 0 18px rgba(59, 130, 246, 0.55)); }
+}
+
+@keyframes arkWave {
+  0%   { transform: translateX(-4px) rotate(-1deg); }
+  50%  { transform: translateX(4px)  rotate(1deg); }
+  100% { transform: translateX(-4px) rotate(-1deg); }
+}
+
+.hero-shield,
+.hero-ark-icon {
+  animation:
+    shieldFloat 4s var(--ease-in-out) infinite,
+    shieldGlow 4s var(--ease-in-out) infinite;
+}
+
+.hero-ark-icon.wave {
+  animation:
+    arkWave 6s var(--ease-in-out) infinite,
+    shieldGlow 4s var(--ease-in-out) infinite;
+}
+
+/* --------------------------------------------------------------------------
+   14. ACCORDION OPEN / CLOSE TRANSITIONS
+   -------------------------------------------------------------------------- */
+.accordion-content {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows var(--duration-normal) var(--ease-out-expo);
+}
+
+.accordion-content > .accordion-inner {
+  overflow: hidden;
+}
+
+.accordion.open .accordion-content,
+.accordion[open] .accordion-content {
+  grid-template-rows: 1fr;
+}
+
+/* Chevron rotation */
+.accordion-trigger .chevron {
+  display: inline-block;
+  transition: transform var(--duration-normal) var(--ease-out-expo);
+}
+
+.accordion.open .accordion-trigger .chevron,
+.accordion[open] .accordion-trigger .chevron {
+  transform: rotate(180deg);
+}
+
+/* Alternative: <details>/<summary> native accordion */
+details.accordion-native {
+  overflow: hidden;
+}
+
+details.accordion-native summary {
+  cursor: pointer;
+  list-style: none;
+}
+
+details.accordion-native summary::-webkit-details-marker {
+  display: none;
+}
+
+/* Using max-height fallback for browsers without grid-template-rows animation */
+.accordion-content-fallback {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height var(--duration-normal) var(--ease-out-expo);
+}
+
+.accordion.open .accordion-content-fallback {
+  max-height: 1000px; /* large enough to fit content */
+}
+
+/* --------------------------------------------------------------------------
+   15. SKELETON LOADING ANIMATION
+   -------------------------------------------------------------------------- */
+@keyframes skeletonShimmer {
+  0%   { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.skeleton {
+  background:
+    linear-gradient(
+      90deg,
+      rgba(128, 128, 128, 0.1) 25%,
+      rgba(128, 128, 128, 0.2) 50%,
+      rgba(128, 128, 128, 0.1) 75%
+    );
+  background-size: 200% 100%;
+  animation: skeletonShimmer 1.8s ease infinite;
+  border-radius: 4px;
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+  border-radius: 4px;
+}
+
+.skeleton-text:last-child {
+  width: 60%;
+}
+
+.skeleton-heading {
+  height: 1.6em;
+  width: 40%;
+  margin-bottom: 0.75em;
+  border-radius: 4px;
+}
+
+.skeleton-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+}
+
+.skeleton-card {
+  height: 160px;
+  border-radius: 8px;
+}
+
+/* --------------------------------------------------------------------------
+   16. SMOOTH UNDERLINE ANIMATION FOR LINKS
+   -------------------------------------------------------------------------- */
+.link-underline {
+  position: relative;
+  text-decoration: none;
+}
+
+.link-underline::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0;
+  height: 2px;
+  background: currentColor;
+  transition: width var(--duration-normal) var(--ease-out-expo);
+}
+
+.link-underline:hover::after,
+.link-underline:focus-visible::after {
+  width: 100%;
+}
+
+/* Variant: underline slides from center */
+.link-underline.from-center::after {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* Variant: underline always visible, changes color on hover */
+.link-underline.always-visible::after {
+  width: 100%;
+  opacity: 0.3;
+  transition: opacity var(--duration-normal) ease;
+}
+
+.link-underline.always-visible:hover::after,
+.link-underline.always-visible:focus-visible::after {
+  opacity: 1;
+}
+
+/* --------------------------------------------------------------------------
+   17. REDUCED MOTION -- respect user preferences
+   -------------------------------------------------------------------------- */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .particles::before,
+  .particles::after,
+  .particles .particle-layer::before,
+  .particles .particle-layer::after {
+    animation: none !important;
+  }
+
+  .scroll-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
