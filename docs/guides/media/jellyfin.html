@@ -118,7 +118,7 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Jellyfin herunterladen</h4>
-              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>jellyfin.org</strong>. Klicke auf "Download" und wähle den Windows-Installer. Die Datei ist ca. 150 MB groß.</p>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <a href="https://jellyfin.org/downloads" target="_blank" rel="noopener"><strong>jellyfin.org</strong></a>. Klicke auf "Download" und wähle den Windows-Installer. Die Datei ist ca. 150 MB groß.</p>
             </div>
           </div>
           <div class="step">
@@ -147,7 +147,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                   </button>
                 </div>
-                <pre class="code-content"><code>http://localhost:8096</code></pre>
+                <pre class="code-content"><code><span class="url">http://localhost:8096</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Der Einrichtungsassistent startet automatisch beim ersten Zugriff.</p>
             </div>
@@ -170,13 +170,13 @@
               <p class="step__desc"><strong>Debian / Ubuntu:</strong></p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash</code></pre>
+                <pre class="code-content"><code><span class="command">curl</span> <span class="url">https://repo.jellyfin.org/install-debuntu.sh</span> | <span class="keyword">sudo</span> <span class="command">bash</span></code></pre>
               </div>
               <p class="step__desc mt-md"><strong>Fedora / RHEL:</strong></p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>sudo dnf install https://repo.jellyfin.org/releases/server/fedora/jellyfin-server.rpm
-sudo dnf install https://repo.jellyfin.org/releases/server/fedora/jellyfin-web.rpm</code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="url">https://repo.jellyfin.org/releases/server/fedora/jellyfin-server.rpm</span>
+<span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="url">https://repo.jellyfin.org/releases/server/fedora/jellyfin-web.rpm</span></code></pre>
               </div>
             </div>
           </div>
@@ -186,8 +186,8 @@ sudo dnf install https://repo.jellyfin.org/releases/server/fedora/jellyfin-web.r
               <h4 class="step__title">Dienst starten</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>sudo systemctl enable jellyfin
-sudo systemctl start jellyfin</code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">systemctl</span> <span class="keyword">enable</span> <span class="string">jellyfin</span>
+<span class="keyword">sudo</span> <span class="command">systemctl</span> <span class="keyword">start</span> <span class="string">jellyfin</span></code></pre>
               </div>
             </div>
           </div>
@@ -197,7 +197,7 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">Weboberfläche öffnen</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Browser</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>http://localhost:8096</code></pre>
+                <pre class="code-content"><code><span class="url">http://localhost:8096</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Häufige Fehler</summary>
@@ -216,10 +216,10 @@ sudo systemctl start jellyfin</code></pre>
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Jellyfin installieren</h4>
-              <p class="step__desc">Nutze Homebrew oder lade die DMG von <strong>jellyfin.org</strong> herunter:</p>
+              <p class="step__desc">Nutze Homebrew oder lade die DMG von <a href="https://jellyfin.org/downloads" target="_blank" rel="noopener"><strong>jellyfin.org</strong></a> herunter:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>brew install jellyfin</code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="string">jellyfin</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
@@ -236,7 +236,7 @@ sudo systemctl start jellyfin</code></pre>
               <p class="step__desc">Starte Jellyfin über die App oder das Terminal:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>jellyfin</code></pre>
+                <pre class="code-content"><code><span class="string">jellyfin</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Öffne dann <strong>http://localhost:8096</strong> im Browser.</p>
             </div>
@@ -251,7 +251,7 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">Docker-Image herunterladen</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>docker pull jellyfin/jellyfin</code></pre>
+                <pre class="code-content"><code><span class="command">docker</span> <span class="keyword">pull</span> <span class="string">jellyfin/jellyfin</span></code></pre>
               </div>
             </div>
           </div>
@@ -261,14 +261,14 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">Container starten</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>docker run -d \
-  --name jellyfin \
-  --restart=unless-stopped \
-  -p 8096:8096 \
-  -v /pfad/zu/config:/config \
-  -v /pfad/zu/cache:/cache \
-  -v /pfad/zu/medien:/media \
-  jellyfin/jellyfin</code></pre>
+                <pre class="code-content"><code><span class="command">docker</span> <span class="keyword">run</span> <span class="flag">-d</span> \
+  <span class="flag">--name</span> <span class="string">jellyfin</span> \
+  <span class="flag">--restart=unless-stopped</span> \
+  <span class="flag">-p</span> 8096:8096 \
+  <span class="flag">-v</span> <span class="path">/pfad/zu/config</span>:<span class="path">/config</span> \
+  <span class="flag">-v</span> <span class="path">/pfad/zu/cache</span>:<span class="path">/cache</span> \
+  <span class="flag">-v</span> <span class="path">/pfad/zu/medien</span>:<span class="path">/media</span> \
+  <span class="string">jellyfin/jellyfin</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Ersetze <code>/pfad/zu/medien</code> mit dem tatsächlichen Pfad zu deinen Medien. Öffne dann <strong>http://localhost:8096</strong> im Browser.</p>
             </div>
@@ -279,21 +279,21 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">Docker Compose (Alternative)</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">docker-compose.yml</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>services:
-  jellyfin:
-    image: jellyfin/jellyfin
-    container_name: jellyfin
-    restart: unless-stopped
-    ports:
+                <pre class="code-content"><code><span class="keyword">services</span>:
+  <span class="string">jellyfin</span>:
+    <span class="keyword">image</span>: <span class="string">jellyfin/jellyfin</span>
+    <span class="keyword">container_name</span>: <span class="string">jellyfin</span>
+    <span class="keyword">restart</span>: unless-stopped
+    <span class="keyword">ports</span>:
       - "8096:8096"
-    volumes:
-      - ./config:/config
-      - ./cache:/cache
-      - /pfad/zu/medien:/media</code></pre>
+    <span class="keyword">volumes</span>:
+      - <span class="path">./config</span>:<span class="path">/config</span>
+      - <span class="path">./cache</span>:<span class="path">/cache</span>
+      - <span class="path">/pfad/zu/medien</span>:<span class="path">/media</span></code></pre>
               </div>
               <div class="code-block mt-sm">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>docker compose up -d</code></pre>
+                <pre class="code-content"><code><span class="command">docker</span> <span class="keyword">compose</span> <span class="keyword">up</span> <span class="flag">-d</span></code></pre>
               </div>
             </div>
           </div>
@@ -308,7 +308,7 @@ sudo systemctl start jellyfin</code></pre>
               <p class="step__desc">Auf Raspberry Pi OS (Debian-basiert) nutze das offizielle Installationsskript:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash</code></pre>
+                <pre class="code-content"><code><span class="command">curl</span> <span class="url">https://repo.jellyfin.org/install-debuntu.sh</span> | <span class="keyword">sudo</span> <span class="command">bash</span></code></pre>
               </div>
             </div>
           </div>
@@ -318,8 +318,8 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">Dienst starten</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>sudo systemctl enable jellyfin
-sudo systemctl start jellyfin</code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">systemctl</span> <span class="keyword">enable</span> <span class="string">jellyfin</span>
+<span class="keyword">sudo</span> <span class="command">systemctl</span> <span class="keyword">start</span> <span class="string">jellyfin</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Öffne auf einem anderen Gerät im Netzwerk <strong>http://&lt;raspberry-pi-ip&gt;:8096</strong>.</p>
             </div>
@@ -330,7 +330,7 @@ sudo systemctl start jellyfin</code></pre>
               <h4 class="step__title">IP-Adresse herausfinden</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>hostname -I</code></pre>
+                <pre class="code-content"><code><span class="command">hostname</span> <span class="flag">-I</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Die erste angezeigte IP-Adresse ist die deines Raspberry Pi. Nutze sie mit Port 8096 im Browser.</p>
               <details class="mt-sm">

@@ -112,10 +112,10 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">LocalSend herunterladen</h4>
-              <p class="step__desc">Gehe zu <strong>localsend.org</strong> und klicke auf den Download-Button für Windows. Alternativ kannst du die App auch über den Microsoft Store oder das Terminal installieren:</p>
+              <p class="step__desc">Gehe zu <a href="https://localsend.org/#/download" target="_blank" rel="noopener"><strong>localsend.org</strong></a> und klicke auf den Download-Button für Windows. Alternativ kannst du die App auch über den Microsoft Store oder das Terminal installieren:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal (PowerShell)</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>winget install LocalSend.LocalSend</code></pre>
+                <pre class="code-content"><code><span class="command">winget</span> <span class="keyword">install</span> <span class="string">LocalSend.LocalSend</span></code></pre>
               </div>
             </div>
           </div>
@@ -149,16 +149,16 @@
               <h4 class="step__title">LocalSend installieren</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code># Flatpak (empfohlen — funktioniert auf allen Distributionen)
-flatpak install flathub org.localsend.localsend_app
+                <pre class="code-content"><code><span class="comment"># Flatpak (empfohlen — funktioniert auf allen Distributionen)</span>
+<span class="command">flatpak</span> <span class="keyword">install</span> <span class="string">flathub org.localsend.localsend_app</span>
 
-# Snap
-sudo snap install localsend
+<span class="comment"># Snap</span>
+<span class="keyword">sudo</span> <span class="command">snap</span> <span class="keyword">install</span> <span class="string">localsend</span>
 
-# Arch Linux (AUR)
-yay -S localsend-bin</code></pre>
+<span class="comment"># Arch Linux (AUR)</span>
+<span class="command">yay</span> <span class="flag">-S</span> <span class="string">localsend-bin</span></code></pre>
               </div>
-              <p class="step__desc mt-sm">Alternativ kannst du das AppImage oder .deb/.rpm-Paket von <strong>localsend.org</strong> oder der GitHub-Releases-Seite herunterladen.</p>
+              <p class="step__desc mt-sm">Alternativ kannst du das AppImage oder .deb/.rpm-Paket von <a href="https://localsend.org/#/download" target="_blank" rel="noopener"><strong>localsend.org</strong></a> oder der GitHub-Releases-Seite herunterladen.</p>
             </div>
           </div>
           <div class="step">
@@ -168,7 +168,7 @@ yay -S localsend-bin</code></pre>
               <p class="step__desc">Starte LocalSend über das Anwendungsmenü oder im Terminal:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>flatpak run org.localsend.localsend_app</code></pre>
+                <pre class="code-content"><code><span class="command">flatpak</span> <span class="keyword">run</span> <span class="string">org.localsend.localsend_app</span></code></pre>
               </div>
             </div>
           </div>
@@ -179,13 +179,13 @@ yay -S localsend-bin</code></pre>
               <p class="step__desc">Falls andere Geräte nicht sichtbar sind, muss Port 53317 (TCP und UDP) in der Firewall freigegeben werden:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code># UFW (Ubuntu/Debian)
-sudo ufw allow 53317
+                <pre class="code-content"><code><span class="comment"># UFW (Ubuntu/Debian)</span>
+<span class="keyword">sudo</span> <span class="command">ufw</span> allow <span class="string">53317</span>
 
-# firewalld (Fedora)
-sudo firewall-cmd --add-port=53317/tcp --permanent
-sudo firewall-cmd --add-port=53317/udp --permanent
-sudo firewall-cmd --reload</code></pre>
+<span class="comment"># firewalld (Fedora)</span>
+<span class="keyword">sudo</span> <span class="command">firewall-cmd</span> <span class="flag">--add-port=53317/tcp</span> <span class="flag">--permanent</span>
+<span class="keyword">sudo</span> <span class="command">firewall-cmd</span> <span class="flag">--add-port=53317/udp</span> <span class="flag">--permanent</span>
+<span class="keyword">sudo</span> <span class="command">firewall-cmd</span> <span class="flag">--reload</span></code></pre>
               </div>
             </div>
           </div>
@@ -197,10 +197,10 @@ sudo firewall-cmd --reload</code></pre>
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">LocalSend installieren</h4>
-              <p class="step__desc">Lade LocalSend von <strong>localsend.org</strong> herunter, oder nutze Homebrew:</p>
+              <p class="step__desc">Lade LocalSend von <a href="https://localsend.org/#/download" target="_blank" rel="noopener"><strong>localsend.org</strong></a> herunter, oder nutze Homebrew:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>brew install --cask localsend</code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="flag">--cask</span> <span class="string">localsend</span></code></pre>
               </div>
               <p class="step__desc mt-sm">Die App ist auch im Mac App Store verfügbar.</p>
             </div>
@@ -220,7 +220,7 @@ sudo firewall-cmd --reload</code></pre>
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">LocalSend installieren</h4>
-              <p class="step__desc">Installiere <strong>LocalSend</strong> aus dem <strong>Google Play Store</strong> oder aus <strong>F-Droid</strong>. Suche einfach nach "LocalSend". Die App ist kostenlos und werbefrei.</p>
+              <p class="step__desc">Installiere <strong>LocalSend</strong> aus dem <a href="https://play.google.com/store/apps/details?id=org.localsend.localsend_app" target="_blank" rel="noopener"><strong>Google Play Store</strong></a> oder aus <a href="https://f-droid.org/packages/org.localsend.localsend_app/" target="_blank" rel="noopener"><strong>F-Droid</strong></a>. Suche einfach nach "LocalSend". Die App ist kostenlos und werbefrei.</p>
             </div>
           </div>
           <div class="step">
@@ -245,7 +245,7 @@ sudo firewall-cmd --reload</code></pre>
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">LocalSend installieren</h4>
-              <p class="step__desc">Öffne den <strong>App Store</strong> und suche nach "LocalSend". Tippe auf <strong>"Laden"</strong>. Die App ist kostenlos.</p>
+              <p class="step__desc">Öffne den <a href="https://apps.apple.com/app/localsend/id1661733229" target="_blank" rel="noopener"><strong>App Store</strong></a> und suche nach "LocalSend". Tippe auf <strong>"Laden"</strong>. Die App ist kostenlos.</p>
             </div>
           </div>
           <div class="step">

@@ -834,7 +834,7 @@ p + p { margin-top: var(--space-md); }
   font-family: var(--font-mono);
   font-size: 0.8125rem;
   line-height: 1.6;
-  color: var(--text-primary);
+  color: #e2e8f0;
   white-space: pre;
 }
 
@@ -842,7 +842,23 @@ p + p { margin-top: var(--space-md); }
   .code-content code { font-size: 0.9rem; line-height: 1.7; }
 }
 
-[data-theme="light"] .code-block { background: #fafafa; }
+/* Syntax Highlighting */
+.code-content .comment { color: #6b7280; font-style: italic; }
+.code-content .keyword { color: #c084fc; }
+.code-content .string { color: #86efac; }
+.code-content .command { color: #67e8f9; }
+.code-content .flag { color: #fbbf24; }
+.code-content .url { color: #93c5fd; text-decoration: underline; }
+.code-content .path { color: #fdba74; }
+.code-content .variable { color: #f0abfc; }
+.code-content .number { color: #fca5a5; }
+.code-content .output { color: #9ca3af; font-style: italic; }
+.code-content .prompt { color: #6b7280; user-select: none; }
+
+[data-theme="light"] .code-block { background: #1e1e2e; }
+[data-theme="light"] .code-content code { color: #e2e8f0; }
+[data-theme="light"] .code-header { background: rgba(0,0,0,0.15); }
+[data-theme="light"] .code-lang { color: #a1a1aa; }
 
 /* --- Tables - Mobile First --- */
 .table-wrapper { 

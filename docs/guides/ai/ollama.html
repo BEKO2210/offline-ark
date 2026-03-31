@@ -114,7 +114,7 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Ollama herunterladen</h4>
-              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>ollama.com</strong>. Klicke auf den großen "Download for Windows"-Button. Die Datei ist ca. 90 MB groß.</p>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <a href="https://ollama.com" target="_blank" rel="noopener"><strong>ollama.com</strong></a>. Klicke auf den großen "Download for Windows"-Button. Die Datei ist ca. 90 MB groß.</p>
             </div>
           </div>
           <div class="step">
@@ -150,7 +150,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                   </button>
                 </div>
-                <pre class="code-content"><code>ollama pull llama3.2</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">pull</span> <span class="string">llama3.2</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Das Modell ist ca. 2 GB groß. Der Download dauert je nach Internetgeschwindigkeit 2–10 Minuten. <strong>Danach brauchst du kein Internet mehr!</strong></p>
             </div>
@@ -166,7 +166,7 @@
                     <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
                   </button>
                 </div>
-                <pre class="code-content"><code>ollama run llama3.2</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">run</span> <span class="string">llama3.2</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Du kannst jetzt Fragen stellen! Tippe zum Beispiel: <code>Erkläre mir was künstliche Intelligenz ist</code>. Mit <code>/bye</code> beendest du den Chat.</p>
             </div>
@@ -185,7 +185,7 @@
                   <span class="code-lang">Terminal</span>
                   <button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
                 </div>
-                <pre class="code-content"><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+                <pre class="code-content"><code><span class="command">curl</span> <span class="flag">-fsSL</span> <span class="url">https://ollama.com/install.sh</span> | <span class="command">sh</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Das Skript erkennt automatisch deine Linux-Distribution und installiert Ollama mit allen Abhängigkeiten.</p>
             </div>
@@ -196,7 +196,7 @@
               <h4 class="step__title">Installation prüfen</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>ollama --version</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="flag">--version</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Du solltest eine Versionsnummer sehen, z.B. <code>ollama version 0.5.x</code>.</p>
             </div>
@@ -207,7 +207,7 @@
               <h4 class="step__title">Modell herunterladen</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>ollama pull llama3.2</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">pull</span> <span class="string">llama3.2</span></code></pre>
               </div>
             </div>
           </div>
@@ -217,7 +217,7 @@
               <h4 class="step__title">Chatten!</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>ollama run llama3.2</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">run</span> <span class="string">llama3.2</span></code></pre>
               </div>
             </div>
           </div>
@@ -227,7 +227,7 @@
               <h4 class="step__title">Dienst-Status prüfen (optional)</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>sudo systemctl status ollama</code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">systemctl</span> status <span class="string">ollama</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Ollama läuft als systemd-Dienst und startet automatisch mit deinem Computer.</p>
               <details class="mt-sm">
@@ -247,10 +247,10 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Ollama installieren</h4>
-              <p class="step__desc">Lade Ollama von <strong>ollama.com</strong> herunter, oder nutze Homebrew:</p>
+              <p class="step__desc">Lade Ollama von <a href="https://ollama.com" target="_blank" rel="noopener"><strong>ollama.com</strong></a> herunter, oder nutze Homebrew:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>brew install ollama</code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="string">ollama</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
@@ -267,7 +267,7 @@
               <p class="step__desc">Starte die Ollama-App aus dem Launchpad oder öffne Terminal und starte den Dienst:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>ollama serve</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">serve</span></code></pre>
               </div>
               <p class="text-secondary mt-sm">Auf Apple Silicon (M1/M2/M3/M4) wird die GPU automatisch via Metal genutzt — das ist <strong>deutlich schneller</strong> als CPU!</p>
             </div>
@@ -278,8 +278,8 @@
               <h4 class="step__title">Modell herunterladen und chatten</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>ollama pull llama3.2
-ollama run llama3.2</code></pre>
+                <pre class="code-content"><code><span class="command">ollama</span> <span class="keyword">pull</span> <span class="string">llama3.2</span>
+<span class="command">ollama</span> <span class="keyword">run</span> <span class="string">llama3.2</span></code></pre>
               </div>
             </div>
           </div>
@@ -298,12 +298,12 @@ ollama run llama3.2</code></pre>
             <tr><th>RAM</th><th>Modell</th><th>Befehl</th><th>Qualität</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>4 GB</strong></td><td>Phi-3 Mini</td><td><code>ollama pull phi3</code></td><td>Gut für einfache Aufgaben</td></tr>
-            <tr><td><strong>8 GB</strong></td><td>Llama 3.2 (3B)</td><td><code>ollama pull llama3.2</code></td><td>Sehr gut, empfohlen als Einstieg</td></tr>
-            <tr><td><strong>16 GB</strong></td><td>Llama 3.1 (8B)</td><td><code>ollama pull llama3.1</code></td><td>Exzellent für die meisten Aufgaben</td></tr>
-            <tr><td><strong>32 GB+</strong></td><td>Llama 3.1 (70B)</td><td><code>ollama pull llama3.1:70b</code></td><td>Nahezu ChatGPT-Niveau</td></tr>
-            <tr><td><strong>8 GB</strong></td><td>Mistral (7B)</td><td><code>ollama pull mistral</code></td><td>Schnell, gut für Code &amp; Chat</td></tr>
-            <tr><td><strong>8 GB</strong></td><td>Gemma 2 (9B)</td><td><code>ollama pull gemma2</code></td><td>Google-Modell, stark bei Deutsch</td></tr>
+            <tr><td><strong>4 GB</strong></td><td>Phi-3 Mini</td><td><code><span class="command">ollama</span> pull <span class="string">phi3</span></code></td><td>Gut für einfache Aufgaben</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Llama 3.2 (3B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.2</span></code></td><td>Sehr gut, empfohlen als Einstieg</td></tr>
+            <tr><td><strong>16 GB</strong></td><td>Llama 3.1 (8B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.1</span></code></td><td>Exzellent für die meisten Aufgaben</td></tr>
+            <tr><td><strong>32 GB+</strong></td><td>Llama 3.1 (70B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.1:70b</span></code></td><td>Nahezu ChatGPT-Niveau</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Mistral (7B)</td><td><code><span class="command">ollama</span> pull <span class="string">mistral</span></code></td><td>Schnell, gut für Code &amp; Chat</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Gemma 2 (9B)</td><td><code><span class="command">ollama</span> pull <span class="string">gemma2</span></code></td><td>Google-Modell, stark bei Deutsch</td></tr>
           </tbody>
         </table>
       </div>
@@ -323,24 +323,24 @@ ollama run llama3.2</code></pre>
 
       <div class="code-block">
         <div class="code-header"><span class="code-lang">Terminal / cURL</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-        <pre class="code-content"><code>curl http://localhost:11434/api/generate -d '{
+        <pre class="code-content"><code><span class="command">curl</span> <span class="url">http://localhost:11434/api/generate</span> <span class="flag">-d</span> <span class="string">'{
   "model": "llama3.2",
   "prompt": "Erkläre mir was Photosynthese ist",
   "stream": false
-}'</code></pre>
+}'</span></code></pre>
       </div>
 
       <h4 class="mt-lg">Modelle verwalten</h4>
       <div class="code-block">
         <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-        <pre class="code-content"><code># Alle installierten Modelle anzeigen
-ollama list
+        <pre class="code-content"><code><span class="comment"># Alle installierten Modelle anzeigen</span>
+<span class="command">ollama</span> <span class="keyword">list</span>
 
-# Modell-Details anzeigen
-ollama show llama3.2
+<span class="comment"># Modell-Details anzeigen</span>
+<span class="command">ollama</span> <span class="keyword">show</span> <span class="string">llama3.2</span>
 
-# Modell löschen (um Speicherplatz freizugeben)
-ollama rm llama3.2</code></pre>
+<span class="comment"># Modell löschen (um Speicherplatz freizugeben)</span>
+<span class="command">ollama</span> <span class="keyword">rm</span> <span class="string">llama3.2</span></code></pre>
       </div>
     </section>
 

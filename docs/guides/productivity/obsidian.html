@@ -116,7 +116,7 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Obsidian herunterladen</h4>
-              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>obsidian.md</strong>. Klicke auf "Get Obsidian for Windows". Die Installationsdatei ist ca. 80 MB groß.</p>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <a href="https://obsidian.md/download" target="_blank" rel="noopener"><strong>obsidian.md</strong></a>. Klicke auf "Get Obsidian for Windows". Die Installationsdatei ist ca. 80 MB groß.</p>
             </div>
           </div>
           <div class="step">
@@ -130,7 +130,7 @@
                   <p>Du kannst Obsidian auch über die Kommandozeile installieren:</p>
                   <div class="code-block">
                     <div class="code-header"><span class="code-lang">PowerShell</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                    <pre class="code-content"><code>winget install Obsidian.Obsidian</code></pre>
+                    <pre class="code-content"><code><span class="command">winget</span> <span class="keyword">install</span> <span class="string">Obsidian.Obsidian</span></code></pre>
                   </div>
                 </div>
               </details>
@@ -155,19 +155,19 @@
               <h4 class="mt-sm">AppImage (universell)</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code># AppImage von obsidian.md herunterladen, dann:
-chmod +x Obsidian-*.AppImage
-./Obsidian-*.AppImage</code></pre>
+                <pre class="code-content"><code><span class="comment"># AppImage von obsidian.md herunterladen, dann:</span>
+<span class="command">chmod</span> <span class="flag">+x</span> <span class="string">Obsidian-*.AppImage</span>
+<span class="path">./Obsidian-*.AppImage</span></code></pre>
               </div>
               <h4 class="mt-sm">Flatpak</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>flatpak install flathub md.obsidian.Obsidian</code></pre>
+                <pre class="code-content"><code><span class="command">flatpak</span> <span class="keyword">install</span> <span class="string">flathub md.obsidian.Obsidian</span></code></pre>
               </div>
               <h4 class="mt-sm">Snap</h4>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>sudo snap install obsidian --classic</code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">snap</span> <span class="keyword">install</span> <span class="string">obsidian</span> <span class="flag">--classic</span></code></pre>
               </div>
             </div>
           </div>
@@ -186,10 +186,10 @@ chmod +x Obsidian-*.AppImage
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Obsidian installieren</h4>
-              <p class="step__desc">Lade die DMG-Datei von <strong>obsidian.md</strong> herunter und ziehe Obsidian in den Programme-Ordner. Oder nutze Homebrew:</p>
+              <p class="step__desc">Lade die DMG-Datei von <a href="https://obsidian.md/download" target="_blank" rel="noopener"><strong>obsidian.md</strong></a> herunter und ziehe Obsidian in den Programme-Ordner. Oder nutze Homebrew:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code>brew install --cask obsidian</code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="flag">--cask</span> <span class="string">obsidian</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
@@ -214,7 +214,7 @@ chmod +x Obsidian-*.AppImage
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Obsidian aus dem Play Store installieren</h4>
-              <p class="step__desc">Öffne den Google Play Store und suche nach <strong>Obsidian</strong>. Tippe auf "Installieren". Die App ist kostenlos und ca. 60 MB groß.</p>
+              <p class="step__desc">Öffne den <a href="https://play.google.com/store/apps/details?id=md.obsidian" target="_blank" rel="noopener"><strong>Google Play Store</strong></a> und suche nach <strong>Obsidian</strong>. Tippe auf "Installieren". Die App ist kostenlos und ca. 60 MB groß.</p>
             </div>
           </div>
           <div class="step">
@@ -232,7 +232,7 @@ chmod +x Obsidian-*.AppImage
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">Obsidian aus dem App Store installieren</h4>
-              <p class="step__desc">Öffne den App Store auf deinem iPhone oder iPad und suche nach <strong>Obsidian</strong>. Tippe auf "Laden". Die App ist kostenlos.</p>
+              <p class="step__desc">Öffne den <a href="https://apps.apple.com/app/obsidian-connected-notes/id1557175442" target="_blank" rel="noopener"><strong>App Store</strong></a> auf deinem iPhone oder iPad und suche nach <strong>Obsidian</strong>. Tippe auf "Laden". Die App ist kostenlos.</p>
             </div>
           </div>
           <div class="step">
