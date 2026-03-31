@@ -141,7 +141,9 @@ p + p { margin-top: var(--space-md); }
 .header .container { display: flex; align-items: center; justify-content: space-between; height: 100%; }
 .logo { display: flex; align-items: center; gap: var(--space-sm); font-family: var(--font-heading); font-weight: 800; font-size: 1.35rem; color: var(--text-primary); text-decoration: none; }
 .logo:hover { text-decoration: none; color: var(--accent-primary); }
-.logo__icon { font-size: 1.5rem; }
+.logo__icon { display: inline-flex; align-items: center; }
+.logo__icon svg { width: 1.5rem; height: 1.5rem; flex-shrink: 0; }
+.hero__shield-icon { width: clamp(2.5rem, 7vw, 5rem); height: clamp(2.5rem, 7vw, 5rem); vertical-align: -0.15em; }
 .nav { display: flex; align-items: center; gap: var(--space-lg); }
 .nav__link { color: var(--text-secondary); font-weight: 500; font-size: 0.95rem; padding: var(--space-xs) 0; transition: color 0.2s; }
 .nav__link:hover, .nav__link--active { color: var(--accent-primary); text-decoration: none; }
