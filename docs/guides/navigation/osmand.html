@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="OsmAnd — Offline-Karten und Navigation mit OpenStreetMap. Schritt-für-Schritt Anleitung für Android und iOS.">
+  <meta name="theme-color" content="#0f1117">
+  <title>OsmAnd — Offline-Navigation | Offline Ark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Navigation</a><span class="sep">/</span>
+        <span>OsmAnd</span>
+      </div>
+      <h1 class="guide-header__title">OsmAnd — Offline-Karten und Navigation</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--navigation">Navigation</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          10–15 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Android</span>
+        <span class="badge badge--os">iOS</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="osmand">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="osmand" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>OsmAnd ist wie ein Navi auf deinem Handy, das auch ohne Internet funktioniert. Du lädst die Karte vorher herunter und kannst dich dann überall zurechtfinden — beim Wandern, Radfahren oder im Auto!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>OsmAnd ist eine kostenlose Navigations-App, die Kartendaten von OpenStreetMap nutzt. Du kannst ganze Länder oder Regionen auf dein Smartphone herunterladen und dann vollständig offline navigieren — egal ob mit dem Auto, dem Fahrrad oder zu Fuß. Im Gegensatz zu Google Maps brauchst du kein Internet und gibst keine Daten preis.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>OsmAnd (OSM Automated Navigation Directions) verwendet OpenStreetMap-Vektorkarten im proprietären OBF-Format. Die App berechnet Routen lokal auf dem Gerät mit einem modifizierten A*-Algorithmus. Unterstützt werden Routing-Profile für Auto, Fahrrad, Wandern und öffentliche Verkehrsmittel. OsmAnd bietet zudem GPX-Track-Aufzeichnung, Höhenprofile, Hillshade-Overlay, Wikipedia-POIs und Reiseführer-Plugins. Die kostenlose Version erlaubt 7 Karten-Downloads, OsmAnd+ (einmaliger Kauf) hebt diese Beschränkung auf. Auf dem Desktop kannst du OpenStreetMap-Daten mit QGIS oder direkt über <strong>osmand.net</strong> betrachten.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- KARTENGROSSEN -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span> Kartengröße im Überblick</h2>
+      <p class="text-secondary mb-md">Vor dem Download solltest du wissen, wie viel Speicherplatz die Karten benötigen. Lade die Karten am besten über WLAN herunter!</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Region</th><th>Größe (ca.)</th><th>Hinweis</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Deutschland</strong></td><td>~1,5 GB</td><td>Alle 16 Bundesländer auch einzeln verfügbar</td></tr>
+            <tr><td><strong>Österreich</strong></td><td>~350 MB</td><td>Kompakt, ideal für Wanderungen</td></tr>
+            <tr><td><strong>Schweiz</strong></td><td>~300 MB</td><td>Inklusive aller Bergwege</td></tr>
+            <tr><td><strong>Frankreich</strong></td><td>~2,2 GB</td><td>Auch nach Regionen aufgeteilt</td></tr>
+            <tr><td><strong>Italien</strong></td><td>~1,5 GB</td><td>Regionale Downloads möglich</td></tr>
+            <tr><td><strong>Ganz Europa</strong></td><td>~8,5 GB</td><td>Besser einzelne Länder laden</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--warning mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Wichtig:</strong> Lade Karten immer über WLAN herunter, um dein mobiles Datenvolumen zu schonen. Am besten vor einer Reise zu Hause vorbereiten!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- PLATTFORM TABS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="android" role="tab" aria-selected="true">Android</button>
+          <button class="tab-btn" data-tab="ios" role="tab">iOS</button>
+        </div>
+
+        <!-- ANDROID -->
+        <div class="tab-content active" id="tab-android" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">OsmAnd installieren</h4>
+              <p class="step__desc">Installiere OsmAnd aus dem <strong>Google Play Store</strong> oder von <strong>F-Droid</strong> (für mehr Privatsphäre). Suche einfach nach "OsmAnd". Die App ist kostenlos — die freie Version erlaubt 7 Karten-Downloads.</p>
+              <div class="callout callout--info mt-sm">
+                <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+                <div class="callout__content">
+                  <p><strong>Tipp:</strong> Über F-Droid erhältst du die vollständige Version (OsmAnd+) kostenlos und ohne Download-Limit!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Karte herunterladen</h4>
+              <p class="step__desc">Beim ersten Start fragt OsmAnd nach deiner Region. Wähle z.B. <strong>Europa</strong> &rarr; <strong>Deutschland</strong>. Du kannst auch einzelne Bundesländer laden, um Speicherplatz zu sparen. Stelle sicher, dass du mit einem <strong>WLAN</strong> verbunden bist!</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Navigation starten</h4>
+              <p class="step__desc">Tippe auf den Navigations-Button (unten links), gib dein Ziel ein und wähle dein Fortbewegungsmittel: Auto, Fahrrad, zu Fuß oder öffentliche Verkehrsmittel. OsmAnd berechnet die Route komplett offline auf deinem Gerät.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Weitere Karten laden (optional)</h4>
+              <p class="step__desc">Gehe zu <strong>Menü</strong> &rarr; <strong>Karten herunterladen</strong>, um zusätzliche Regionen zu laden. Für Wanderer empfehlen sich auch die <strong>Höhenlinien</strong> und <strong>Hillshade</strong>-Daten (unter "Zusätzliche Karten").</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IOS -->
+        <div class="tab-content" id="tab-ios" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">OsmAnd installieren</h4>
+              <p class="step__desc">Installiere OsmAnd Maps aus dem <strong>App Store</strong>. Die App ist kostenlos mit begrenzten Karten-Downloads. Für unbegrenzte Downloads gibt es OsmAnd Maps+ als In-App-Kauf oder Abo.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Karte herunterladen</h4>
+              <p class="step__desc">Öffne die App und gehe zu <strong>Karten herunterladen</strong>. Wähle <strong>Europa</strong> &rarr; <strong>Deutschland</strong> (oder dein gewünschtes Land). Verbinde dich vorher unbedingt mit einem WLAN!</p>
+              <div class="callout callout--warning mt-sm">
+                <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="callout__content">
+                  <p><strong>Speicherplatz prüfen:</strong> Stelle sicher, dass genug freier Speicher auf deinem iPhone vorhanden ist. Deutschland benötigt etwa 1,5 GB.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Offline navigieren</h4>
+              <p class="step__desc">Tippe auf die Karte, um einen Zielort zu wählen, oder nutze die Suchfunktion. Wähle dein Routenprofil (Auto, Fahrrad, Wandern) und starte die Navigation. Alles funktioniert ohne Internetverbindung!</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Karten vor der Reise vorbereiten</h4>
+              <p class="step__desc">Lade alle benötigten Karten zu Hause über WLAN herunter, bevor du auf Reisen gehst. So bist du auch in Gebieten ohne Mobilfunk bestens vorbereitet.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUTZUNG -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span> Was kann OsmAnd?</h2>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Funktion</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Auto-Navigation</strong></td><td>Turn-by-Turn Sprachnavigation, Spurassistent, Geschwindigkeitswarnungen</td></tr>
+            <tr><td><strong>Fahrrad-Navigation</strong></td><td>Radwege bevorzugen, Höhenprofil anzeigen, GPX-Tracks folgen</td></tr>
+            <tr><td><strong>Wandern</strong></td><td>Wanderwege, Höhenlinien, Hillshade-Karten, Wegmarkierungen</td></tr>
+            <tr><td><strong>ÖPNV</strong></td><td>Öffentliche Verkehrsmittel mit Haltestellen und Linien</td></tr>
+            <tr><td><strong>GPX-Aufzeichnung</strong></td><td>Eigene Routen aufzeichnen und später wieder verwenden</td></tr>
+            <tr><td><strong>Wikipedia-POIs</strong></td><td>Offline-Wikipedia-Artikel für Sehenswürdigkeiten anzeigen</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Alternative:</strong> Wer eine schlankere App sucht, sollte sich <strong>Organic Maps</strong> ansehen. Organic Maps basiert ebenfalls auf OpenStreetMap, ist vollständig kostenlos und ohne Werbung. Ideal für Wanderer und Radfahrer, die eine einfachere Oberfläche bevorzugen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TIPPS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Tipps und Hinweise</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Vor der Reise vorbereiten:</strong> Lade alle Karten der Regionen herunter, die du besuchen wirst. Karten über WLAN herunterladen spart mobiles Datenvolumen und geht schneller.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Karten aktuell halten:</strong> OpenStreetMap-Daten werden monatlich aktualisiert. Gehe regelmäßig zu "Karten herunterladen" und aktualisiere deine Karten, um neue Wege und Änderungen zu erhalten.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--warning mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Akku sparen:</strong> Offline-Navigation verbraucht weniger Akku als Online-Navigation, aber GPS bleibt aktiv. Nimm auf längeren Wanderungen eine Powerbank mit!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Kostenlos vs. Bezahlt:</strong> Die kostenlose Version erlaubt 7 Karten-Downloads. OsmAnd+ (Einmalkauf) hebt dieses Limit auf. Über <strong>F-Droid</strong> (Android) erhältst du die Vollversion kostenlos.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="osmand" data-step="0"><span class="checklist__text">OsmAnd installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="osmand" data-step="1"><span class="checklist__text">Erste Karte heruntergeladen (z.B. Deutschland)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="osmand" data-step="2"><span class="checklist__text">Offline-Navigation getestet</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="osmand" data-step="3"><span class="checklist__text">Routenprofil gewählt (Auto, Fahrrad, Wandern)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="osmand" data-step="4"><span class="checklist__text">Weitere Karten für Reiseziele geladen (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt ein vollständiges Navigationssystem auf deinem Smartphone — komplett offline und ohne Tracking. Egal ob Autofahrt, Radtour oder Wanderung: Du findest immer den Weg.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polygon points="1 6 1 22 8 18 16 22 23 18 23 2 16 6 8 2 1 6"/><line x1="8" y1="2" x2="8" y2="18"/><line x1="16" y1="6" x2="16" y2="22"/></svg></span>
+          <div><strong>Organic Maps</strong><br><span class="text-small text-muted">Schlanke Offline-Karten für Wanderer und Radfahrer — Bald verfügbar</span></div>
+        </a>
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M12 2L2 7l10 5 10-5-10-5z"/><path d="M2 17l10 5 10-5"/><path d="M2 12l10 5 10-5"/></svg></span>
+          <div><strong>Meshtastic</strong><br><span class="text-small text-muted">Kommunikation ohne Internet über Mesh-Netzwerke — Bald verfügbar</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

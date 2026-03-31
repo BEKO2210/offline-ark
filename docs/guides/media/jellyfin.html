@@ -1,0 +1,539 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="Jellyfin installieren und als lokalen Medienserver einrichten — Schritt-für-Schritt Anleitung für Windows, Linux, macOS, Docker und Raspberry Pi.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Jellyfin — Lokaler Medienserver | Offline Ark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo">
+        <span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a>
+        <span class="sep">/</span>
+        <a href="../../index.html#kategorien">Medien</a>
+        <span class="sep">/</span>
+        <span>Jellyfin</span>
+      </div>
+      <h1 class="guide-header__title">Jellyfin — Lokaler Medienserver</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--media">Medien</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span> <span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          30–45 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+        <span class="badge badge--os">Docker</span>
+        <span class="badge badge--os">Raspberry Pi</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="jellyfin">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="jellyfin" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS? -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Jellyfin ist wie dein eigenes Netflix zu Hause! Du legst deine Filme, Serien und Musik auf den Computer, und dann kannst du sie auf dem Fernseher, Tablet oder Handy anschauen — ganz ohne Internet!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>Jellyfin ist ein kostenloser, quelloffener Medienserver. Du installierst ihn auf einem Computer und er organisiert deine Filme, Serien, Musik und Fotos in einer schönen Oberfläche — ähnlich wie Netflix oder Spotify. Alle Geräte in deinem Heimnetzwerk können darauf zugreifen. Anders als Plex braucht Jellyfin kein Konto und keine Cloud-Verbindung. Alles bleibt lokal bei dir.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>Jellyfin ist ein Fork von Emby und unter der GPL-v2-Lizenz veröffentlicht. Der Server ist in C# (.NET) geschrieben und bietet eine REST-API, Hardware-Transkodierung (VAAPI, NVENC, QSV), DLNA-Unterstützung, Live-TV mit DVB-Tunern, Benutzerverwaltung mit Zugriffsrechten und Plugin-System. Unterstützte Medienformate umfassen nahezu alle gängigen Video- (H.264, H.265, VP9, AV1), Audio- (FLAC, MP3, AAC, Opus) und Bildformate.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLATTFORM-TABS: INSTALLATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+          <button class="tab-btn" data-tab="docker" role="tab">Docker</button>
+          <button class="tab-btn" data-tab="raspi" role="tab">Raspberry Pi</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Jellyfin herunterladen</h4>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>jellyfin.org</strong>. Klicke auf "Download" und wähle den Windows-Installer. Die Datei ist ca. 150 MB groß.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installer ausführen</h4>
+              <p class="step__desc">Doppelklicke auf die heruntergeladene <code>jellyfin_xxx_windows-x64.exe</code>. Folge dem Installationsassistenten und wähle "Als Dienst installieren", damit Jellyfin automatisch beim Hochfahren startet.</p>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Häufige Fehler</summary>
+                <div class="details-content">
+                  <p><strong>Windows Defender warnt:</strong> Klicke auf "Weitere Informationen" und dann "Trotzdem ausführen". Jellyfin ist sicher und Open Source.</p>
+                  <p><strong>Port belegt:</strong> Falls Port 8096 bereits verwendet wird, kannst du den Port in der Konfigurationsdatei ändern.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Weboberfläche öffnen</h4>
+              <p class="step__desc">Öffne deinen Browser und gehe zu:</p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">Browser</span>
+                  <button class="copy-btn" aria-label="Code kopieren">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  </button>
+                </div>
+                <pre class="code-content"><code>http://localhost:8096</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Der Einrichtungsassistent startet automatisch beim ersten Zugriff.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Ersteinrichtung durchführen</h4>
+              <p class="step__desc">Wähle deine Sprache (Deutsch), erstelle einen Admin-Benutzer mit Passwort und klicke auf "Weiter". Die Medienbibliotheken richtest du im nächsten Abschnitt ein.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Repository hinzufügen und installieren</h4>
+              <p class="step__desc"><strong>Debian / Ubuntu:</strong></p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash</code></pre>
+              </div>
+              <p class="step__desc mt-md"><strong>Fedora / RHEL:</strong></p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo dnf install https://repo.jellyfin.org/releases/server/fedora/jellyfin-server.rpm
+sudo dnf install https://repo.jellyfin.org/releases/server/fedora/jellyfin-web.rpm</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Dienst starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo systemctl enable jellyfin
+sudo systemctl start jellyfin</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Weboberfläche öffnen</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Browser</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>http://localhost:8096</code></pre>
+              </div>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Häufige Fehler</summary>
+                <div class="details-content">
+                  <p><strong>Zugriff verweigert auf Medienordner:</strong> Jellyfin läuft als Benutzer <code>jellyfin</code>. Stelle sicher, dass dieser Benutzer Leserechte auf deine Medienordner hat: <code>sudo chmod -R o+rx /pfad/zu/medien</code></p>
+                  <p><strong>Firewall blockiert:</strong> Öffne den Port mit <code>sudo ufw allow 8096/tcp</code></p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Jellyfin installieren</h4>
+              <p class="step__desc">Nutze Homebrew oder lade die DMG von <strong>jellyfin.org</strong> herunter:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>brew install jellyfin</code></pre>
+              </div>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
+                <div class="details-content">
+                  <p>Beim ersten Start fragt macOS, ob du die App wirklich öffnen willst. Gehe zu <strong>Systemeinstellungen &rarr; Datenschutz &amp; Sicherheit</strong> und klicke auf "Trotzdem öffnen".</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Jellyfin starten</h4>
+              <p class="step__desc">Starte Jellyfin über die App oder das Terminal:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>jellyfin</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Öffne dann <strong>http://localhost:8096</strong> im Browser.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- DOCKER -->
+        <div class="tab-content" id="tab-docker" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Docker-Image herunterladen</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>docker pull jellyfin/jellyfin</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Container starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>docker run -d \
+  --name jellyfin \
+  --restart=unless-stopped \
+  -p 8096:8096 \
+  -v /pfad/zu/config:/config \
+  -v /pfad/zu/cache:/cache \
+  -v /pfad/zu/medien:/media \
+  jellyfin/jellyfin</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Ersetze <code>/pfad/zu/medien</code> mit dem tatsächlichen Pfad zu deinen Medien. Öffne dann <strong>http://localhost:8096</strong> im Browser.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Docker Compose (Alternative)</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">docker-compose.yml</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>services:
+  jellyfin:
+    image: jellyfin/jellyfin
+    container_name: jellyfin
+    restart: unless-stopped
+    ports:
+      - "8096:8096"
+    volumes:
+      - ./config:/config
+      - ./cache:/cache
+      - /pfad/zu/medien:/media</code></pre>
+              </div>
+              <div class="code-block mt-sm">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>docker compose up -d</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- RASPBERRY PI -->
+        <div class="tab-content" id="tab-raspi" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Jellyfin-Repository hinzufügen</h4>
+              <p class="step__desc">Auf Raspberry Pi OS (Debian-basiert) nutze das offizielle Installationsskript:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>curl https://repo.jellyfin.org/install-debuntu.sh | sudo bash</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Dienst starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo systemctl enable jellyfin
+sudo systemctl start jellyfin</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Öffne auf einem anderen Gerät im Netzwerk <strong>http://&lt;raspberry-pi-ip&gt;:8096</strong>.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">IP-Adresse herausfinden</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>hostname -I</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Die erste angezeigte IP-Adresse ist die deines Raspberry Pi. Nutze sie mit Port 8096 im Browser.</p>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg> Tipp für den Raspberry Pi</summary>
+                <div class="details-content">
+                  <p>Ein Raspberry Pi 4 mit 4 GB RAM eignet sich gut als Jellyfin-Server. Hardware-Transkodierung wird allerdings nur eingeschränkt unterstützt. Am besten speicherst du Medien in Formaten, die deine Endgeräte direkt abspielen können (Direct Play).</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MEDIENBIBLIOTHEK EINRICHTEN -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Medienbibliothek einrichten</h2>
+
+      <p class="text-secondary mb-md">Organisiere deine Medien in Ordnern, damit Jellyfin sie automatisch erkennt und Metadaten (Cover, Beschreibungen) herunterladen kann.</p>
+
+      <h4>Empfohlene Ordnerstruktur</h4>
+      <div class="code-block mt-sm">
+        <div class="code-header"><span class="code-lang">Ordnerstruktur</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+        <pre class="code-content"><code>Medien/
+├── Filme/
+│   ├── Der Film (2024)/
+│   │   └── Der Film (2024).mkv
+│   └── Ein anderer Film (2023)/
+│       └── Ein anderer Film (2023).mp4
+├── Serien/
+│   └── Serienname (2023)/
+│       ├── Season 01/
+│       │   ├── S01E01 - Pilotfolge.mkv
+│       │   └── S01E02 - Zweite Folge.mkv
+│       └── Season 02/
+│           └── S02E01 - Neue Staffel.mkv
+├── Musik/
+│   └── Künstler/
+│       └── Album (2024)/
+│           ├── 01 - Erster Song.flac
+│           └── 02 - Zweiter Song.flac
+└── Fotos/
+    └── Urlaub 2024/
+        ├── IMG_001.jpg
+        └── IMG_002.jpg</code></pre>
+      </div>
+
+      <h4 class="mt-lg">Bibliothek in Jellyfin hinzufügen</h4>
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Gehe im Einrichtungsassistenten (oder unter <strong>Dashboard &rarr; Bibliotheken</strong>) auf "Medienbibliothek hinzufügen".</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <p class="step__desc">Wähle den <strong>Inhaltstyp</strong> (Filme, Serien, Musik oder Fotos) und füge den Ordnerpfad hinzu.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <p class="step__desc">Aktiviere die gewünschten <strong>Metadaten-Quellen</strong> (z.B. TheMovieDB für Filme und Serien). Jellyfin lädt automatisch Cover, Beschreibungen und Bewertungen herunter.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">4</div>
+        <div class="step__content">
+          <p class="step__desc">Klicke auf "OK" und warte, bis der Bibliotheksscan abgeschlossen ist. Je nach Medienmenge kann das einige Minuten dauern.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Tipp:</strong> Benenne Filme und Serien nach dem Schema "Name (Jahr)" — so findet Jellyfin automatisch die richtigen Metadaten. Für Serien nutze das Format S01E01 in den Dateinamen.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CLIENT-APPS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Zugriff und Client-Apps</h2>
+
+      <p class="text-secondary mb-md">Jellyfin kannst du von jedem Gerät in deinem Netzwerk erreichen. Öffne einfach <code>http://&lt;Server-IP&gt;:8096</code> im Browser oder nutze eine der offiziellen Apps:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Plattform</th><th>App</th><th>Verfügbar in</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Webbrowser</strong></td><td>Integrierte Web-App</td><td>Jeder moderne Browser</td></tr>
+            <tr><td><strong>Android</strong></td><td>Jellyfin for Android</td><td>Google Play Store / F-Droid</td></tr>
+            <tr><td><strong>iOS</strong></td><td>Jellyfin Mobile</td><td>App Store</td></tr>
+            <tr><td><strong>Android TV</strong></td><td>Jellyfin for Android TV</td><td>Google Play Store</td></tr>
+            <tr><td><strong>Amazon Fire TV</strong></td><td>Jellyfin for Fire TV</td><td>Amazon Appstore</td></tr>
+            <tr><td><strong>Roku</strong></td><td>Jellyfin for Roku</td><td>Roku Channel Store</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Tipp:</strong> In der Client-App musst du die Server-Adresse eingeben. Finde die IP deines Servers heraus: Windows: <code>ipconfig</code> in PowerShell. Linux/macOS: <code>hostname -I</code> oder <code>ifconfig</code>. Dann trage <code>http://192.168.x.x:8096</code> ein.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRANSKODIERUNG -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Transkodierung einrichten</h2>
+
+      <p class="text-secondary mb-md">Transkodierung wandelt Videos in Echtzeit um, wenn ein Gerät das Originalformat nicht abspielen kann. Hardware-Transkodierung ist deutlich schneller als Software-Transkodierung.</p>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Gehe zu <strong>Dashboard &rarr; Wiedergabe &rarr; Transkodierung</strong>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <p class="step__desc">Wähle deine <strong>Hardware-Beschleunigung</strong>:</p>
+          <div class="table-wrapper mt-sm">
+            <table>
+              <thead><tr><th>Hardware</th><th>Einstellung</th><th>Hinweis</th></tr></thead>
+              <tbody>
+                <tr><td><strong>NVIDIA GPU</strong></td><td>NVENC</td><td>Benötigt aktuelle NVIDIA-Treiber</td></tr>
+                <tr><td><strong>Intel iGPU</strong></td><td>Intel Quick Sync (QSV)</td><td>Auf den meisten Intel-CPUs verfügbar</td></tr>
+                <tr><td><strong>AMD GPU</strong></td><td>VA-API</td><td>Linux bevorzugt, unter Windows eingeschränkt</td></tr>
+                <tr><td><strong>Keine GPU</strong></td><td>Keine</td><td>Software-Transkodierung (langsamer, mehr CPU-Last)</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <p class="step__desc">Aktiviere die gewünschten Codecs (H.264 und H.265 sind am häufigsten) und klicke auf "Speichern".</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg> Direct Play vs. Transkodierung</summary>
+        <div class="details-content">
+          <p><strong>Direct Play:</strong> Das Endgerät spielt die Datei direkt ab, ohne Umwandlung. Das ist am effizientesten und belastet den Server kaum.</p>
+          <p><strong>Transkodierung:</strong> Der Server wandelt das Video in Echtzeit um. Das ist nötig, wenn das Endgerät das Format nicht unterstützt (z.B. HEVC auf älteren Geräten).</p>
+          <p><strong>Empfehlung:</strong> Speichere Medien wenn möglich in H.264 (MP4/MKV) — dieses Format wird von fast allen Geräten direkt unterstützt.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- FORTSCHRITT CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="0"><span class="checklist__text">Jellyfin installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="1"><span class="checklist__text">Ersteinrichtung abgeschlossen (Admin-Benutzer erstellt)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="2"><span class="checklist__text">Medienbibliothek hinzugefügt (Filme, Serien oder Musik)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="3"><span class="checklist__text">Im Browser auf Medien zugegriffen</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="4"><span class="checklist__text">Client-App auf einem Gerät eingerichtet</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="jellyfin" data-step="5"><span class="checklist__text">Transkodierung konfiguriert (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt deinen eigenen Medienserver — kostenlos, ohne Cloud, ohne Konto. Deine Filme, Serien und Musik stehen dir auf allen Geräten in deinem Netzwerk zur Verfügung.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="5.5" cy="17.5" r="2.5"/><circle cx="17.5" cy="15.5" r="2.5"/><path d="M8 17V5l12-2v12"/></svg></span>
+          <div><strong>Navidrome</strong><br><span class="text-small text-muted">Eigener Musik-Streaming-Server — Bald verfügbar</span></div>
+        </a>
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><path d="M21 15l-5-5L5 21"/></svg></span>
+          <div><strong>Immich</strong><br><span class="text-small text-muted">Selbstgehostete Foto- und Video-Verwaltung — Bald verfügbar</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

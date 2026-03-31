@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="Obsidian — Notizen und Wissen lokal organisieren. Anleitung für alle Plattformen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Obsidian — Notizen offline organisieren | Offline Ark</title>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo">
+        <span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a>
+        <span class="sep">/</span>
+        <a href="../../index.html#kategorien">Produktivität</a>
+        <span class="sep">/</span>
+        <span>Obsidian</span>
+      </div>
+      <h1 class="guide-header__title">Obsidian — Notizen offline organisieren</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--productivity">Produktivität</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          15–20 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+        <span class="badge badge--os">Android</span>
+        <span class="badge badge--os">iOS</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="obsidian">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="obsidian" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS? -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Obsidian ist wie ein digitales Notizbuch, das auf deinem Computer lebt. Du kannst darin schreiben, Ideen sammeln und deine Notizen miteinander verbinden — wie ein Spinnennetz aus Wissen. Und das Beste: Es funktioniert auch ohne Internet!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>Obsidian ist ein Programm zum Schreiben und Organisieren von Notizen. Alle Notizen werden als einfache Textdateien (Markdown) auf deinem Computer gespeichert — nicht in der Cloud. Du kannst Notizen untereinander verlinken und so ein persönliches Wissensnetzwerk aufbauen. Obsidian ist kostenlos für den privaten Gebrauch und funktioniert komplett offline.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>Obsidian ist eine Electron-basierte Desktop-Anwendung zur Wissensorganisation nach dem Zettelkasten-Prinzip. Notizen werden als lokale <code>.md</code>-Dateien (Markdown) in sogenannten Vaults gespeichert. Die App unterstützt bidirektionale Links (<code>[[Wikilinks]]</code>), eine interaktive Graph-Ansicht, YAML-Frontmatter für Metadaten und eine umfangreiche Plugin-API. Community-Plugins und Themes erweitern die Funktionalität beliebig. Die Dateien sind portabel und können mit jedem Texteditor gelesen werden.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLATTFORM-TABS: INSTALLATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+          <button class="tab-btn" data-tab="android" role="tab">Android</button>
+          <button class="tab-btn" data-tab="ios" role="tab">iOS</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian herunterladen</h4>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>obsidian.md</strong>. Klicke auf "Get Obsidian for Windows". Die Installationsdatei ist ca. 80 MB groß.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installer ausführen</h4>
+              <p class="step__desc">Doppelklicke auf die heruntergeladene <code>Obsidian.x.x.x.exe</code>. Die Installation startet automatisch — Obsidian öffnet sich nach wenigen Sekunden.</p>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Alternative: Installation per winget</summary>
+                <div class="details-content">
+                  <p>Du kannst Obsidian auch über die Kommandozeile installieren:</p>
+                  <div class="code-block">
+                    <div class="code-header"><span class="code-lang">PowerShell</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                    <pre class="code-content"><code>winget install Obsidian.Obsidian</code></pre>
+                  </div>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Deinen ersten Vault erstellen</h4>
+              <p class="step__desc">Beim ersten Start fragt Obsidian nach einem <strong>Vault</strong> (Tresor). Klicke auf "Neuen Vault erstellen", gib einen Namen ein (z.B. "Meine Notizen") und wähle einen Speicherort auf deiner Festplatte. Fertig!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian installieren</h4>
+              <p class="step__desc">Es gibt mehrere Wege, Obsidian unter Linux zu installieren. Wähle die Variante, die zu deinem System passt:</p>
+              <h4 class="mt-sm">AppImage (universell)</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code># AppImage von obsidian.md herunterladen, dann:
+chmod +x Obsidian-*.AppImage
+./Obsidian-*.AppImage</code></pre>
+              </div>
+              <h4 class="mt-sm">Flatpak</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>flatpak install flathub md.obsidian.Obsidian</code></pre>
+              </div>
+              <h4 class="mt-sm">Snap</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo snap install obsidian --classic</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian starten</h4>
+              <p class="step__desc">Starte Obsidian über dein Anwendungsmenü oder den Befehl <code>obsidian</code> im Terminal. Erstelle beim ersten Start einen neuen Vault.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian installieren</h4>
+              <p class="step__desc">Lade die DMG-Datei von <strong>obsidian.md</strong> herunter und ziehe Obsidian in den Programme-Ordner. Oder nutze Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>brew install --cask obsidian</code></pre>
+              </div>
+              <details class="mt-sm">
+                <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
+                <div class="details-content">
+                  <p>Beim ersten Start fragt macOS, ob du die App wirklich öffnen willst. Gehe zu <strong>Systemeinstellungen → Datenschutz &amp; Sicherheit</strong> und klicke auf "Trotzdem öffnen".</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Vault erstellen</h4>
+              <p class="step__desc">Starte Obsidian aus dem Launchpad und erstelle einen neuen Vault. Wähle einen Ordner auf deiner Festplatte — z.B. <code>~/Documents/MeineNotizen</code>.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANDROID -->
+        <div class="tab-content" id="tab-android" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian aus dem Play Store installieren</h4>
+              <p class="step__desc">Öffne den Google Play Store und suche nach <strong>Obsidian</strong>. Tippe auf "Installieren". Die App ist kostenlos und ca. 60 MB groß.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Vault erstellen</h4>
+              <p class="step__desc">Öffne die App und tippe auf "Neuen Vault erstellen". Gib einen Namen ein. Die Notizen werden lokal auf deinem Gerät gespeichert. Optional kannst du den Vault-Ordner im internen Speicher ablegen, um ihn mit anderen Apps zu teilen.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IOS -->
+        <div class="tab-content" id="tab-ios" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Obsidian aus dem App Store installieren</h4>
+              <p class="step__desc">Öffne den App Store auf deinem iPhone oder iPad und suche nach <strong>Obsidian</strong>. Tippe auf "Laden". Die App ist kostenlos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Vault erstellen</h4>
+              <p class="step__desc">Öffne Obsidian und erstelle einen neuen Vault. Du kannst wählen, ob die Dateien im App-internen Speicher oder in iCloud Drive abgelegt werden. Für vollständig offline: wähle "Auf meinem iPhone" (nicht iCloud).</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NUTZUNG: NOTIZEN SCHREIBEN -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Obsidian nutzen</h2>
+
+      <h3>Vault anlegen und erste Notiz schreiben</h3>
+      <p class="text-secondary mb-md">Ein <strong>Vault</strong> ist einfach ein Ordner auf deiner Festplatte. Alle Notizen darin sind normale <code>.md</code>-Dateien, die du auch mit jedem anderen Texteditor öffnen kannst.</p>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Neue Notiz erstellen</h4>
+          <p class="step__desc">Klicke auf das Symbol "Neue Notiz" in der linken Seitenleiste oder drücke <kbd>Strg</kbd> + <kbd>N</kbd> (Windows/Linux) bzw. <kbd>Cmd</kbd> + <kbd>N</kbd> (macOS). Gib deiner Notiz einen aussagekräftigen Titel.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">In Markdown schreiben</h4>
+          <p class="step__desc">Obsidian nutzt Markdown — eine einfache Textauszeichnung. Hier die wichtigsten Formatierungen:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Markdown</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code># Überschrift 1
+## Überschrift 2
+### Überschrift 3
+
+**Fettgedruckt** und *kursiv*
+
+- Aufzählung Punkt 1
+- Aufzählung Punkt 2
+
+1. Nummerierte Liste
+2. Zweiter Punkt
+
+> Zitat oder Blockquote
+
+`Inline-Code` und Codeblöcke mit ```</code></pre>
+          </div>
+          <p class="text-secondary mt-sm">Du musst die Syntax nicht auswendig lernen — Obsidian zeigt dir eine Live-Vorschau und hat auch eine Symbolleiste.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Notizen miteinander verlinken</h4>
+          <p class="step__desc">Das Herzstück von Obsidian: Verlinke Notizen mit doppelten eckigen Klammern. Tippe einfach <code>[[</code> und der Name der Zielnotiz erscheint als Vorschlag:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Markdown</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code>Heute habe ich etwas über [[Photosynthese]] gelernt.
+Das passt gut zu meinen Notizen über [[Biologie]].
+
+# Links mit anderem Anzeigenamen:
+Mehr dazu in meiner [[Photosynthese|Notiz zur Photosynthese]].</code></pre>
+          </div>
+          <p class="text-secondary mt-sm">Wenn die verlinkte Notiz noch nicht existiert, erstellt Obsidian sie automatisch, sobald du auf den Link klickst.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">4</div>
+        <div class="step__content">
+          <h4 class="step__title">Die Graph-Ansicht entdecken</h4>
+          <p class="step__desc">Klicke auf das Graph-Symbol in der linken Seitenleiste oder drücke <kbd>Strg</kbd> + <kbd>G</kbd>. Du siehst eine interaktive Karte aller deiner Notizen und wie sie miteinander verbunden sind. Je mehr Notizen du verlinkst, desto nützlicher wird die Graph-Ansicht.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Tipp:</strong> Nutze die Tastenkombination <kbd>Strg</kbd> + <kbd>O</kbd>, um schnell zwischen Notizen zu wechseln. Obsidian durchsucht dabei Dateinamen und Inhalte — viel schneller als durch Ordner zu klicken!</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMPFOHLENE PLUGINS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Empfohlene Plugins</h2>
+      <p class="text-secondary mb-md">Obsidian hat ein umfangreiches Plugin-Ökosystem. Alle Plugins funktionieren offline, sobald sie einmal installiert sind. Hier drei besonders nützliche:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>Plugin</th><th>Beschreibung</th><th>Wofür geeignet</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>Calendar</strong></td><td>Fügt eine Kalenderansicht in die Seitenleiste ein. Erstellt automatisch tägliche Notizen.</td><td>Tagebuch, Tagesplanung, tägliche Reflexion</td></tr>
+            <tr><td><strong>Kanban</strong></td><td>Erstellt Kanban-Boards direkt in Obsidian — wie Trello, aber komplett offline.</td><td>Projektplanung, Aufgabenverwaltung, To-Do-Listen</td></tr>
+            <tr><td><strong>Excalidraw</strong></td><td>Zeichnen und Skizzieren direkt in deinen Notizen. Erstellt handgezeichnete Diagramme.</td><td>Mindmaps, Skizzen, visuelle Notizen, Diagramme</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <h4 class="mt-lg">Plugins installieren</h4>
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Öffne die Einstellungen mit <kbd>Strg</kbd> + <kbd>,</kbd> und gehe zu <strong>Community-Plugins</strong>.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <p class="step__desc">Klicke auf <strong>"Community-Plugins aktivieren"</strong> und bestätige die Warnung. (Die Plugins sind Open Source und sicher.)</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <p class="step__desc">Klicke auf <strong>"Durchsuchen"</strong>, suche nach dem gewünschten Plugin (z.B. "Calendar"), klicke auf <strong>"Installieren"</strong> und dann <strong>"Aktivieren"</strong>. Ab jetzt funktioniert das Plugin auch ohne Internet.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Tipp für Offline-Nutzung:</strong> Installiere alle gewünschten Plugins, solange du noch Internet hast. Danach funktionieren sie dauerhaft offline. Die Plugin-Dateien liegen im Ordner <code>.obsidian/plugins/</code> deines Vaults.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- BESTE KONFIGURATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span> Empfohlene Konfiguration</h2>
+
+      <h4>Dunkles Theme aktivieren</h4>
+      <p class="text-secondary mb-md">Standardmäßig verwendet Obsidian ein dunkles Theme. Falls du es ändern möchtest:</p>
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Öffne <strong>Einstellungen</strong> (<kbd>Strg</kbd> + <kbd>,</kbd>) → <strong>Darstellung</strong>. Unter "Basis-Thema" kannst du zwischen <strong>Dunkel</strong> und <strong>Hell</strong> wählen. Unter "CSS-Schnipsel" kannst du zusätzlich eigene Farbanpassungen vornehmen.</p>
+        </div>
+      </div>
+
+      <h4 class="mt-lg">Vim-Modus (für Fortgeschrittene)</h4>
+      <p class="text-secondary mb-md">Wenn du die Vim-Tastaturbelegung bevorzugst:</p>
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Gehe zu <strong>Einstellungen</strong> → <strong>Editor</strong> und aktiviere <strong>"Vim-Tastenbelegung"</strong>. Du kannst nun mit h/j/k/l navigieren, im Normal- und Insert-Modus arbeiten und Vim-Befehle nutzen.</p>
+        </div>
+      </div>
+
+      <h4 class="mt-lg">Community-Plugins aktivieren</h4>
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <p class="step__desc">Gehe zu <strong>Einstellungen</strong> → <strong>Community-Plugins</strong> → schalte den "Eingeschränkter Modus" aus. Damit erhältst du Zugriff auf über 1.800 Community-Plugins, die Obsidian um zahlreiche Funktionen erweitern.</p>
+        </div>
+      </div>
+
+      <details class="mt-lg">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg> Weitere nützliche Einstellungen</summary>
+        <div class="details-content">
+          <p><strong>Automatisches Speichern:</strong> Obsidian speichert Notizen standardmäßig automatisch — du musst nie manuell speichern.</p>
+          <p><strong>Standard-Notizordner:</strong> Unter Einstellungen → Dateien &amp; Links kannst du festlegen, wo neue Notizen abgelegt werden (z.B. in einem Ordner "Posteingang").</p>
+          <p><strong>Tägliche Notizen:</strong> Aktiviere unter den Kern-Plugins die "Tägliche Notiz". Damit erstellst du mit einem Klick eine Notiz für den heutigen Tag — ideal als Tagebuch oder Tagesplaner.</p>
+          <p><strong>Vorlagen:</strong> Aktiviere das Kern-Plugin "Vorlagen" und erstelle einen Vorlagen-Ordner. So kannst du wiederverwendbare Strukturen für Meeting-Notizen, Buchzusammenfassungen oder Projektdokumentation anlegen.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- FORTSCHRITT CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="0"><span class="checklist__text">Obsidian installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="1"><span class="checklist__text">Ersten Vault erstellt</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="2"><span class="checklist__text">Erste Notiz in Markdown geschrieben</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="3"><span class="checklist__text">Zwei Notizen mit [[Links]] verbunden</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="4"><span class="checklist__text">Graph-Ansicht ausprobiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="5"><span class="checklist__text">Community-Plugins aktiviert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="6"><span class="checklist__text">Ein Plugin installiert (z.B. Calendar)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="obsidian" data-step="7"><span class="checklist__text">Theme und Einstellungen angepasst</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt ein leistungsstarkes Notiz- und Wissensmanagement-System, das komplett auf deinem Computer läuft — ohne Cloud, ohne Abo, ohne Internet. Deine Notizen gehören dir und sind einfache Textdateien, die du jederzeit exportieren oder mit anderen Programmen öffnen kannst.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+          <div><strong>LibreOffice</strong><br><span class="text-small text-muted">Office-Suite komplett offline nutzen — Bald verfügbar</span></div>
+        </a>
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+          <div><strong>Joplin</strong><br><span class="text-small text-muted">Notizen mit Synchronisation offline verwalten — Bald verfügbar</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

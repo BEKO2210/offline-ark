@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="LocalSend — Dateien zwischen Geräten teilen ohne Internet. Anleitung für alle Plattformen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>LocalSend — Dateien teilen ohne Internet | Offline Ark</title>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Kommunikation</a><span class="sep">/</span>
+        <span>LocalSend</span>
+      </div>
+      <h1 class="guide-header__title">LocalSend — Dateien teilen ohne Internet</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--communication">Kommunikation</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          5–10 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+        <span class="badge badge--os">Android</span>
+        <span class="badge badge--os">iOS</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="localsend">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="localsend" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Stell dir vor, du willst ein Foto von deinem Handy an den Computer schicken — ohne Kabel, ohne Internet, ohne E-Mail. LocalSend ist wie ein unsichtbares Kabel zwischen deinen Geräten. Du wählst die Datei aus, tippst auf Senden, und schwupps ist sie auf dem anderen Gerät!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>LocalSend ist eine kostenlose, quelloffene App, mit der du Dateien, Fotos, Videos und Text direkt zwischen deinen Geräten austauschen kannst — ganz ohne Internet. Es funktioniert wie Apples AirDrop, aber auf <strong>allen</strong> Plattformen: Windows, Linux, macOS, Android und iOS. Die Geräte müssen sich nur im selben WLAN (oder lokalen Netzwerk) befinden. Kein Konto nötig, keine Cloud, keine Datenweitergabe an Dritte.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>LocalSend nutzt ein eigenes REST-basiertes Protokoll zur Geräteerkennung und Dateiübertragung über das lokale Netzwerk. Die Kommunikation wird mit TLS/HTTPS verschlüsselt — jedes Gerät generiert beim ersten Start ein selbstsigniertes Zertifikat. Die Erkennung anderer Geräte erfolgt via UDP-Multicast auf Port 53317. Dateien werden direkt Peer-to-Peer übertragen, ohne zentralen Server. Die App ist in Flutter/Dart geschrieben und vollständig Open Source (MIT-Lizenz). Der Quellcode ist auf GitHub unter <strong>localsend/localsend</strong> einsehbar.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLATTFORM TABS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+          <button class="tab-btn" data-tab="android" role="tab">Android</button>
+          <button class="tab-btn" data-tab="ios" role="tab">iOS</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">LocalSend herunterladen</h4>
+              <p class="step__desc">Gehe zu <strong>localsend.org</strong> und klicke auf den Download-Button für Windows. Alternativ kannst du die App auch über den Microsoft Store oder das Terminal installieren:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal (PowerShell)</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>winget install LocalSend.LocalSend</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installieren und starten</h4>
+              <p class="step__desc">Führe den Installer aus und folge den Anweisungen. Nach der Installation starte LocalSend. Die App zeigt sofort deinen Gerätenamen und sucht nach anderen Geräten im Netzwerk.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Firewall-Zugriff erlauben</h4>
+              <p class="step__desc">Beim ersten Start fragt Windows nach einer Firewall-Berechtigung. Klicke auf <strong>"Zugriff zulassen"</strong> — das ist wichtig, damit andere Geräte dich finden können. Erlaube den Zugriff für <strong>private Netzwerke</strong>.</p>
+              <div class="callout callout--warning mt-sm">
+                <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="callout__content">
+                  <p><strong>Firewall-Tipp:</strong> Falls die Abfrage nicht erscheint oder du sie weggeklickt hast: Öffne <strong>Windows-Sicherheit → Firewall → App durch Firewall zulassen</strong> und aktiviere LocalSend für private Netzwerke.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">LocalSend installieren</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code># Flatpak (empfohlen — funktioniert auf allen Distributionen)
+flatpak install flathub org.localsend.localsend_app
+
+# Snap
+sudo snap install localsend
+
+# Arch Linux (AUR)
+yay -S localsend-bin</code></pre>
+              </div>
+              <p class="step__desc mt-sm">Alternativ kannst du das AppImage oder .deb/.rpm-Paket von <strong>localsend.org</strong> oder der GitHub-Releases-Seite herunterladen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Starten</h4>
+              <p class="step__desc">Starte LocalSend über das Anwendungsmenü oder im Terminal:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>flatpak run org.localsend.localsend_app</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Firewall konfigurieren (falls nötig)</h4>
+              <p class="step__desc">Falls andere Geräte nicht sichtbar sind, muss Port 53317 (TCP und UDP) in der Firewall freigegeben werden:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code># UFW (Ubuntu/Debian)
+sudo ufw allow 53317
+
+# firewalld (Fedora)
+sudo firewall-cmd --add-port=53317/tcp --permanent
+sudo firewall-cmd --add-port=53317/udp --permanent
+sudo firewall-cmd --reload</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">LocalSend installieren</h4>
+              <p class="step__desc">Lade LocalSend von <strong>localsend.org</strong> herunter, oder nutze Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>brew install --cask localsend</code></pre>
+              </div>
+              <p class="step__desc mt-sm">Die App ist auch im Mac App Store verfügbar.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Berechtigungen erteilen</h4>
+              <p class="step__desc">Beim ersten Start fragt macOS, ob LocalSend Netzwerkverbindungen empfangen darf. Klicke auf <strong>"Erlauben"</strong>. Falls du die Meldung verpasst hast, gehe zu <strong>Systemeinstellungen → Datenschutz &amp; Sicherheit → Firewall → Optionen</strong> und erlaube eingehende Verbindungen für LocalSend.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANDROID -->
+        <div class="tab-content" id="tab-android" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">LocalSend installieren</h4>
+              <p class="step__desc">Installiere <strong>LocalSend</strong> aus dem <strong>Google Play Store</strong> oder aus <strong>F-Droid</strong>. Suche einfach nach "LocalSend". Die App ist kostenlos und werbefrei.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">App öffnen</h4>
+              <p class="step__desc">Starte die App. LocalSend erkennt automatisch andere Geräte im selben WLAN. Dein Gerät bekommt einen zufälligen Namen (z.B. "Smaragd-Falke"), den du in den Einstellungen ändern kannst.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Berechtigungen</h4>
+              <p class="step__desc">Erlaube LocalSend den Zugriff auf Dateien und Fotos, wenn du dazu aufgefordert wirst. Ohne diese Berechtigung kann die App keine Dateien senden oder empfangen.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- IOS -->
+        <div class="tab-content" id="tab-ios" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">LocalSend installieren</h4>
+              <p class="step__desc">Öffne den <strong>App Store</strong> und suche nach "LocalSend". Tippe auf <strong>"Laden"</strong>. Die App ist kostenlos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">App starten und erlauben</h4>
+              <p class="step__desc">Starte LocalSend und erlaube den Zugriff auf das lokale Netzwerk, wenn iOS dich fragt. Das ist notwendig, damit die App andere Geräte finden kann. Erlaube außerdem den Zugriff auf Fotos und Dateien, wenn du diese teilen möchtest.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENUTZUNG -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="18" cy="5" r="3"/><circle cx="6" cy="12" r="3"/><circle cx="18" cy="19" r="3"/><line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/><line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/></svg></span> Dateien senden und empfangen</h2>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Beide Geräte ins selbe Netzwerk bringen</h4>
+          <p class="step__desc">Stelle sicher, dass beide Geräte mit demselben WLAN verbunden sind. Das funktioniert auch über ein Ethernet-Kabel oder einen Hotspot — Hauptsache, die Geräte sind im selben lokalen Netzwerk.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">LocalSend auf beiden Geräten öffnen</h4>
+          <p class="step__desc">Starte LocalSend auf dem sendenden und dem empfangenden Gerät. Nach wenigen Sekunden sollten sich die Geräte gegenseitig auf dem Startbildschirm anzeigen.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Datei(en) auswählen und senden</h4>
+          <p class="step__desc">Auf dem sendenden Gerät:</p>
+          <ol style="list-style:decimal;padding-left:1.5rem;margin-top:0.5rem;color:var(--text-secondary)">
+            <li>Tippe auf das Zielgerät in der Liste</li>
+            <li>Wähle <strong>Dateien</strong>, <strong>Fotos</strong>, <strong>Videos</strong> oder <strong>Text</strong> aus</li>
+            <li>Tippe auf <strong>"Senden"</strong></li>
+          </ol>
+          <p class="text-secondary mt-sm">Auf dem empfangenden Gerät erscheint eine Anfrage. Tippe auf <strong>"Akzeptieren"</strong> — fertig! Die Dateien werden direkt übertragen.</p>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__number">4</div>
+        <div class="step__content">
+          <h4 class="step__title">Alternative: Teilen-Menü nutzen</h4>
+          <p class="step__desc">Auf Mobilgeräten kannst du Dateien auch direkt über das System-Teilen-Menü senden. Öffne ein Foto oder eine Datei, tippe auf <strong>"Teilen"</strong> und wähle <strong>LocalSend</strong> aus der Liste der Apps.</p>
+        </div>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Tipps für eine reibungslose Übertragung</div>
+          <ul style="list-style:disc;padding-left:1.5rem;margin-top:0.5rem">
+            <li><strong>Geräte nicht sichtbar?</strong> Prüfe, ob beide Geräte im selben WLAN sind. Manche Router isolieren Geräte voneinander ("Client Isolation" / "AP Isolation") — das muss deaktiviert sein.</li>
+            <li><strong>Firewall:</strong> Auf Desktop-Betriebssystemen muss LocalSend durch die Firewall zugelassen werden (Port 53317 TCP/UDP).</li>
+            <li><strong>Schnell-Modus:</strong> In den Einstellungen kannst du "Schnellspeichern" aktivieren — dann werden eingehende Dateien automatisch ohne Bestätigung angenommen. Nur in vertrauenswürdigen Netzwerken verwenden!</li>
+            <li><strong>Ohne WLAN:</strong> Du kannst auch einen Handy-Hotspot als Netzwerk nutzen. Verbinde das zweite Gerät mit dem Hotspot — Internetverbindung ist dabei nicht nötig.</li>
+            <li><strong>Gerätename ändern:</strong> Unter Einstellungen kannst du deinen Gerätenamen anpassen, um Geräte leichter zu unterscheiden.</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="0"><span class="checklist__text">LocalSend auf dem ersten Gerät installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="1"><span class="checklist__text">LocalSend auf dem zweiten Gerät installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="2"><span class="checklist__text">Beide Geräte im selben WLAN</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="3"><span class="checklist__text">Geräte erkennen sich gegenseitig</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="4"><span class="checklist__text">Erste Datei erfolgreich gesendet</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="localsend" data-step="5"><span class="checklist__text">Erste Datei erfolgreich empfangen</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du kannst jetzt Dateien zwischen all deinen Geräten teilen — ohne Internet, ohne Cloud, ohne Konto. Deine Daten bleiben in deinem Netzwerk und werden verschlüsselt übertragen. LocalSend ist die perfekte Alternative zu AirDrop, die auf allen Plattformen funktioniert.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg></span>
+          <div><strong>Briar</strong><br><span class="text-small text-muted">Messenger ohne Internet — Bald verfügbar</span></div>
+        </a>
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></span>
+          <div><strong>Meshtastic</strong><br><span class="text-small text-muted">Kommunikation via LoRa-Funk — Bald verfügbar</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

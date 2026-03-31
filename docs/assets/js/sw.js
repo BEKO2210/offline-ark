@@ -3,7 +3,7 @@
  * Provides offline-first caching with cache-first strategy.
  */
 
-const CACHE_VERSION = 2;
+const CACHE_VERSION = 3;
 const CACHE_NAME = 'offline-ark-v' + CACHE_VERSION;
 
 const CORE_ASSETS = [

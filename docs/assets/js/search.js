@@ -9,7 +9,7 @@
 
   var STORAGE_KEY = 'offline-ark-search-index';
   var STORAGE_VERSION_KEY = 'offline-ark-search-version';
-  var INDEX_VERSION = '1';
+  var INDEX_VERSION = '2';
 
   // ------------------------------------------------------------------
   // Search data - one entry per guide. Extend this array as guides are
@@ -17,84 +17,76 @@
   // ------------------------------------------------------------------
   var searchData = [
     {
-      id: 'water-purification',
-      title: 'Water Purification',
-      description: 'Methods to make water safe for drinking including boiling, filtration, and chemical treatment.',
-      category: 'survival',
-      tags: ['water', 'purification', 'filter', 'boiling', 'survival', 'drinking'],
-      url: '/guides/water-purification.html'
+      id: 'ollama',
+      title: 'Ollama — LLMs lokal betreiben',
+      description: 'Künstliche Intelligenz auf deinem eigenen Rechner. ChatGPT-Alternative komplett offline, Modelle herunterladen und lokal chatten.',
+      category: 'KI Offline',
+      tags: ['ki', 'ai', 'llm', 'ollama', 'chatgpt', 'lokal', 'modell', 'chat', 'künstliche intelligenz'],
+      url: '/guides/ai/ollama.html'
     },
     {
-      id: 'fire-starting',
-      title: 'Fire Starting',
-      description: 'Techniques for starting and maintaining fire using various methods and materials.',
-      category: 'survival',
-      tags: ['fire', 'friction', 'flint', 'tinder', 'warmth', 'cooking'],
-      url: '/guides/fire-starting.html'
+      id: 'kiwix',
+      title: 'Kiwix — Wikipedia offline',
+      description: 'Die komplette Wikipedia und andere Webseiten offline auf deinem Gerät. Millionen Artikel ohne Internet.',
+      category: 'Wissen Sichern',
+      tags: ['kiwix', 'wikipedia', 'offline', 'wissen', 'enzyklopädie', 'zim', 'bibliothek', 'nachschlagen'],
+      url: '/guides/knowledge/kiwix.html'
     },
     {
-      id: 'first-aid',
-      title: 'First Aid Basics',
-      description: 'Essential first aid procedures for common injuries and medical emergencies.',
-      category: 'medical',
-      tags: ['first aid', 'medical', 'wounds', 'cpr', 'emergency', 'bandage'],
-      url: '/guides/first-aid.html'
+      id: 'keepassxc',
+      title: 'KeePassXC — Passwort-Manager offline',
+      description: 'Sichere deine Passwörter in einem verschlüsselten Tresor. Komplett offline, ohne Cloud, ohne monatliche Kosten.',
+      category: 'Sicherheit',
+      tags: ['keepassxc', 'passwort', 'password', 'manager', 'tresor', 'verschlüsselung', 'sicherheit', 'kdbx'],
+      url: '/guides/security/keepassxc.html'
     },
     {
-      id: 'shelter-building',
-      title: 'Shelter Building',
-      description: 'How to construct emergency shelters from natural and salvaged materials.',
-      category: 'survival',
-      tags: ['shelter', 'building', 'tarp', 'lean-to', 'insulation', 'camp'],
-      url: '/guides/shelter-building.html'
+      id: 'veracrypt',
+      title: 'VeraCrypt — Festplatten verschlüsseln',
+      description: 'Verschlüssele Festplatten, USB-Sticks und Dateien mit militärstarker AES-256 Verschlüsselung.',
+      category: 'Sicherheit',
+      tags: ['veracrypt', 'verschlüsselung', 'encryption', 'festplatte', 'usb', 'aes', 'container', 'sicherheit'],
+      url: '/guides/security/veracrypt.html'
     },
     {
-      id: 'food-preservation',
-      title: 'Food Preservation',
-      description: 'Techniques for preserving food without refrigeration including drying, smoking, and salting.',
-      category: 'food',
-      tags: ['food', 'preservation', 'drying', 'smoking', 'salting', 'canning'],
-      url: '/guides/food-preservation.html'
+      id: 'localsend',
+      title: 'LocalSend — Dateien teilen ohne Internet',
+      description: 'Dateien zwischen Geräten teilen ohne Internet und ohne Cloud. Funktioniert mit allen Betriebssystemen im lokalen Netzwerk.',
+      category: 'Kommunikation',
+      tags: ['localsend', 'dateien', 'teilen', 'share', 'airdrop', 'p2p', 'lokal', 'netzwerk', 'senden'],
+      url: '/guides/communication/localsend.html'
     },
     {
-      id: 'navigation',
-      title: 'Navigation Without GPS',
-      description: 'Navigate using a compass, stars, sun position, and natural landmarks.',
-      category: 'survival',
-      tags: ['navigation', 'compass', 'stars', 'map', 'orientation', 'direction'],
-      url: '/guides/navigation.html'
+      id: 'osmand',
+      title: 'OsmAnd — Offline-Karten und Navigation',
+      description: 'Offline navigieren mit OpenStreetMap. Komplette Länder herunterladen, Wandern, Radfahren, Auto — ohne Internet.',
+      category: 'Navigation',
+      tags: ['osmand', 'karten', 'maps', 'navigation', 'openstreetmap', 'osm', 'offline', 'wandern', 'route'],
+      url: '/guides/navigation/osmand.html'
     },
     {
-      id: 'radio-communication',
-      title: 'Radio Communication',
-      description: 'Setting up and using two-way radios and amateur radio for emergency communication.',
-      category: 'communication',
-      tags: ['radio', 'ham', 'communication', 'frequency', 'antenna', 'emergency'],
-      url: '/guides/radio-communication.html'
+      id: 'jellyfin',
+      title: 'Jellyfin — Eigener Streaming-Server',
+      description: 'Dein eigener Streaming-Server für Filme, Serien und Musik. Wie Netflix, aber lokal und kostenlos.',
+      category: 'Medien',
+      tags: ['jellyfin', 'streaming', 'filme', 'serien', 'musik', 'media', 'server', 'plex', 'video'],
+      url: '/guides/media/jellyfin.html'
     },
     {
-      id: 'solar-power',
-      title: 'Solar Power Basics',
-      description: 'Harness solar energy for basic electricity needs with panels, batteries, and inverters.',
-      category: 'power',
-      tags: ['solar', 'power', 'battery', 'electricity', 'panel', 'inverter', 'energy'],
-      url: '/guides/solar-power.html'
+      id: 'obsidian',
+      title: 'Obsidian — Notizen offline organisieren',
+      description: 'Notizen, Ideen und Wissen in einer lokalen Wissensdatenbank organisieren. Markdown-basiert, komplett offline.',
+      category: 'Produktivität',
+      tags: ['obsidian', 'notizen', 'notes', 'markdown', 'wissen', 'vault', 'produktivität', 'wiki'],
+      url: '/guides/productivity/obsidian.html'
     },
     {
-      id: 'knot-tying',
-      title: 'Essential Knots',
-      description: 'The most useful knots for survival situations including bowline, clove hitch, and taut-line.',
-      category: 'skills',
-      tags: ['knots', 'rope', 'bowline', 'hitch', 'tying', 'cordage'],
-      url: '/guides/knot-tying.html'
-    },
-    {
-      id: 'foraging',
-      title: 'Wild Foraging',
-      description: 'Identify and safely harvest edible wild plants, berries, nuts, and mushrooms.',
-      category: 'food',
-      tags: ['foraging', 'plants', 'edible', 'berries', 'mushrooms', 'wild food'],
-      url: '/guides/foraging.html'
+      id: 'beginner-checklist',
+      title: 'Beginner-Checkliste',
+      description: 'Deine ersten 5 Offline-Tools Schritt für Schritt. Passwörter, Wikipedia, KI, Dateien teilen und Notizen.',
+      category: 'Checklisten',
+      tags: ['beginner', 'anfänger', 'checkliste', 'start', 'einstieg', 'erste schritte'],
+      url: '/guides/checklists/beginner.html'
     }
   ];
 
