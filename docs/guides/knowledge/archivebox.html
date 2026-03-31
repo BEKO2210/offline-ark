@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="ArchiveBox — Webseiten dauerhaft offline speichern. Selbst-gehostetes Web-Archiv für alle Plattformen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>ArchiveBox — Webseiten offline archivieren | Offline Ark</title>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Wissen Sichern</a><span class="sep">/</span>
+        <span>ArchiveBox</span>
+      </div>
+      <h1 class="guide-header__title">ArchiveBox — Webseiten dauerhaft offline archivieren</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--knowledge">Wissen Sichern</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span> Mittel</span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          20–30 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows (WSL)</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+        <span class="badge badge--os">Docker</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="archivebox">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="archivebox" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Fur Kinder erklärt</div>
+          <p>ArchiveBox ist wie ein magisches Fotoalbum für Webseiten — es macht einen Schnappschuss von jeder Seite und bewahrt ihn auf, damit du ihn auch ohne Internet jederzeit anschauen kannst!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>ArchiveBox ist ein kostenloses, selbst-gehostetes Werkzeug, mit dem du komplette Webseiten auf deinem eigenen Computer speicherst. Es sichert nicht nur den Text, sondern auch Bilder, CSS, JavaScript, PDFs und sogar Screenshots. Wenn eine Webseite später offline geht oder verändert wird, hast du immer noch deine eigene Kopie. Stell es dir vor wie eine persönliche Wayback Machine.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>ArchiveBox ist eine Open-Source-Software (<a href="https://archivebox.io" target="_blank" rel="noopener">archivebox.io</a>), die Webseiten in mehreren Formaten gleichzeitig archiviert: HTML mit allen Assets, Screenshot (PNG), PDF, WARC (Web ARChive — das Standardformat für Web-Archive), eingebettete Medien und sogar Git-Repositories. Es nutzt unter anderem <code>wget</code>, <code>Chrome/Chromium</code> (headless) und <code>youtube-dl</code> im Hintergrund. Die Daten werden in einem durchsuchbaren Index mit Web-Oberfläche gespeichert. ArchiveBox kann per CLI, Web-UI oder REST-API gesteuert werden.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- INSTALLATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="docker" role="tab" aria-selected="true">Docker (empfohlen)</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux (pip)</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS (pip/brew)</button>
+        </div>
+
+        <!-- DOCKER -->
+        <div class="tab-content active" id="tab-docker" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Docker installieren</h4>
+              <p class="step__desc">Falls Docker noch nicht installiert ist, lade es von <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener"><strong>docker.com</strong></a> herunter. Unter Linux kannst du es so installieren:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">docker.io docker-compose</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Projektverzeichnis anlegen</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">mkdir</span> <span class="path">~/archivebox</span> &amp;&amp; <span class="command">cd</span> <span class="path">~/archivebox</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Docker Compose Datei erstellen</h4>
+              <p class="step__desc">Erstelle eine <code>docker-compose.yml</code> Datei mit folgendem Inhalt:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">docker-compose.yml</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="keyword">services</span>:
+  <span class="variable">archivebox</span>:
+    <span class="keyword">image</span>: <span class="string">archivebox/archivebox:latest</span>
+    <span class="keyword">ports</span>:
+      - <span class="string">8000:8000</span>
+    <span class="keyword">volumes</span>:
+      - <span class="path">./data:/data</span>
+    <span class="keyword">environment</span>:
+      - <span class="variable">ALLOWED_HOSTS</span>=<span class="string">*</span>
+      - <span class="variable">MEDIA_MAX_SIZE</span>=<span class="string">750m</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">ArchiveBox initialisieren und starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="comment"># Datenbank initialisieren</span>
+<span class="command">docker compose</span> <span class="keyword">run</span> <span class="string">archivebox</span> <span class="keyword">init</span>
+
+<span class="comment"># Admin-Benutzer erstellen</span>
+<span class="command">docker compose</span> <span class="keyword">run</span> <span class="string">archivebox</span> <span class="keyword">manage</span> createsuperuser
+
+<span class="comment"># Server starten</span>
+<span class="command">docker compose</span> <span class="keyword">up</span> <span class="flag">-d</span></code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Öffne dann im Browser: <code>http://localhost:8000</code> — dein persönliches Web-Archiv ist bereit!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Abhängigkeiten installieren</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">python3 python3-pip nodejs chromium-browser wget git</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">ArchiveBox installieren</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">pip3</span> <span class="keyword">install</span> <span class="string">archivebox</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Archiv initialisieren</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">mkdir</span> <span class="path">~/archivebox</span> &amp;&amp; <span class="command">cd</span> <span class="path">~/archivebox</span>
+<span class="command">archivebox</span> <span class="keyword">init</span>
+<span class="command">archivebox</span> <span class="keyword">manage</span> createsuperuser</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Server starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">archivebox</span> <span class="keyword">server</span> <span class="string">0.0.0.0:8000</span></code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Öffne dann im Browser: <code>http://localhost:8000</code></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">ArchiveBox installieren</h4>
+              <p class="step__desc">Installiere ArchiveBox mit pip oder Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="comment"># Option A: per pip</span>
+<span class="command">pip3</span> <span class="keyword">install</span> <span class="string">archivebox</span>
+
+<span class="comment"># Option B: per Homebrew</span>
+<span class="command">brew</span> <span class="keyword">install</span> <span class="string">archivebox</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Archiv einrichten und starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">mkdir</span> <span class="path">~/archivebox</span> &amp;&amp; <span class="command">cd</span> <span class="path">~/archivebox</span>
+<span class="command">archivebox</span> <span class="keyword">init</span>
+<span class="command">archivebox</span> <span class="keyword">manage</span> createsuperuser
+<span class="command">archivebox</span> <span class="keyword">server</span> <span class="string">0.0.0.0:8000</span></code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Die Web-Oberfläche ist jetzt unter <code>http://localhost:8000</code> erreichbar.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WEBSEITEN ARCHIVIEREN -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span> Webseiten archivieren</h2>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Einzelne URL archivieren</h4>
+          <p class="step__desc">Der einfachste Weg, eine Webseite zu sichern:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="command">archivebox</span> <span class="keyword">add</span> <span class="url">https://example.com/wichtiger-artikel</span></code></pre>
+          </div>
+          <p class="text-secondary mt-sm">In Docker:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="command">docker compose</span> <span class="keyword">run</span> <span class="string">archivebox</span> <span class="keyword">add</span> <span class="url">https://example.com/wichtiger-artikel</span></code></pre>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Lesezeichen importieren</h4>
+          <p class="step__desc">Du kannst eine ganze Liste von URLs oder exportierte Browser-Lesezeichen importieren:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># Aus einer Textdatei mit URLs (eine pro Zeile)</span>
+<span class="command">archivebox</span> <span class="keyword">add</span> &lt; <span class="path">urls.txt</span>
+
+<span class="comment"># Browser-Lesezeichen importieren (HTML-Export)</span>
+<span class="command">archivebox</span> <span class="keyword">add</span> &lt; <span class="path">bookmarks.html</span></code></pre>
+          </div>
+          <div class="callout callout--info mt-sm">
+            <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+            <div class="callout__content">
+              <p><strong>Tipp:</strong> Exportiere deine Lesezeichen in Chrome unter <em>Lesezeichen-Manager &gt; Drei Punkte &gt; Lesezeichen exportieren</em>. In Firefox unter <em>Lesezeichen &gt; Lesezeichen verwalten &gt; Importieren und Sichern &gt; Lesezeichen nach HTML exportieren</em>.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Automatische Archivierung planen</h4>
+          <p class="step__desc">Richte einen Cronjob ein, der regelmäßig neue Inhalte archiviert:</p>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># Jeden Tag um 3 Uhr nachts eine RSS-Feed-URL archivieren</span>
+<span class="command">crontab</span> <span class="flag">-e</span>
+
+<span class="comment"># Diese Zeile hinzufügen:</span>
+<span class="string">0 3 * * *</span> <span class="command">cd</span> <span class="path">~/archivebox</span> &amp;&amp; <span class="command">archivebox</span> <span class="keyword">add</span> <span class="url">https://example.com/rss.xml</span> <span class="flag">--depth=1</span></code></pre>
+          </div>
+          <div class="callout callout--warning mt-sm">
+            <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="callout__content">
+              <p><strong>Speicherplatz beachten:</strong> Jede archivierte Seite kann 5–50 MB beanspruchen (mit Screenshots und PDFs). Plane genug Festplattenspeicher ein, wenn du viele Seiten archivierst!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- WAS WIRD GESPEICHERT -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was wird gespeichert?</h2>
+      <p class="text-secondary mb-md">ArchiveBox speichert jede Webseite automatisch in mehreren Formaten gleichzeitig:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Format</th><th>Beschreibung</th><th>Vorteil</th></tr></thead>
+          <tbody>
+            <tr><td><strong>HTML</strong></td><td>Komplette Seite mit CSS, JS und Bildern</td><td>Originalgetreue Darstellung im Browser</td></tr>
+            <tr><td><strong>Screenshot</strong></td><td>Bildschirmfoto der gesamten Seite (PNG)</td><td>Visueller Beweis, unabhängig vom Browser</td></tr>
+            <tr><td><strong>PDF</strong></td><td>Druckversion als PDF-Datei</td><td>Einfach zu teilen und auszudrucken</td></tr>
+            <tr><td><strong>WARC</strong></td><td>Web ARChive — Standard-Archivformat</td><td>Vollständigste Kopie, institutioneller Standard</td></tr>
+            <tr><td><strong>Media</strong></td><td>Videos, Audio und andere Medien</td><td>Eingebettete Inhalte werden mitgesichert</td></tr>
+            <tr><td><strong>Git</strong></td><td>Git-Repositories klonen</td><td>Quellcode komplett mit Versionshistorie</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- KONFIGURATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Konfiguration</h2>
+
+      <p class="text-secondary mb-md">ArchiveBox lässt sich über Umgebungsvariablen oder die Datei <code>ArchiveBox.conf</code> konfigurieren. Hier die wichtigsten Einstellungen:</p>
+
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">ArchiveBox.conf</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+        <pre class="code-content"><code><span class="comment"># Welche Formate gespeichert werden sollen</span>
+<span class="variable">SAVE_WGET</span>=<span class="string">True</span>
+<span class="variable">SAVE_PDF</span>=<span class="string">True</span>
+<span class="variable">SAVE_SCREENSHOT</span>=<span class="string">True</span>
+<span class="variable">SAVE_WARC</span>=<span class="string">True</span>
+<span class="variable">SAVE_GIT</span>=<span class="string">True</span>
+<span class="variable">SAVE_MEDIA</span>=<span class="string">True</span>
+
+<span class="comment"># Maximale Medien-Dateigröße</span>
+<span class="variable">MEDIA_MAX_SIZE</span>=<span class="string">750m</span>
+
+<span class="comment"># Zeitlimit pro Archivierung (in Sekunden)</span>
+<span class="variable">TIMEOUT</span>=<span class="string">60</span>
+
+<span class="comment"># Nur bestimmte Formate deaktivieren, um Speicher zu sparen</span>
+<span class="variable">SAVE_MEDIA</span>=<span class="string">False</span>
+<span class="variable">SAVE_GIT</span>=<span class="string">False</span></code></pre>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+        <div class="callout__content">
+          <p><strong>Tipp:</strong> Wenn du Speicherplatz sparen willst, deaktiviere <code>SAVE_MEDIA</code> und <code>SAVE_GIT</code>. Die wichtigsten Formate (HTML, Screenshot, PDF) reichen für die meisten Anwendungsfälle völlig aus.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="0"><span class="checklist__text">ArchiveBox installiert (Docker oder pip)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="1"><span class="checklist__text">Admin-Benutzer erstellt</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="2"><span class="checklist__text">Erste Webseite archiviert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="3"><span class="checklist__text">Web-Oberfläche im Browser geöffnet</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="4"><span class="checklist__text">Lesezeichen importiert (optional)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="archivebox" data-step="5"><span class="checklist__text">Automatische Archivierung eingerichtet (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt dein eigenes Web-Archiv. Wichtige Webseiten gehen nie wieder verloren — selbst wenn sie offline gehen oder gelöscht werden. Deine Daten, deine Kontrolle.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a href="kiwix.html" class="next-guide">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
+          <div><strong>Kiwix</strong><br><span class="text-small text-muted">Wikipedia komplett offline verfügbar machen</span></div>
+        </a>
+        <a class="next-guide next-guide--disabled">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></span>
+          <div><strong>Calibre</strong><br><span class="text-small text-muted">eBook-Bibliothek offline verwalten — Bald verfügbar</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

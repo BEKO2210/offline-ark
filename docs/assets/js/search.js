@@ -87,6 +87,22 @@
       category: 'Checklisten',
       tags: ['beginner', 'anfänger', 'checkliste', 'start', 'einstieg', 'erste schritte'],
       url: '/guides/checklists/beginner.html'
+    },
+    {
+      id: 'archivebox',
+      title: 'ArchiveBox — Webseiten offline archivieren',
+      description: 'Webseiten dauerhaft speichern mit Screenshots, PDFs und komplettem HTML. Selbst-gehostetes Web-Archiv.',
+      category: 'Wissen Sichern',
+      tags: ['archivebox', 'webseiten', 'archiv', 'speichern', 'screenshot', 'pdf', 'warc', 'backup'],
+      url: '/guides/knowledge/archivebox.html'
+    },
+    {
+      id: 'calibre',
+      title: 'Calibre — eBook-Bibliothek offline',
+      description: 'eBooks verwalten, konvertieren und lesen. EPUB, PDF, MOBI und mehr. Eigener Buch-Server im lokalen Netzwerk.',
+      category: 'Wissen Sichern',
+      tags: ['calibre', 'ebook', 'bücher', 'epub', 'pdf', 'bibliothek', 'lesen', 'konvertieren'],
+      url: '/guides/knowledge/calibre.html'
     }
   ];
 

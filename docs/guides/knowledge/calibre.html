@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="Calibre — eBook-Bibliothek offline verwalten, konvertieren und lesen. Anleitung für alle Plattformen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Calibre — eBook-Bibliothek offline | Offline Ark</title>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Wissen Sichern</a><span class="sep">/</span>
+        <span>Calibre</span>
+      </div>
+      <h1 class="guide-header__title">Calibre — eBook-Bibliothek offline verwalten</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--knowledge">Wissen Sichern</span>
+        <span class="guide-meta-item"><span class="difficulty-stars"><span class="difficulty-star"><svg viewBox="0 0 24 24" fill="currentColor" width="14" height="14"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span></span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          15–20 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="calibre">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="calibre" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Calibre ist wie ein riesiges Bücherregal auf deinem Computer. Du kannst alle deine digitalen Bücher dort hineinstellen, sortieren und lesen — ganz ohne Internet!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2"/><circle cx="12" cy="7" r="4"/></svg></div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>Calibre ist ein kostenloses Programm, mit dem du deine eBooks verwalten, zwischen verschiedenen Formaten umwandeln und direkt am Computer lesen kannst. Es funktioniert wie eine persönliche digitale Bibliothek — komplett offline. Du kannst Bücher sortieren, Cover und Beschreibungen automatisch herunterladen und deine Sammlung sogar im lokalen Netzwerk mit anderen teilen.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg> Technische Details</summary>
+        <div class="details-content">
+          <p>Calibre ist in Python geschrieben und unterstützt über 20 eBook-Formate, darunter EPUB, PDF, MOBI, AZW3, FB2, LIT, DJVU, CBZ, CBR und viele mehr. Es bietet einen integrierten Format-Konverter, der nahezu jedes Format in jedes andere umwandeln kann. Die Metadaten-Verwaltung nutzt Online-Quellen wie Google Books, Amazon und Open Library. Der eingebaute Content Server (<code>calibre-server</code>) stellt die Bibliothek über HTTP bereit, sodass jedes Gerät im lokalen Netzwerk darauf zugreifen kann. Calibre speichert alle Bücher in einer strukturierten Ordnerhierarchie mit einer SQLite-Datenbank als Katalog.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- INSTALLATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M21 15v4a2 2 0 01-2 2H5a2 2 0 01-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg></span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Calibre herunterladen</h4>
+              <p class="step__desc">Gehe zu <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener"><strong>calibre-ebook.com</strong></a> und lade den Windows-Installer herunter. Die Datei ist ca. 150 MB.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installieren</h4>
+              <p class="step__desc">Starte die heruntergeladene <code>.msi</code>-Datei und folge dem Installer. Die Standardeinstellungen sind perfekt. Calibre wird automatisch im Startmenü verknüpft.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Ersteinrichtung</h4>
+              <p class="step__desc">Beim ersten Start wählt Calibre automatisch einen Bibliotheksordner (z.B. <code>C:\Users\DeinName\Calibre Library</code>). Du kannst den Speicherort jederzeit ändern.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Calibre installieren (Paketmanager)</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">calibre</span></code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Alternativ den offiziellen Binary-Installer verwenden (empfohlen für die neueste Version):</p>
+              <div class="code-block mt-sm">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="flag">-v</span> && <span class="command">wget</span> <span class="flag">-nv</span> <span class="flag">-O-</span> <span class="url">https://download.calibre-ebook.com/linux-installer.sh</span> | <span class="keyword">sudo</span> <span class="command">sh</span> <span class="path">/dev/stdin</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Calibre starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">calibre</span> &amp;</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Calibre installieren</h4>
+              <p class="step__desc">Lade die DMG-Datei von <a href="https://calibre-ebook.com/download" target="_blank" rel="noopener"><strong>calibre-ebook.com</strong></a> herunter oder nutze Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="flag">--cask</span> <span class="string">calibre</span></code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Ersteinrichtung</h4>
+              <p class="step__desc">Öffne Calibre aus dem Programme-Ordner. Beim ersten Start wählst du den Bibliotheksordner. Die App funktioniert genauso wie auf Windows und Linux.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- BÜCHER HINZUFÜGEN -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></span> Bücher hinzufügen</h2>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Per Drag &amp; Drop</h4>
+          <p class="step__desc">Ziehe eBook-Dateien einfach per Drag &amp; Drop in das Calibre-Hauptfenster. Die Bücher werden automatisch in die Bibliothek importiert und nach Autor sortiert.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Ordner importieren</h4>
+          <p class="step__desc">Klicke auf "Bücher hinzufügen" in der Symbolleiste und wähle "Aus einem Ordner importieren". Calibre durchsucht den Ordner rekursiv nach allen eBook-Dateien.</p>
+          <div class="code-block mt-sm">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># Bücher über die Kommandozeile hinzufügen</span>
+<span class="command">calibredb</span> <span class="keyword">add</span> <span class="path">/pfad/zum/buch.epub</span>
+<span class="comment"># Ganzen Ordner rekursiv importieren</span>
+<span class="command">calibredb</span> <span class="keyword">add</span> <span class="flag">-r</span> <span class="path">/pfad/zum/ordner/</span></code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Metadaten bearbeiten</h4>
+          <p class="step__desc">Wähle ein Buch aus und klicke auf "Metadaten bearbeiten". Du kannst Titel, Autor, Beschreibung und Tags manuell anpassen — oder klicke auf "Metadaten herunterladen", um sie automatisch aus dem Internet zu laden (Cover, Beschreibung, ISBN etc.).</p>
+          <div class="callout callout--info mt-sm">
+            <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+            <div class="callout__content">
+              <p><strong>Tipp:</strong> Du kannst Metadaten für mehrere Bücher gleichzeitig herunterladen: Wähle alle Bücher aus, dann "Metadaten herunterladen". Calibre erledigt den Rest im Hintergrund.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FORMAT-KONVERTIERUNG -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></span> Format-Konvertierung</h2>
+      <p class="text-secondary mb-md">Calibre kann nahezu jedes eBook-Format in jedes andere umwandeln. Hier eine Übersicht der unterstützten Formate:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Eingabeformat</th><th>Ausgabeformat</th><th>Einsatzbereich</th></tr></thead>
+          <tbody>
+            <tr><td><strong>EPUB</strong></td><td>PDF, MOBI, AZW3, DOCX, TXT</td><td>Universelles eBook-Format</td></tr>
+            <tr><td><strong>PDF</strong></td><td>EPUB, MOBI, TXT, DOCX</td><td>Druckoptimierte Dokumente</td></tr>
+            <tr><td><strong>MOBI</strong></td><td>EPUB, PDF, AZW3, TXT</td><td>Älteres Kindle-Format</td></tr>
+            <tr><td><strong>AZW3</strong></td><td>EPUB, PDF, MOBI, TXT</td><td>Modernes Kindle-Format</td></tr>
+            <tr><td><strong>FB2</strong></td><td>EPUB, PDF, MOBI, TXT</td><td>Russisches eBook-Format</td></tr>
+            <tr><td><strong>LIT</strong></td><td>EPUB, PDF, MOBI</td><td>Microsoft Reader</td></tr>
+            <tr><td><strong>DJVU</strong></td><td>PDF, TXT</td><td>Gescannte Dokumente</td></tr>
+            <tr><td><strong>CBZ/CBR</strong></td><td>PDF, EPUB</td><td>Comic-Archive</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="step mt-md">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Buch konvertieren (GUI)</h4>
+          <p class="step__desc">Wähle ein Buch aus, klicke auf "Bücher konvertieren" in der Symbolleiste. Wähle das Zielformat (z.B. EPUB) und klicke auf "OK". Die Konvertierung läuft im Hintergrund.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Buch konvertieren (Kommandozeile)</h4>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># EPUB zu PDF konvertieren</span>
+<span class="command">ebook-convert</span> <span class="path">buch.epub</span> <span class="path">buch.pdf</span>
+
+<span class="comment"># MOBI zu EPUB mit benutzerdefinierten Einstellungen</span>
+<span class="command">ebook-convert</span> <span class="path">buch.mobi</span> <span class="path">buch.epub</span> <span class="flag">--output-profile</span> <span class="string">tablet</span>
+
+<span class="comment"># Massenkonvertierung eines ganzen Ordners</span>
+<span class="command">calibredb</span> <span class="keyword">add</span> <span class="flag">-r</span> <span class="path">/pfad/zum/ordner/</span> && <span class="command">calibredb</span> <span class="keyword">catalog</span> <span class="path">katalog.epub</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTENT SERVER -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span> Content Server</h2>
+      <p class="text-secondary mb-md">Mit dem eingebauten Content Server kannst du deine Bibliothek im lokalen Netzwerk teilen. Jedes Gerät mit einem Browser kann dann auf deine Bücher zugreifen.</p>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Server über die GUI starten</h4>
+          <p class="step__desc">Klicke in Calibre auf "Verbinden/Teilen" und dann auf "Content Server starten". Der Server ist standardmäßig unter <code>http://localhost:8080</code> erreichbar.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Server über die Kommandozeile starten</h4>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># Content Server starten</span>
+<span class="command">calibre-server</span> <span class="flag">--port</span> <span class="string">8080</span> <span class="path">/pfad/zur/bibliothek</span>
+
+<span class="comment"># Mit Benutzerauthentifizierung</span>
+<span class="command">calibre-server</span> <span class="flag">--port</span> <span class="string">8080</span> <span class="flag">--enable-auth</span> <span class="path">/pfad/zur/bibliothek</span>
+
+<span class="comment"># Benutzer hinzufügen</span>
+<span class="command">calibre-server</span> <span class="flag">--manage-users</span></code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Auf die Bibliothek zugreifen</h4>
+          <p class="step__desc">Öffne auf einem beliebigen Gerät im Netzwerk den Browser und navigiere zu <code>http://deine-ip:8080</code>. Du kannst Bücher durchsuchen, lesen und herunterladen.</p>
+          <div class="callout callout--warning mt-sm">
+            <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+            <div class="callout__content">
+              <p><strong>Sicherheitshinweis:</strong> Der Content Server sollte nur im lokalen Netzwerk verwendet werden. Aktiviere die Authentifizierung, wenn andere Personen Zugang zu deinem Netzwerk haben.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- E-BOOK READER -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M2 3h6a4 4 0 014 4v14a3 3 0 00-3-3H2z"/><path d="M22 3h-6a4 4 0 00-4 4v14a3 3 0 013-3h7z"/></svg></span> E-Book Reader</h2>
+      <p class="text-secondary mb-md">Calibre hat einen leistungsstarken integrierten eBook-Viewer, der EPUB, PDF, MOBI und viele weitere Formate direkt anzeigen kann.</p>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Buch im Viewer öffnen</h4>
+          <p class="step__desc">Doppelklicke auf ein Buch in der Bibliothek oder wähle es aus und klicke auf "Bücher anzeigen". Der Viewer öffnet sich in einem eigenen Fenster.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Viewer-Funktionen</h4>
+          <p class="step__desc">Der integrierte Viewer bietet:</p>
+          <ul class="mt-sm" style="padding-left:1.25rem">
+            <li>Anpassbare Schriftgröße, Schriftart und Hintergrundfarbe</li>
+            <li>Lesezeichen und Markierungen</li>
+            <li>Volltextsuche im gesamten Buch</li>
+            <li>Inhaltsverzeichnis-Navigation</li>
+            <li>Nachtmodus für augenschonendes Lesen</li>
+          </ul>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Viewer über die Kommandozeile starten</h4>
+          <div class="code-block">
+            <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># eBook direkt im Viewer öffnen</span>
+<span class="command">ebook-viewer</span> <span class="path">/pfad/zum/buch.epub</span></code></pre>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- KONFIGURATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-2 2 2 2 0 01-2-2v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83 0 2 2 0 010-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 01-2-2 2 2 0 012-2h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 010-2.83 2 2 0 012.83 0l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 012-2 2 2 0 012 2v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 0 2 2 0 010 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 012 2 2 2 0 01-2 2h-.09a1.65 1.65 0 00-1.51 1z"/></svg></span> Konfiguration</h2>
+
+      <div class="step">
+        <div class="step__number">1</div>
+        <div class="step__content">
+          <h4 class="step__title">Bibliotheksordner ändern</h4>
+          <p class="step__desc">Gehe zu "Einstellungen" und klicke auf "Bibliothek verschieben/kopieren". Du kannst die Bibliothek auf eine externe Festplatte oder ein NAS verschieben — ideal für Backups.</p>
+          <div class="code-block mt-sm">
+            <div class="code-header"><span class="code-lang">Standardpfade</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+            <pre class="code-content"><code><span class="comment"># Windows</span>
+<span class="path">C:\Users\DeinName\Calibre Library</span>
+
+<span class="comment"># Linux</span>
+<span class="path">~/Calibre Library</span>
+
+<span class="comment"># macOS</span>
+<span class="path">~/Calibre Library</span></code></pre>
+          </div>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">2</div>
+        <div class="step__content">
+          <h4 class="step__title">Metadaten-Download konfigurieren</h4>
+          <p class="step__desc">Unter "Einstellungen" > "Metadaten-Download" kannst du festlegen, welche Online-Quellen Calibre für Cover und Buchinfos nutzen soll (Google Books, Amazon, Open Library etc.). Diese Metadaten werden lokal gespeichert und stehen danach offline zur Verfügung.</p>
+        </div>
+      </div>
+      <div class="step">
+        <div class="step__number">3</div>
+        <div class="step__content">
+          <h4 class="step__title">Cover-Bilder verwalten</h4>
+          <p class="step__desc">Calibre kann Cover automatisch aus dem Internet herunterladen oder du kannst eigene Cover-Bilder per Drag &amp; Drop zuweisen. Unter "Einstellungen" > "Aussehen" kannst du die Covergröße und das Anzeigeformat anpassen.</p>
+          <div class="callout callout--info mt-sm">
+            <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+            <div class="callout__content">
+              <p><strong>Tipp:</strong> Lade Metadaten und Cover herunter, solange du noch Internet hast. Danach funktioniert deine Bibliothek vollständig offline!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M22 11.08V12a10 10 0 11-5.93-9.14"/><polyline points="22 4 12 14.01 9 11.01"/></svg></span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="0"><span class="checklist__text">Calibre installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="1"><span class="checklist__text">Erste Bücher zur Bibliothek hinzugefügt</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="2"><span class="checklist__text">Metadaten und Cover heruntergeladen</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="3"><span class="checklist__text">Ein Buch erfolgreich konvertiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="4"><span class="checklist__text">E-Book im integrierten Viewer gelesen</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="calibre" data-step="5"><span class="checklist__text">Content Server getestet (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="48" height="48"><circle cx="12" cy="8" r="7"/><polyline points="8.21 13.89 7 23 12 20 17 23 15.79 13.88"/></svg></div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt deine eigene digitale Bibliothek — komplett offline. Bücher verwalten, konvertieren, lesen und im Netzwerk teilen, alles ohne Internet.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a href="kiwix.html" class="next-guide">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"/></svg></span>
+          <div><strong>Kiwix</strong><br><span class="text-small text-muted">Wikipedia komplett offline nutzen</span></div>
+        </a>
+        <a href="archivebox.html" class="next-guide">
+          <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><polyline points="21 8 21 21 3 21 3 8"/><rect x="1" y="3" width="22" height="5"/><line x1="10" y1="12" x2="14" y2="12"/></svg></span>
+          <div><strong>ArchiveBox</strong><br><span class="text-small text-muted">Webseiten dauerhaft speichern</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with <svg viewBox="0 0 24 24" fill="currentColor" width="16" height="16" style="vertical-align:-0.15em;color:var(--danger)"><path d="M20.84 4.61a5.5 5.5 0 00-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 00-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 000-7.78z"/></svg> für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>
