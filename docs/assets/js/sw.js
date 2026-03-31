@@ -3,19 +3,19 @@
  * Provides offline-first caching with cache-first strategy.
  */
 
-const CACHE_VERSION = 1;
+const CACHE_VERSION = 2;
 const CACHE_NAME = 'offline-ark-v' + CACHE_VERSION;
 
 const CORE_ASSETS = [
   '/',
   '/index.html',
-  '/assets/css/style.css',
+  '/assets/css/fonts.css',
+  '/assets/css/main.css',
+  '/assets/css/animations.css',
   '/assets/js/app.js',
   '/assets/js/search.js',
   '/assets/js/progress.js',
-  '/assets/js/clipboard.js',
-  '/assets/fonts/inter-var.woff2',
-  '/assets/fonts/fira-code-var.woff2'
+  '/assets/js/clipboard.js'
 ];
 
 /**

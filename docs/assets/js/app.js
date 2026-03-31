@@ -141,7 +141,6 @@
           var panelId = panel.getAttribute('id');
           var isActive = panelId === 'tab-' + platform;
           panel.classList.toggle('active', isActive);
-          panel.hidden = !isActive;
         });
 
         try {
