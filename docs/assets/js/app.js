@@ -127,18 +127,19 @@
     }
 
     tabContainers.forEach(function (container) {
-      var tabs = container.querySelectorAll('.platform-tab');
-      var panels = container.parentNode.querySelectorAll('.platform-panel');
+      var tabs = container.querySelectorAll('.tab-btn');
+      var panels = container.querySelectorAll('.tab-content');
 
       function activate(platform) {
         tabs.forEach(function (tab) {
-          var isActive = tab.getAttribute('data-platform') === platform;
+          var isActive = tab.getAttribute('data-tab') === platform;
           tab.classList.toggle('active', isActive);
           tab.setAttribute('aria-selected', isActive ? 'true' : 'false');
         });
 
         panels.forEach(function (panel) {
-          var isActive = panel.getAttribute('data-platform') === platform;
+          var panelId = panel.getAttribute('id');
+          var isActive = panelId === 'tab-' + platform;
           panel.classList.toggle('active', isActive);
           panel.hidden = !isActive;
         });
@@ -151,9 +152,8 @@
       }
 
       tabs.forEach(function (tab) {
-        tab.setAttribute('role', 'tab');
         tab.addEventListener('click', function () {
-          var platform = tab.getAttribute('data-platform');
+          var platform = tab.getAttribute('data-tab');
           if (platform) {
             activate(platform);
           }
@@ -163,7 +163,7 @@
       // Restore saved selection or default to the first tab.
       if (savedPlatform) {
         var hasTab = container.querySelector(
-          '[data-platform="' + savedPlatform + '"]'
+          '[data-tab="' + savedPlatform + '"]'
         );
         if (hasTab) {
           activate(savedPlatform);
@@ -173,7 +173,7 @@
 
       var firstTab = tabs[0];
       if (firstTab) {
-        activate(firstTab.getAttribute('data-platform'));
+        activate(firstTab.getAttribute('data-tab'));
       }
     });
   }
