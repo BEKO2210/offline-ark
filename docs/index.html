@@ -1,0 +1,382 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Offline Ark — Dein Handbuch für die digitale Unabhängigkeit. KI, Wissen, Tools und Workflows komplett offline nutzen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Offline Ark — Dein Handbuch für die digitale Unabhängigkeit</title>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script>
+    /* Prevent flash: apply saved theme immediately */
+    (function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();
+  </script>
+</head>
+<body>
+
+  <!-- ========== HEADER ========== -->
+  <header class="header" role="banner">
+    <div class="container flex--between">
+      <a href="index.html" class="logo" aria-label="Offline Ark Startseite">
+        <span class="logo__icon">&#x1F6E1;</span>
+        <span>Offline Ark</span>
+      </a>
+
+      <nav class="nav" id="main-nav" role="navigation" aria-label="Hauptnavigation">
+        <a href="#kategorien" class="nav__link">Kategorien</a>
+        <a href="#quick-start" class="nav__link">Quick-Start</a>
+        <a href="glossary.html" class="nav__link">Glossar</a>
+        <a href="#plattformen" class="nav__link">Plattformen</a>
+      </nav>
+
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <div class="nav-search">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <input type="search" class="search-input" id="search-input" placeholder="Suche..." aria-label="Guides durchsuchen">
+          <div class="search-results" id="search-results"></div>
+        </div>
+
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen" aria-expanded="false">
+          <span></span>
+        </button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero">
+      <div class="particles"></div>
+      <div class="container hero__content">
+        <div class="reveal delay-1">
+          <span class="hero__badge">Open Source &bull; Komplett Offline &bull; Für Alle</span>
+        </div>
+        <h1 class="hero__title reveal delay-2">
+          Offline <span>Ark</span> &#x1F6E1;
+        </h1>
+        <p class="hero__subtitle reveal delay-3">
+          Dein Handbuch für die digitale Unabhängigkeit.<br>
+          Schritt für Schritt: KI, Wissen, Tools und Workflows — komplett offline.
+        </p>
+        <div class="hero__actions reveal delay-4">
+          <a href="#quick-start" class="btn btn--primary btn--large">Jetzt starten</a>
+          <a href="#kategorien" class="btn btn--secondary btn--large">Alle Guides</a>
+        </div>
+        <div class="hero__stats reveal delay-5">
+          <div class="hero__stat">
+            <div class="hero__stat-number">36</div>
+            <div class="hero__stat-label">Guides</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number">6</div>
+            <div class="hero__stat-label">Plattformen</div>
+          </div>
+          <div class="hero__stat">
+            <div class="hero__stat-number">100%</div>
+            <div class="hero__stat-label">Offline</div>
+          </div>
+        </div>
+        <div class="mt-xl reveal delay-5">
+          <div class="progress-label">
+            <span>Dein Fortschritt</span>
+            <span id="overall-progress-pct">0%</span>
+          </div>
+          <div class="progress-bar">
+            <div class="progress-bar__fill" id="overall-progress-bar" style="width:0%"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WARUM OFFLINE? ========== -->
+    <section class="section" id="warum-offline">
+      <div class="container">
+        <h2 class="text-center mb-xl scroll-reveal">Warum Offline?</h2>
+        <div class="grid grid--4">
+
+          <div class="card scroll-reveal">
+            <div class="card__icon" style="background:rgba(239,68,68,0.12);color:var(--danger)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z"/></svg>
+            </div>
+            <h3 class="card__title">Stromausfall &amp; Katastrophen</h3>
+            <p class="card__desc">Was tun, wenn das Internet ausfällt? Mit den richtigen Tools bist du vorbereitet — auch wenn Infrastruktur versagt.</p>
+          </div>
+
+          <div class="card scroll-reveal">
+            <div class="card__icon" style="background:rgba(168,85,247,0.12);color:#a855f7">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <h3 class="card__title">Zensur &amp; Kontrolle</h3>
+            <p class="card__desc">Dein Wissen gehört dir. Offline-Kopien sind immun gegen Zensur, Geo-Blocking und plötzliche Abschaltungen.</p>
+          </div>
+
+          <div class="card scroll-reveal">
+            <div class="card__icon" style="background:rgba(59,130,246,0.12);color:var(--info)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><circle cx="12" cy="12" r="10"/><path d="M2 12h20"/><path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10A15.3 15.3 0 0112 2z"/></svg>
+            </div>
+            <h3 class="card__title">Reise &amp; Mobilität</h3>
+            <p class="card__desc">Überall produktiv — im Flugzeug, im Zug, auf dem Campingplatz. Kein Empfang? Kein Problem.</p>
+          </div>
+
+          <div class="card scroll-reveal">
+            <div class="card__icon" style="background:rgba(34,197,94,0.12);color:var(--success)">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="card__title">Privatsphäre &amp; Sicherheit</h3>
+            <p class="card__desc">Deine Daten bleiben bei dir. Keine Cloud, keine Tracker, keine fremden Server. Du hast die volle Kontrolle.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== KATEGORIEN ========== -->
+    <section class="section" id="kategorien">
+      <div class="container">
+        <h2 class="text-center mb-xl scroll-reveal">Alle Kategorien</h2>
+        <div class="grid grid--3">
+
+          <a href="guides/ai/ollama.html" class="card card--ai scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 2a4 4 0 014 4v1a4 4 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 10v3c0 3.3 2.7 6 6 6s6-2.7 6-6v-3"/><path d="M9 21h6"/><path d="M12 19v2"/></svg>
+            </div>
+            <h3 class="card__title">KI Offline</h3>
+            <p class="card__desc">Künstliche Intelligenz auf deinem eigenen Rechner — ChatGPT-Alternativen, Bildgenerierung, Sprache-zu-Text.</p>
+            <div class="card__meta"><span>7 Guides</span></div>
+          </a>
+
+          <a href="guides/knowledge/kiwix.html" class="card card--knowledge scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <h3 class="card__title">Wissen Sichern</h3>
+            <p class="card__desc">Wikipedia, Bücher, Dokumentation — alles offline verfügbar auf deinem Gerät.</p>
+            <div class="card__meta"><span>5 Guides</span></div>
+          </a>
+
+          <a href="#" class="card card--communication scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M21 15a2 2 0 01-2 2H7l-4 4V5a2 2 0 012-2h14a2 2 0 012 2z"/></svg>
+            </div>
+            <h3 class="card__title">Kommunikation</h3>
+            <p class="card__desc">Verbindung halten, auch ohne Internet — Mesh-Netzwerke, verschlüsselte Messenger.</p>
+            <div class="card__meta"><span>3 Guides</span></div>
+          </a>
+
+          <a href="#" class="card card--navigation scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
+            </div>
+            <h3 class="card__title">Navigation</h3>
+            <p class="card__desc">Karten und Routen ohne Netz — offline navigieren mit OpenStreetMap.</p>
+            <div class="card__meta"><span>2 Guides</span></div>
+          </a>
+
+          <a href="#" class="card card--media scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+            </div>
+            <h3 class="card__title">Medien</h3>
+            <p class="card__desc">Filme, Musik, Fotos — dein eigener Streaming-Server zu Hause.</p>
+            <div class="card__meta"><span>3 Guides</span></div>
+          </a>
+
+          <a href="#" class="card card--productivity scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/><polyline points="10 9 9 9 8 9"/></svg>
+            </div>
+            <h3 class="card__title">Produktivität</h3>
+            <p class="card__desc">Arbeiten ohne Cloud — Notizen, Office, E-Mail komplett lokal.</p>
+            <div class="card__meta"><span>3 Guides</span></div>
+          </a>
+
+          <a href="guides/security/keepassxc.html" class="card card--security scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <h3 class="card__title">Sicherheit</h3>
+            <p class="card__desc">Passwörter, Verschlüsselung, Backups — alles was du brauchst um deine Daten zu schützen.</p>
+            <div class="card__meta"><span>4 Guides</span></div>
+          </a>
+
+          <a href="#" class="card card--platforms scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="2" y="3" width="20" height="14" rx="2" ry="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="17" x2="12" y2="21"/></svg>
+            </div>
+            <h3 class="card__title">Plattform-Guides</h3>
+            <p class="card__desc">Dein Betriebssystem offline-ready machen — Windows, Linux, macOS, Android, iOS, Raspberry Pi.</p>
+            <div class="card__meta"><span>6 Guides</span></div>
+          </a>
+
+          <a href="guides/checklists/beginner.html" class="card card--checklists scroll-reveal" style="text-decoration:none;color:inherit">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 01-2 2H5a2 2 0 01-2-2V5a2 2 0 012-2h11"/></svg>
+            </div>
+            <h3 class="card__title">Checklisten</h3>
+            <p class="card__desc">Schritt-für-Schritt zum Offline-Profi — vom Anfänger bis zum Experten.</p>
+            <div class="card__meta"><span>3 Checklisten</span></div>
+          </a>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== QUICK START ========== -->
+    <section class="section" id="quick-start">
+      <div class="container">
+        <h2 class="text-center scroll-reveal">In 5 Minuten zum ersten Offline-Tool</h2>
+        <p class="text-center text-secondary mb-xl scroll-reveal">Starte mit einem dieser drei Guides — kein Vorwissen nötig.</p>
+        <div class="grid grid--3">
+
+          <div class="card card--security scroll-reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><rect x="3" y="11" width="18" height="11" rx="2"/><path d="M7 11V7a5 5 0 0110 0v4"/></svg>
+            </div>
+            <h3 class="card__title">KeePassXC</h3>
+            <p class="card__desc">Sichere deine Passwörter in einem verschlüsselten Tresor — komplett offline, auf allen Geräten.</p>
+            <div class="card__meta">
+              <span class="badge badge--difficulty">&#11088; Einfach</span>
+              <span>15 Min</span>
+            </div>
+            <a href="guides/security/keepassxc.html" class="card__link">Guide starten &rarr;</a>
+          </div>
+
+          <div class="card card--knowledge scroll-reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg>
+            </div>
+            <h3 class="card__title">Kiwix</h3>
+            <p class="card__desc">Die komplette Wikipedia auf deinem Computer — nachschlagen ohne Internet, wann immer du willst.</p>
+            <div class="card__meta">
+              <span class="badge badge--difficulty">&#11088; Einfach</span>
+              <span>20 Min</span>
+            </div>
+            <a href="guides/knowledge/kiwix.html" class="card__link">Guide starten &rarr;</a>
+          </div>
+
+          <div class="card card--ai scroll-reveal">
+            <div class="card__icon">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="28" height="28"><path d="M12 2a4 4 0 014 4v1a4 4 0 01-8 0V6a4 4 0 014-4z"/><path d="M6 10v3c0 3.3 2.7 6 6 6s6-2.7 6-6v-3"/></svg>
+            </div>
+            <h3 class="card__title">Ollama</h3>
+            <p class="card__desc">Deine eigene KI auf deinem Rechner — chatten, Fragen stellen, Texte schreiben. Ohne Internet.</p>
+            <div class="card__meta">
+              <span class="badge badge--difficulty">&#11088;&#11088; Mittel</span>
+              <span>30 Min</span>
+            </div>
+            <a href="guides/ai/ollama.html" class="card__link">Guide starten &rarr;</a>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== PLATTFORMEN ========== -->
+    <section class="section" id="plattformen">
+      <div class="container">
+        <h2 class="text-center scroll-reveal">Wähle deine Plattform</h2>
+        <p class="text-center text-secondary mb-xl scroll-reveal">Jeder Guide zeigt dir die Schritte für dein Betriebssystem.</p>
+        <div class="grid grid--3">
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="currentColor" width="48" height="48" style="margin:0 auto var(--space-md);color:var(--info)"><path d="M3 12l9-9 9 9H3zm0 0v9h18v-9"/></svg>
+            <h4>Windows</h4>
+            <p class="text-small text-muted mt-sm">Windows 10 &amp; 11</p>
+          </div>
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="margin:0 auto var(--space-md);color:#f59e0b"><circle cx="12" cy="12" r="10"/><circle cx="12" cy="12" r="4"/><path d="M12 2v4M12 18v4M2 12h4M18 12h4"/></svg>
+            <h4>Linux</h4>
+            <p class="text-small text-muted mt-sm">Ubuntu, Fedora, Debian</p>
+          </div>
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="margin:0 auto var(--space-md);color:#a1a1aa"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/><path d="M18 8s-2-2-6-2-6 2-6 2"/><circle cx="9" cy="12" r="1" fill="currentColor"/><circle cx="15" cy="12" r="1" fill="currentColor"/></svg>
+            <h4>macOS</h4>
+            <p class="text-small text-muted mt-sm">Ventura, Sonoma, Sequoia</p>
+          </div>
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="margin:0 auto var(--space-md);color:#22c55e"><rect x="5" y="2" width="14" height="20" rx="2"/><line x1="12" y1="18" x2="12" y2="18.01" stroke-width="2"/></svg>
+            <h4>Android</h4>
+            <p class="text-small text-muted mt-sm">Android 10+</p>
+          </div>
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="margin:0 auto var(--space-md);color:#a1a1aa"><rect x="5" y="2" width="14" height="20" rx="3"/><line x1="9" y1="2" x2="15" y2="2" stroke-width="0"/><path d="M12 18h.01" stroke-width="2"/></svg>
+            <h4>iOS</h4>
+            <p class="text-small text-muted mt-sm">iPhone &amp; iPad</p>
+          </div>
+
+          <div class="card text-center scroll-reveal" style="padding:var(--space-xl)">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="48" height="48" style="margin:0 auto var(--space-md);color:#ef4444"><rect x="2" y="7" width="20" height="10" rx="2"/><circle cx="7" cy="12" r="1.5"/><path d="M14 10h4M14 14h4"/></svg>
+            <h4>Raspberry Pi</h4>
+            <p class="text-small text-muted mt-sm">Pi 4 &amp; Pi 5</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SUCHE ========== -->
+    <section class="section" id="suche">
+      <div class="container text-center">
+        <h2 class="scroll-reveal">Guide suchen</h2>
+        <p class="text-secondary mb-lg scroll-reveal">Diese Suche funktioniert komplett offline!</p>
+        <div class="search-container scroll-reveal" style="margin:0 auto">
+          <div class="search-icon">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+          </div>
+          <input type="search" class="search-input" placeholder="z.B. Ollama, Wikipedia, Passwort..." aria-label="Guides durchsuchen">
+          <div class="search-results"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__logo">&#x1F6E1; Offline Ark</div>
+          <p class="footer__desc">Dein Open-Source-Handbuch für die digitale Unabhängigkeit. Alle Inhalte sind frei verfügbar und funktionieren offline.</p>
+        </div>
+        <div>
+          <h4 class="footer__heading">Schnellzugriff</h4>
+          <div class="footer__links">
+            <a href="#kategorien">Kategorien</a>
+            <a href="#quick-start">Quick-Start</a>
+            <a href="glossary.html">Glossar</a>
+            <a href="guides/checklists/beginner.html">Beginner-Checkliste</a>
+          </div>
+        </div>
+        <div>
+          <h4 class="footer__heading">Projekt</h4>
+          <div class="footer__links">
+            <a href="https://github.com/BEKO2210/offline-ark" target="_blank" rel="noopener">GitHub Repository</a>
+            <a href="https://github.com/BEKO2210/offline-ark/issues" target="_blank" rel="noopener">Fehler melden</a>
+            <a href="https://github.com/BEKO2210/offline-ark/blob/main/LICENSE" target="_blank" rel="noopener">MIT Lizenz</a>
+          </div>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <span>Made with &#10084;&#65039; für die digitale Unabhängigkeit</span>
+        <span>&copy; 2026 Offline Ark — MIT Lizenz</span>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>
