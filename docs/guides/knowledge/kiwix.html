@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="Kiwix — Wikipedia und andere Webseiten komplett offline nutzen. Schritt-für-Schritt Anleitung für alle Plattformen.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Kiwix — Wikipedia offline | Offline Ark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Wissen Sichern</a><span class="sep">/</span>
+        <span>Kiwix</span>
+      </div>
+      <h1 class="guide-header__title">Kiwix — Wikipedia offline verfügbar machen</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--knowledge">Wissen Sichern</span>
+        <span class="guide-meta-item"><span class="difficulty-stars">&#11088;</span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          15–30 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+        <span class="badge badge--os">Android</span>
+        <span class="badge badge--os">iOS</span>
+        <span class="badge badge--os">Raspberry Pi</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="kiwix">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="kiwix" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#128214;</span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">&#x1F476;</div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Kiwix ist wie eine Zauberkiste, die das ganze Wikipedia auf deinen Computer packt — du kannst alles nachschlagen, auch wenn kein Internet da ist!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon">&#x1F475;</div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>Kiwix ist ein kostenloses Programm, mit dem du die komplette Wikipedia (und andere Webseiten) auf deinen Computer, dein Handy oder einen USB-Stick herunterladen kannst. Danach kannst du alles nachschlagen — auch wenn du gar kein Internet hast. Stell es dir vor wie eine riesige Enzyklopädie, die auf einen Stick passt.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary>&#x1F527; Technische Details</summary>
+        <div class="details-content">
+          <p>Kiwix nutzt das ZIM-Dateiformat (Zeno IMproved), ein hochkomprimiertes Archivformat für Web-Inhalte. Die deutsche Wikipedia (mit Bildern) ist ca. 50 GB groß, ohne Bilder ca. 10 GB. Kiwix bietet einen integrierten HTTP-Server (<code>kiwix-serve</code>), mit dem du Inhalte im lokalen Netzwerk teilen kannst. Verfügbare Inhalte gehen weit über Wikipedia hinaus: Stack Overflow, Project Gutenberg, TED Talks, Wikivoyage und mehr.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLATTFORM TABS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F4E5;</span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+          <button class="tab-btn" data-tab="android" role="tab">Android</button>
+          <button class="tab-btn" data-tab="ios" role="tab">iOS</button>
+          <button class="tab-btn" data-tab="raspberrypi" role="tab">Raspberry Pi</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix herunterladen</h4>
+              <p class="step__desc">Gehe zu <strong>kiwix.org</strong> und klicke auf "Download Kiwix". Wähle die Windows-Version. Die App ist klein (ca. 80 MB).</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installieren</h4>
+              <p class="step__desc">Starte die heruntergeladene Datei und folge dem Installer. Standardeinstellungen sind perfekt.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Wikipedia herunterladen</h4>
+              <p class="step__desc">Öffne Kiwix und klicke auf das "+" Symbol oder "Bibliothek". Du siehst eine Liste aller verfügbaren Inhalte. Suche nach <strong>"Wikipedia (de)"</strong> und klicke auf "Download".</p>
+              <div class="callout callout--warning mt-sm">
+                <div class="callout__icon">&#9888;&#65039;</div>
+                <div class="callout__content">
+                  <p><strong>Dateigröße beachten:</strong> Wikipedia Deutsch mit Bildern ist ca. 50 GB. Ohne Bilder ca. 10 GB. Stelle sicher, dass du genug Speicherplatz hast!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Offline lesen!</h4>
+              <p class="step__desc">Nach dem Download kannst du sofort suchen und lesen — ganz ohne Internet. Die Suche funktioniert genauso wie auf der echten Wikipedia.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix installieren</h4>
+              <p class="step__desc">Am einfachsten über Flatpak:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>flatpak install flathub org.kiwix.desktop</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Alternativ kannst du das AppImage von kiwix.org herunterladen.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix-Tools für den Server-Modus</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo apt install kiwix-tools</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Wikipedia im Netzwerk teilen (optional)</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>kiwix-serve wikipedia_de.zim -p 8080</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Öffne dann im Browser: <code>http://localhost:8080</code>. Jedes Gerät in deinem Netzwerk kann darauf zugreifen!</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix installieren</h4>
+              <p class="step__desc">Lade Kiwix von <strong>kiwix.org</strong> herunter oder nutze Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>brew install --cask kiwix</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Inhalte herunterladen</h4>
+              <p class="step__desc">Öffne Kiwix, gehe zur Bibliothek und lade die gewünschten Inhalte herunter. Die App funktioniert genauso wie auf Windows.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- ANDROID -->
+        <div class="tab-content" id="tab-android" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix installieren</h4>
+              <p class="step__desc">Installiere Kiwix aus dem <strong>Google Play Store</strong> oder von <strong>F-Droid</strong> (für mehr Privatsphäre). Suche einfach nach "Kiwix".</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Wikipedia herunterladen</h4>
+              <p class="step__desc">Öffne die App, tippe auf "Bibliothek" und wähle die gewünschte Wikipedia-Version. Für Handys empfehlen wir die Version <strong>ohne Bilder</strong> (~10 GB), um Speicherplatz zu sparen.</p>
+              <div class="callout callout--info mt-sm">
+                <div class="callout__icon">&#x1F4A1;</div>
+                <div class="callout__content">
+                  <p><strong>Tipp:</strong> Wenn du eine SD-Karte hast, kannst du in den App-Einstellungen den Speicherort ändern!</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- IOS -->
+        <div class="tab-content" id="tab-ios" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix installieren</h4>
+              <p class="step__desc">Installiere Kiwix aus dem <strong>App Store</strong>. Die App ist kostenlos.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Inhalte laden</h4>
+              <p class="step__desc">Öffne die App und lade Inhalte direkt in der App herunter. Beachte, dass iOS-Speicher meist begrenzt ist — wähle eine kleinere Wikipedia-Version oder einzelne Themengebiete.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RASPBERRY PI -->
+        <div class="tab-content" id="tab-raspberrypi" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Kiwix-Tools installieren</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo apt update
+sudo apt install kiwix-tools</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">ZIM-Datei herunterladen</h4>
+              <p class="step__desc">Lade die gewünschte ZIM-Datei auf eine externe Festplatte oder eine große SD-Karte:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code># Beispiel: Wikipedia Deutsch (ohne Bilder, ~10 GB)
+wget https://download.kiwix.org/zim/wikipedia/wikipedia_de_all_nopic.zim</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Als Server starten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>kiwix-serve /pfad/zur/wikipedia_de.zim -p 8080</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Jetzt kann jedes Gerät in deinem WLAN über <code>http://raspberry-pi-ip:8080</code> auf Wikipedia zugreifen!</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Autostart einrichten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo tee /etc/systemd/system/kiwix.service &lt;&lt;EOF
+[Unit]
+Description=Kiwix Server
+After=network.target
+
+[Service]
+ExecStart=/usr/bin/kiwix-serve /pfad/zur/wikipedia_de.zim -p 8080
+Restart=always
+User=pi
+
+[Install]
+WantedBy=multi-user.target
+EOF
+
+sudo systemctl enable kiwix
+sudo systemctl start kiwix</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Jetzt startet der Kiwix-Server automatisch bei jedem Neustart deines Raspberry Pi!</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- VERFÜGBARE INHALTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F4DA;</span> Verfügbare Inhalte</h2>
+      <p class="text-secondary mb-md">Kiwix bietet viel mehr als nur Wikipedia! Hier eine Auswahl der besten Offline-Bibliotheken:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead><tr><th>Inhalt</th><th>Beschreibung</th><th>Größe (ca.)</th></tr></thead>
+          <tbody>
+            <tr><td><strong>Wikipedia DE</strong> (mit Bildern)</td><td>Komplette deutsche Wikipedia</td><td>50 GB</td></tr>
+            <tr><td><strong>Wikipedia DE</strong> (ohne Bilder)</td><td>Nur Text, viel kompakter</td><td>10 GB</td></tr>
+            <tr><td><strong>Wikipedia EN</strong> (mit Bildern)</td><td>Komplette englische Wikipedia</td><td>95 GB</td></tr>
+            <tr><td><strong>Stack Exchange</strong></td><td>Programmier-Fragen &amp; Antworten</td><td>70 GB</td></tr>
+            <tr><td><strong>Project Gutenberg</strong></td><td>Über 70.000 freie eBooks</td><td>60 GB</td></tr>
+            <tr><td><strong>Wikivoyage</strong></td><td>Reiseführer weltweit</td><td>1 GB</td></tr>
+            <tr><td><strong>Wiktionary DE</strong></td><td>Deutsches Wörterbuch</td><td>3 GB</td></tr>
+            <tr><td><strong>TED Talks</strong></td><td>Vorträge mit Untertiteln</td><td>15 GB</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x2705;</span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="kiwix" data-step="0"><span class="checklist__text">Kiwix installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="kiwix" data-step="1"><span class="checklist__text">Wikipedia heruntergeladen</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="kiwix" data-step="2"><span class="checklist__text">Offline-Suche getestet</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="kiwix" data-step="3"><span class="checklist__text">Weitere Inhalte entdeckt (optional)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="kiwix" data-step="4"><span class="checklist__text">Kiwix-Server eingerichtet (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon">&#x1F389;</div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt Zugang zu Millionen von Artikeln — auch komplett ohne Internet. Wikipedia, Bücher, Wörterbücher — alles auf deinem Gerät.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a href="#" class="next-guide">
+          <span>&#x1F4E6;</span>
+          <div><strong>ArchiveBox</strong><br><span class="text-small text-muted">Webseiten dauerhaft speichern</span></div>
+        </a>
+        <a href="#" class="next-guide">
+          <span>&#x1F4DA;</span>
+          <div><strong>Calibre</strong><br><span class="text-small text-muted">eBook-Bibliothek offline verwalten</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with &#10084;&#65039; für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

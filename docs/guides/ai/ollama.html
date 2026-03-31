@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, viewport-fit=cover">
+  <meta name="description" content="Ollama installieren und LLMs lokal betreiben — Schritt-für-Schritt Anleitung für Windows, Linux und macOS.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Ollama — LLMs lokal betreiben | Offline Ark</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="dns-prefetch" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+<a href="#main-content" class="sr-only focus:not-sr-only focus:absolute focus:top-2 focus:left-2 focus:z-[1001] focus:bg-white focus:text-black focus:px-4 focus:py-2 focus:rounded">Zum Hauptinhalt springen</a>
+
+  <!-- HEADER -->
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo">
+        <span class="logo__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></span><span>Offline Ark</span>
+      </a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main id="main-content" class="container container--narrow">
+
+    <!-- GUIDE HEADER -->
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a>
+        <span class="sep">/</span>
+        <a href="../../index.html#kategorien">KI Offline</a>
+        <span class="sep">/</span>
+        <span>Ollama</span>
+      </div>
+      <h1 class="guide-header__title">Ollama — LLMs lokal betreiben</h1>
+      <div class="guide-header__meta">
+        <span class="badge badge--ai">KI Offline</span>
+        <span class="guide-meta-item"><span class="difficulty-stars">&#11088;&#11088;</span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          30–60 Minuten
+        </span>
+      </div>
+      <div class="guide-header__platforms mt-md">
+        <span class="badge badge--os">Windows</span>
+        <span class="badge badge--os">Linux</span>
+        <span class="badge badge--os">macOS</span>
+      </div>
+      <div class="mt-md">
+        <div class="progress-label"><span>Fortschritt</span><span class="guide-progress-pct" data-guide="ollama">0%</span></div>
+        <div class="progress-bar"><div class="progress-bar__fill" data-guide="ollama" style="width:0%"></div></div>
+      </div>
+    </div>
+
+    <!-- WAS IST DAS? -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#128214;</span> Was ist das?</h2>
+
+      <div class="callout callout--info">
+        <div class="callout__icon">&#x1F476;</div>
+        <div class="callout__content">
+          <div class="callout__title">Für Kinder erklärt</div>
+          <p>Ollama ist wie ein schlauer Roboter-Freund, der auf deinem Computer wohnt und dir Fragen beantworten kann — auch wenn das Internet aus ist!</p>
+        </div>
+      </div>
+
+      <div class="callout callout--success mt-md">
+        <div class="callout__icon">&#x1F475;</div>
+        <div class="callout__content">
+          <div class="callout__title">Einfach erklärt</div>
+          <p>Ollama ist ein Programm, mit dem du eine künstliche Intelligenz direkt auf deinem Computer laufen lassen kannst — ganz ohne Internet. Du kannst der KI Fragen stellen, dir Texte schreiben lassen oder Ideen sammeln. Stell es dir vor wie eine digitale Enzyklopädie, die auch Fragen beantworten kann. Alles bleibt privat auf deinem Rechner.</p>
+        </div>
+      </div>
+
+      <details class="mt-md">
+        <summary>&#x1F527; Technische Details</summary>
+        <div class="details-content">
+          <p>Ollama ist ein Inference-Server für quantisierte Large Language Models (LLMs) im GGUF-Format. Er bietet eine REST-API, automatische GPU-Beschleunigung (CUDA für NVIDIA, ROCm für AMD, Metal für Apple Silicon), Modellverwaltung mit Pull/Push, parallele Anfragen und ein CLI-Interface. Unterstützt werden Modelle wie Llama 3, Mistral, Gemma, Phi und viele weitere.</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- PLATTFORM-TABS: INSTALLATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F4E5;</span> Installation</h2>
+
+      <div class="platform-tabs">
+        <div class="tab-buttons" role="tablist">
+          <button class="tab-btn active" data-tab="windows" role="tab" aria-selected="true">Windows</button>
+          <button class="tab-btn" data-tab="linux" role="tab">Linux</button>
+          <button class="tab-btn" data-tab="macos" role="tab">macOS</button>
+        </div>
+
+        <!-- WINDOWS -->
+        <div class="tab-content active" id="tab-windows" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Ollama herunterladen</h4>
+              <p class="step__desc">Öffne deinen Browser und gehe zu <strong>ollama.com</strong>. Klicke auf den großen "Download for Windows"-Button. Die Datei ist ca. 90 MB groß.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installer ausführen</h4>
+              <p class="step__desc">Doppelklicke auf die heruntergeladene <code>OllamaSetup.exe</code>. Klicke "Installieren" und warte bis die Installation abgeschlossen ist. Ollama startet automatisch im Hintergrund (du siehst ein kleines Lama-Icon unten rechts in der Taskleiste).</p>
+              <details class="mt-sm">
+                <summary>&#9888;&#65039; Häufige Fehler</summary>
+                <div class="details-content">
+                  <p><strong>Windows Defender warnt:</strong> Klicke auf "Weitere Informationen" und dann "Trotzdem ausführen". Ollama ist sicher und Open Source.</p>
+                  <p><strong>Firewall-Warnung:</strong> Erlaube den Zugriff. Ollama braucht lokale Netzwerkports (Standard: 11434).</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">PowerShell öffnen</h4>
+              <p class="step__desc">Drücke <kbd>Win</kbd> + <kbd>X</kbd> und wähle "Terminal" oder "PowerShell". Alternativ: Drücke <kbd>Win</kbd>, tippe <code>powershell</code> und drücke Enter.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Dein erstes KI-Modell herunterladen</h4>
+              <p class="step__desc">Tippe folgenden Befehl ein und drücke Enter:</p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">PowerShell</span>
+                  <button class="copy-btn" aria-label="Code kopieren">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  </button>
+                </div>
+                <pre class="code-content"><code>ollama pull llama3.2</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Das Modell ist ca. 2 GB groß. Der Download dauert je nach Internetgeschwindigkeit 2–10 Minuten. <strong>Danach brauchst du kein Internet mehr!</strong></p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">5</div>
+            <div class="step__content">
+              <h4 class="step__title">Mit der KI chatten!</h4>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">PowerShell</span>
+                  <button class="copy-btn" aria-label="Code kopieren">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg>
+                  </button>
+                </div>
+                <pre class="code-content"><code>ollama run llama3.2</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Du kannst jetzt Fragen stellen! Tippe zum Beispiel: <code>Erkläre mir was künstliche Intelligenz ist</code>. Mit <code>/bye</code> beendest du den Chat.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- LINUX -->
+        <div class="tab-content" id="tab-linux" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Ollama installieren</h4>
+              <p class="step__desc">Öffne ein Terminal und führe den Installationsbefehl aus:</p>
+              <div class="code-block">
+                <div class="code-header">
+                  <span class="code-lang">Terminal</span>
+                  <button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button>
+                </div>
+                <pre class="code-content"><code>curl -fsSL https://ollama.com/install.sh | sh</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Das Skript erkennt automatisch deine Linux-Distribution und installiert Ollama mit allen Abhängigkeiten.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Installation prüfen</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>ollama --version</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Du solltest eine Versionsnummer sehen, z.B. <code>ollama version 0.5.x</code>.</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Modell herunterladen</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>ollama pull llama3.2</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">4</div>
+            <div class="step__content">
+              <h4 class="step__title">Chatten!</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>ollama run llama3.2</code></pre>
+              </div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">5</div>
+            <div class="step__content">
+              <h4 class="step__title">Dienst-Status prüfen (optional)</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>sudo systemctl status ollama</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Ollama läuft als systemd-Dienst und startet automatisch mit deinem Computer.</p>
+              <details class="mt-sm">
+                <summary>&#9888;&#65039; Häufige Fehler</summary>
+                <div class="details-content">
+                  <p><strong>GPU nicht erkannt:</strong> Stelle sicher, dass NVIDIA-Treiber installiert sind: <code>nvidia-smi</code></p>
+                  <p><strong>Permission denied:</strong> Dein Benutzer muss in der <code>ollama</code>-Gruppe sein. Führe aus: <code>sudo usermod -aG ollama $USER</code> und melde dich neu an.</p>
+                </div>
+              </details>
+            </div>
+          </div>
+        </div>
+
+        <!-- MACOS -->
+        <div class="tab-content" id="tab-macos" role="tabpanel">
+          <div class="step">
+            <div class="step__number">1</div>
+            <div class="step__content">
+              <h4 class="step__title">Ollama installieren</h4>
+              <p class="step__desc">Lade Ollama von <strong>ollama.com</strong> herunter, oder nutze Homebrew:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>brew install ollama</code></pre>
+              </div>
+              <details class="mt-sm">
+                <summary>&#9888;&#65039; Gatekeeper-Warnung</summary>
+                <div class="details-content">
+                  <p>Beim ersten Start fragt macOS, ob du die App wirklich öffnen willst. Gehe zu <strong>Systemeinstellungen → Datenschutz &amp; Sicherheit</strong> und klicke auf "Trotzdem öffnen".</p>
+                </div>
+              </details>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">2</div>
+            <div class="step__content">
+              <h4 class="step__title">Ollama starten</h4>
+              <p class="step__desc">Starte die Ollama-App aus dem Launchpad oder öffne Terminal und starte den Dienst:</p>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>ollama serve</code></pre>
+              </div>
+              <p class="text-secondary mt-sm">Auf Apple Silicon (M1/M2/M3/M4) wird die GPU automatisch via Metal genutzt — das ist <strong>deutlich schneller</strong> als CPU!</p>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step__number">3</div>
+            <div class="step__content">
+              <h4 class="step__title">Modell herunterladen und chatten</h4>
+              <div class="code-block">
+                <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+                <pre class="code-content"><code>ollama pull llama3.2
+ollama run llama3.2</code></pre>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- MODELLE NACH RAM -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F4CA;</span> Welches Modell für deinen Computer?</h2>
+      <p class="text-secondary mb-md">Die Modellgröße bestimmt die Qualität der Antworten. Wähle ein Modell das zu deinem Arbeitsspeicher (RAM) passt:</p>
+
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr><th>RAM</th><th>Modell</th><th>Befehl</th><th>Qualität</th></tr>
+          </thead>
+          <tbody>
+            <tr><td><strong>4 GB</strong></td><td>Phi-3 Mini</td><td><code>ollama pull phi3</code></td><td>Gut für einfache Aufgaben</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Llama 3.2 (3B)</td><td><code>ollama pull llama3.2</code></td><td>Sehr gut, empfohlen als Einstieg</td></tr>
+            <tr><td><strong>16 GB</strong></td><td>Llama 3.1 (8B)</td><td><code>ollama pull llama3.1</code></td><td>Exzellent für die meisten Aufgaben</td></tr>
+            <tr><td><strong>32 GB+</strong></td><td>Llama 3.1 (70B)</td><td><code>ollama pull llama3.1:70b</code></td><td>Nahezu ChatGPT-Niveau</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Mistral (7B)</td><td><code>ollama pull mistral</code></td><td>Schnell, gut für Code &amp; Chat</td></tr>
+            <tr><td><strong>8 GB</strong></td><td>Gemma 2 (9B)</td><td><code>ollama pull gemma2</code></td><td>Google-Modell, stark bei Deutsch</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="callout callout--info mt-md">
+        <div class="callout__icon">&#x1F4A1;</div>
+        <div class="callout__content">
+          <p><strong>Tipp:</strong> Du weißt nicht wie viel RAM du hast? Windows: <kbd>Strg</kbd>+<kbd>Shift</kbd>+<kbd>Esc</kbd> → Reiter "Leistung". Linux: <code>free -h</code>. macOS: Apple-Menü → "Über diesen Mac".</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- API NUTZUNG -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#9881;&#65039;</span> Die API nutzen (für Fortgeschrittene)</h2>
+      <p class="text-secondary mb-md">Ollama bietet eine REST-API auf Port 11434. Damit kannst du die KI in eigene Programme einbinden:</p>
+
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">Terminal / cURL</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+        <pre class="code-content"><code>curl http://localhost:11434/api/generate -d '{
+  "model": "llama3.2",
+  "prompt": "Erkläre mir was Photosynthese ist",
+  "stream": false
+}'</code></pre>
+      </div>
+
+      <h4 class="mt-lg">Modelle verwalten</h4>
+      <div class="code-block">
+        <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
+        <pre class="code-content"><code># Alle installierten Modelle anzeigen
+ollama list
+
+# Modell-Details anzeigen
+ollama show llama3.2
+
+# Modell löschen (um Speicherplatz freizugeben)
+ollama rm llama3.2</code></pre>
+      </div>
+    </section>
+
+    <!-- BESTE KONFIGURATION -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F527;</span> Beste Konfiguration</h2>
+
+      <h4>Umgebungsvariablen</h4>
+      <div class="table-wrapper mt-md">
+        <table>
+          <thead><tr><th>Variable</th><th>Standardwert</th><th>Beschreibung</th></tr></thead>
+          <tbody>
+            <tr><td><code>OLLAMA_HOST</code></td><td>127.0.0.1:11434</td><td>Auf welcher Adresse Ollama lauscht. Setze auf <code>0.0.0.0:11434</code> für Netzwerk-Zugriff.</td></tr>
+            <tr><td><code>OLLAMA_MODELS</code></td><td>~/.ollama/models</td><td>Wo Modelle gespeichert werden. Nützlich wenn du eine externe Festplatte nutzen willst.</td></tr>
+            <tr><td><code>OLLAMA_NUM_PARALLEL</code></td><td>1</td><td>Wie viele Anfragen gleichzeitig verarbeitet werden.</td></tr>
+          </tbody>
+        </table>
+      </div>
+
+      <details class="mt-lg">
+        <summary>&#x1F4A1; GPU vs CPU — Was ist schneller?</summary>
+        <div class="details-content">
+          <p><strong>GPU (Grafikkarte):</strong> 5–20x schneller als CPU. Ollama erkennt NVIDIA-GPUs automatisch (CUDA). AMD-GPUs gehen über ROCm. Apple Silicon nutzt Metal.</p>
+          <p><strong>CPU:</strong> Funktioniert immer, aber langsamer. Für kleine Modelle (unter 4B Parameter) trotzdem ausreichend schnell.</p>
+          <p><strong>Empfehlung:</strong> Wenn du eine NVIDIA-Grafikkarte mit 6+ GB VRAM hast, nutze sie! Installiere die neuesten NVIDIA-Treiber.</p>
+        </div>
+      </details>
+
+      <details class="mt-sm">
+        <summary>&#x1F4A1; Was ist Quantisierung?</summary>
+        <div class="details-content">
+          <p>Quantisierung macht KI-Modelle kleiner und schneller, mit minimalem Qualitätsverlust. Stell es dir vor wie MP3 vs. WAV — kleiner, aber du merkst den Unterschied kaum.</p>
+          <p><strong>Q4_K_M:</strong> Guter Kompromiss aus Qualität und Größe (Standard bei Ollama)</p>
+          <p><strong>Q5_K_M:</strong> Etwas besser, aber größer</p>
+          <p><strong>Q8_0:</strong> Nahezu verlustfrei, aber deutlich größer</p>
+        </div>
+      </details>
+    </section>
+
+    <!-- FORTSCHRITT CHECKLISTE -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x2705;</span> Deine Schritte</h2>
+      <ul class="checklist">
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="0"><span class="checklist__text">Ollama installiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="1"><span class="checklist__text">Erstes Modell heruntergeladen</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="2"><span class="checklist__text">Ersten Chat geführt</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="3"><span class="checklist__text">Verschiedene Modelle ausprobiert</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="4"><span class="checklist__text">API getestet (optional)</span></li>
+        <li class="checklist__item"><input type="checkbox" class="step-checkbox" data-guide="ollama" data-step="5"><span class="checklist__text">Konfiguration optimiert (optional)</span></li>
+      </ul>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon">&#x1F389;</div>
+        <h2 class="success-section__title">Geschafft!</h2>
+        <p>Du hast jetzt eine KI die komplett auf deinem Computer läuft — ohne Internet, ohne Cloud, ohne Kosten. Deine Daten bleiben bei dir.</p>
+      </div>
+
+      <h3 class="mt-xl">Nächste empfohlene Guides</h3>
+      <div class="next-guides">
+        <a href="#" class="next-guide">
+          <span>&#x1F5A5;&#65039;</span>
+          <div><strong>Open WebUI</strong><br><span class="text-small text-muted">Chat-Interface für deine lokale KI</span></div>
+        </a>
+        <a href="#" class="next-guide">
+          <span>&#x1F4BB;</span>
+          <div><strong>Coding-Assistenten offline</strong><br><span class="text-small text-muted">VS Code + Ollama für Code-Vorschläge</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with &#10084;&#65039; für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>
