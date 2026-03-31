@@ -175,8 +175,11 @@
               <p class="step__desc mt-md"><strong>Fedora / RHEL:</strong></p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="url">https://repo.jellyfin.org/releases/server/fedora/jellyfin-server.rpm</span>
-<span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="url">https://repo.jellyfin.org/releases/server/fedora/jellyfin-web.rpm</span></code></pre>
+                <pre class="code-content"><code><span class="comment"># Jellyfin-Repository hinzufügen</span>
+<span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="url">https://repo.jellyfin.org/releases/server/fedora/stable/jellyfin-server-latest.noarch.rpm</span>
+
+<span class="comment"># Jellyfin installieren</span>
+<span class="keyword">sudo</span> <span class="command">dnf</span> <span class="keyword">install</span> <span class="string">jellyfin jellyfin-web</span></code></pre>
               </div>
             </div>
           </div>
@@ -219,7 +222,7 @@
               <p class="step__desc">Nutze Homebrew oder lade die DMG von <a href="https://jellyfin.org/downloads" target="_blank" rel="noopener"><strong>jellyfin.org</strong></a> herunter:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="string">jellyfin</span></code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="flag">--cask</span> <span class="string">jellyfin</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>

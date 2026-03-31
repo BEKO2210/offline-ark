@@ -269,8 +269,11 @@
               <p class="step__desc">Lade die gewünschte ZIM-Datei auf eine externe Festplatte oder eine große SD-Karte:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="comment"># Beispiel: Wikipedia Deutsch (ohne Bilder, ~10 GB)</span>
-<span class="command">wget</span> <span class="url">https://download.kiwix.org/zim/wikipedia/wikipedia_de_all_nopic.zim</span></code></pre>
+                <pre class="code-content"><code><span class="comment"># Öffne zuerst die Dateiliste im Browser:</span>
+<span class="comment"># https://download.kiwix.org/zim/wikipedia/</span>
+<span class="comment"># Suche die aktuelle Datei (Dateiname enthält ein Datum)</span>
+<span class="comment"># Beispiel (Dateiname prüfen!):</span>
+<span class="command">wget</span> <span class="url">https://download.kiwix.org/zim/wikipedia/wikipedia_de_all_nopic_2024-06.zim</span></code></pre>
               </div>
             </div>
           </div>
@@ -300,6 +303,7 @@ After=network.target
 ExecStart=/usr/bin/kiwix-serve /pfad/zur/wikipedia_de.zim -p 8080
 Restart=always
 User=pi
+# WICHTIG: Ersetze "pi" durch deinen Benutzernamen!
 
 [Install]
 WantedBy=multi-user.target</span>

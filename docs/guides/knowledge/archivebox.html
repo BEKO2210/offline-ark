@@ -71,7 +71,7 @@
       <div class="callout callout--info">
         <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><circle cx="12" cy="12" r="10"/><path d="M8 14s1.5 2 4 2 4-2 4-2"/><line x1="9" y1="9" x2="9.01" y2="9"/><line x1="15" y1="9" x2="15.01" y2="9"/></svg></div>
         <div class="callout__content">
-          <div class="callout__title">Fur Kinder erklärt</div>
+          <div class="callout__title">Für Kinder erklärt</div>
           <p>ArchiveBox ist wie ein magisches Fotoalbum für Webseiten — es macht einen Schnappschuss von jeder Seite und bewahrt ihn auf, damit du ihn auch ohne Internet jederzeit anschauen kannst!</p>
         </div>
       </div>
@@ -112,7 +112,7 @@
               <p class="step__desc">Falls Docker noch nicht installiert ist, lade es von <a href="https://docs.docker.com/get-docker/" target="_blank" rel="noopener"><strong>docker.com</strong></a> herunter. Unter Linux kannst du es so installieren:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">docker.io docker-compose</span></code></pre>
+                <pre class="code-content"><code><span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">docker.io docker-compose-plugin</span></code></pre>
               </div>
             </div>
           </div>
@@ -143,6 +143,10 @@
     <span class="keyword">environment</span>:
       - <span class="variable">ALLOWED_HOSTS</span>=<span class="string">*</span>
       - <span class="variable">MEDIA_MAX_SIZE</span>=<span class="string">750m</span></code></pre>
+              </div>
+              <div class="callout callout--warning mt-sm">
+                <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+                <div class="callout__content"><p><strong>Sicherheitshinweis:</strong> <code>ALLOWED_HOSTS=*</code> erlaubt Zugriff von überall. Wenn dein Server vom Internet erreichbar ist, ändere den Wert auf deine lokale IP, z.B. <code>ALLOWED_HOSTS=192.168.1.100,localhost</code>.</p></div>
               </div>
             </div>
           </div>
@@ -219,14 +223,19 @@
             <div class="step__number">1</div>
             <div class="step__content">
               <h4 class="step__title">ArchiveBox installieren</h4>
-              <p class="step__desc">Installiere ArchiveBox mit pip oder Homebrew:</p>
+              <p class="step__desc">Installiere ArchiveBox mit pipx (empfohlen für die pip-Methode):</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="comment"># Option A: per pip</span>
-<span class="command">pip3</span> <span class="keyword">install</span> <span class="string">archivebox</span>
+                <pre class="code-content"><code><span class="comment"># pipx installieren (isoliert Abhängigkeiten)</span>
+<span class="keyword">sudo</span> <span class="command">apt</span> <span class="keyword">install</span> <span class="string">pipx</span>
+<span class="command">pipx</span> <span class="keyword">ensurepath</span>
 
-<span class="comment"># Option B: per Homebrew</span>
-<span class="command">brew</span> <span class="keyword">install</span> <span class="string">archivebox</span></code></pre>
+<span class="comment"># ArchiveBox installieren</span>
+<span class="command">pipx</span> <span class="keyword">install</span> <span class="string">archivebox</span></code></pre>
+              </div>
+              <div class="callout callout--info mt-sm">
+                <div class="callout__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="20" height="20"><path d="M9 18h6"/><path d="M10 22h4"/><path d="M12 2a7 7 0 00-4 12.7V17h8v-2.3A7 7 0 0012 2z"/></svg></div>
+                <div class="callout__content"><p><strong>Empfehlung:</strong> Die Docker-Methode (vorheriger Tab) ist deutlich einfacher und zuverlässiger. Nutze pip/pipx nur, wenn du kein Docker verwenden kannst.</p></div>
               </div>
             </div>
           </div>
@@ -396,9 +405,9 @@
           <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/></svg></span>
           <div><strong>Kiwix</strong><br><span class="text-small text-muted">Wikipedia komplett offline verfügbar machen</span></div>
         </a>
-        <a class="next-guide next-guide--disabled">
+        <a href="calibre.html" class="next-guide">
           <span class="next-guide__icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="22" height="22"><path d="M4 19.5A2.5 2.5 0 016.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 014 19.5v-15A2.5 2.5 0 016.5 2z"/><path d="M8 7h8"/><path d="M8 11h6"/></svg></span>
-          <div><strong>Calibre</strong><br><span class="text-small text-muted">eBook-Bibliothek offline verwalten — Bald verfügbar</span></div>
+          <div><strong>Calibre</strong><br><span class="text-small text-muted">eBook-Bibliothek offline verwalten</span></div>
         </a>
       </div>
     </section>

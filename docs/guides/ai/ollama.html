@@ -250,7 +250,7 @@
               <p class="step__desc">Lade Ollama von <a href="https://ollama.com" target="_blank" rel="noopener"><strong>ollama.com</strong></a> herunter, oder nutze Homebrew:</p>
               <div class="code-block">
                 <div class="code-header"><span class="code-lang">Terminal</span><button class="copy-btn" aria-label="Code kopieren"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 01-2-2V4a2 2 0 012-2h9a2 2 0 012 2v1"/></svg></button></div>
-                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="string">ollama</span></code></pre>
+                <pre class="code-content"><code><span class="command">brew</span> <span class="keyword">install</span> <span class="flag">--cask</span> <span class="string">ollama</span></code></pre>
               </div>
               <details class="mt-sm">
                 <summary><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="18" height="18" style="vertical-align:-0.15em"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg> Gatekeeper-Warnung</summary>
@@ -298,10 +298,10 @@
             <tr><th>RAM</th><th>Modell</th><th>Befehl</th><th>Qualität</th></tr>
           </thead>
           <tbody>
-            <tr><td><strong>4 GB</strong></td><td>Phi-3 Mini</td><td><code><span class="command">ollama</span> pull <span class="string">phi3</span></code></td><td>Gut für einfache Aufgaben</td></tr>
+            <tr><td><strong>4 GB frei</strong></td><td>Phi-3 Mini</td><td><code><span class="command">ollama</span> pull <span class="string">phi3</span></code></td><td>Gut für einfache Aufgaben (langsam bei wenig RAM)</td></tr>
             <tr><td><strong>8 GB</strong></td><td>Llama 3.2 (3B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.2</span></code></td><td>Sehr gut, empfohlen als Einstieg</td></tr>
             <tr><td><strong>16 GB</strong></td><td>Llama 3.1 (8B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.1</span></code></td><td>Exzellent für die meisten Aufgaben</td></tr>
-            <tr><td><strong>32 GB+</strong></td><td>Llama 3.1 (70B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.1:70b</span></code></td><td>Nahezu ChatGPT-Niveau</td></tr>
+            <tr><td><strong>48–64 GB</strong></td><td>Llama 3.1 (70B)</td><td><code><span class="command">ollama</span> pull <span class="string">llama3.1:70b</span></code></td><td>Nahezu ChatGPT-Niveau (braucht viel RAM!)</td></tr>
             <tr><td><strong>8 GB</strong></td><td>Mistral (7B)</td><td><code><span class="command">ollama</span> pull <span class="string">mistral</span></code></td><td>Schnell, gut für Code &amp; Chat</td></tr>
             <tr><td><strong>8 GB</strong></td><td>Gemma 2 (9B)</td><td><code><span class="command">ollama</span> pull <span class="string">gemma2</span></code></td><td>Google-Modell, stark bei Deutsch</td></tr>
           </tbody>
