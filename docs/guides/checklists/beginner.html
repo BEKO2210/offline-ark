@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Beginner-Checkliste — Deine ersten 5 Offline-Tools Schritt für Schritt installieren.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Beginner-Checkliste | Offline Ark</title>
+  <link rel="stylesheet" href="../../assets/css/fonts.css">
+  <link rel="stylesheet" href="../../assets/css/main.css">
+  <link rel="stylesheet" href="../../assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container flex--between">
+      <a href="../../index.html" class="logo"><span class="logo__icon">&#x1F6E1;</span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="../../index.html" class="nav__link">Start</a>
+        <a href="../../index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="../../glossary.html" class="nav__link">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main class="container container--narrow">
+
+    <div class="guide-header reveal">
+      <div class="guide-header__breadcrumb">
+        <a href="../../index.html">Start</a><span class="sep">/</span>
+        <a href="../../index.html#kategorien">Checklisten</a><span class="sep">/</span>
+        <span>Beginner</span>
+      </div>
+      <h1 class="guide-header__title">Beginner-Checkliste</h1>
+      <p class="text-secondary mb-md">Deine ersten 5 Offline-Tools — danach bist du für die wichtigsten Szenarien gerüstet.</p>
+      <div class="guide-header__meta">
+        <span class="badge badge--checklists">Checkliste</span>
+        <span class="guide-meta-item"><span class="difficulty-stars">&#11088;</span></span>
+        <span class="guide-meta-item">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="16" height="16"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+          1–2 Stunden (gesamt)
+        </span>
+      </div>
+    </div>
+
+    <!-- Fortschrittsbalken -->
+    <section class="scroll-reveal mb-xl">
+      <div class="progress-label">
+        <span><strong>Gesamtfortschritt</strong></span>
+        <span class="guide-progress-pct" data-guide="beginner-checklist">0%</span>
+      </div>
+      <div class="progress-bar" style="height:12px">
+        <div class="progress-bar__fill" data-guide="beginner-checklist" style="width:0%"></div>
+      </div>
+    </section>
+
+    <!-- TIPPS -->
+    <section class="scroll-reveal mb-xl">
+      <div class="callout callout--info">
+        <div class="callout__icon">&#x1F4A1;</div>
+        <div class="callout__content">
+          <div class="callout__title">Bevor du startest</div>
+          <ul style="list-style:disc;padding-left:1.2rem;margin-top:0.5rem">
+            <li><strong>Reihenfolge ist egal!</strong> Starte mit dem Tool, das dich am meisten interessiert.</li>
+            <li><strong>Mach Pausen!</strong> Du musst nicht alles auf einmal machen.</li>
+            <li><strong>Bei Problemen:</strong> Schau in den jeweiligen Guide — dort gibt es "Häufige Fehler" Boxen.</li>
+            <li>Dein Fortschritt wird <strong>automatisch gespeichert</strong> (im Browser).</li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- DIE 5 TOOLS -->
+    <section class="guide-section scroll-reveal">
+      <h2 class="guide-section__title"><span class="guide-section__icon">&#x1F4CB;</span> Deine 5 Starter-Tools</h2>
+
+      <!-- Tool 1: KeePassXC -->
+      <div class="card card--security mb-lg" style="padding:var(--space-xl)">
+        <div class="flex--between flex--wrap" style="gap:1rem">
+          <div class="flex" style="align-items:flex-start;gap:1rem;flex:1">
+            <input type="checkbox" class="step-checkbox" data-guide="beginner-checklist" data-step="0" style="margin-top:4px">
+            <div>
+              <div class="flex" style="align-items:center;gap:0.5rem;flex-wrap:wrap">
+                <h3 style="margin:0">1. KeePassXC</h3>
+                <span class="badge badge--security">Sicherheit</span>
+              </div>
+              <p class="text-secondary mt-sm">Sichere deine Passwörter in einem verschlüsselten Tresor. Das wichtigste Tool für deine digitale Sicherheit — online wie offline.</p>
+              <div class="flex mt-sm" style="gap:1rem;font-size:0.85rem;color:var(--text-muted)">
+                <span>&#9201; 15 Minuten</span>
+                <span>&#11088; Einfach</span>
+              </div>
+            </div>
+          </div>
+          <a href="../security/keepassxc.html" class="btn btn--primary btn--small">Guide starten</a>
+        </div>
+      </div>
+
+      <!-- Tool 2: Kiwix -->
+      <div class="card card--knowledge mb-lg" style="padding:var(--space-xl)">
+        <div class="flex--between flex--wrap" style="gap:1rem">
+          <div class="flex" style="align-items:flex-start;gap:1rem;flex:1">
+            <input type="checkbox" class="step-checkbox" data-guide="beginner-checklist" data-step="1" style="margin-top:4px">
+            <div>
+              <div class="flex" style="align-items:center;gap:0.5rem;flex-wrap:wrap">
+                <h3 style="margin:0">2. Kiwix</h3>
+                <span class="badge badge--knowledge">Wissen</span>
+              </div>
+              <p class="text-secondary mt-sm">Die komplette Wikipedia offline auf deinem Gerät. Millionen Artikel, jederzeit verfügbar — auch im Flugzeug, im Zug oder bei Stromausfall.</p>
+              <div class="flex mt-sm" style="gap:1rem;font-size:0.85rem;color:var(--text-muted)">
+                <span>&#9201; 20 Minuten</span>
+                <span>&#11088; Einfach</span>
+              </div>
+            </div>
+          </div>
+          <a href="../knowledge/kiwix.html" class="btn btn--primary btn--small">Guide starten</a>
+        </div>
+      </div>
+
+      <!-- Tool 3: Ollama -->
+      <div class="card card--ai mb-lg" style="padding:var(--space-xl)">
+        <div class="flex--between flex--wrap" style="gap:1rem">
+          <div class="flex" style="align-items:flex-start;gap:1rem;flex:1">
+            <input type="checkbox" class="step-checkbox" data-guide="beginner-checklist" data-step="2" style="margin-top:4px">
+            <div>
+              <div class="flex" style="align-items:center;gap:0.5rem;flex-wrap:wrap">
+                <h3 style="margin:0">3. Ollama</h3>
+                <span class="badge badge--ai">KI</span>
+              </div>
+              <p class="text-secondary mt-sm">Deine eigene KI auf deinem Computer. Fragen stellen, Texte schreiben, Ideen sammeln — alles lokal und privat, ohne Internet.</p>
+              <div class="flex mt-sm" style="gap:1rem;font-size:0.85rem;color:var(--text-muted)">
+                <span>&#9201; 30 Minuten</span>
+                <span>&#11088;&#11088; Mittel</span>
+              </div>
+            </div>
+          </div>
+          <a href="../ai/ollama.html" class="btn btn--primary btn--small">Guide starten</a>
+        </div>
+      </div>
+
+      <!-- Tool 4: LocalSend -->
+      <div class="card card--communication mb-lg" style="padding:var(--space-xl)">
+        <div class="flex--between flex--wrap" style="gap:1rem">
+          <div class="flex" style="align-items:flex-start;gap:1rem;flex:1">
+            <input type="checkbox" class="step-checkbox" data-guide="beginner-checklist" data-step="3" style="margin-top:4px">
+            <div>
+              <div class="flex" style="align-items:center;gap:0.5rem;flex-wrap:wrap">
+                <h3 style="margin:0">4. LocalSend</h3>
+                <span class="badge badge--communication">Kommunikation</span>
+              </div>
+              <p class="text-secondary mt-sm">Dateien zwischen Geräten teilen — ohne Internet, ohne Cloud. Funktioniert mit Windows, Mac, Linux, Android und iPhone. Die beste AirDrop-Alternative.</p>
+              <div class="flex mt-sm" style="gap:1rem;font-size:0.85rem;color:var(--text-muted)">
+                <span>&#9201; 5 Minuten</span>
+                <span>&#11088; Einfach</span>
+              </div>
+            </div>
+          </div>
+          <span class="btn btn--secondary btn--small" style="opacity:0.5">Bald verfügbar</span>
+        </div>
+      </div>
+
+      <!-- Tool 5: Obsidian -->
+      <div class="card card--productivity mb-lg" style="padding:var(--space-xl)">
+        <div class="flex--between flex--wrap" style="gap:1rem">
+          <div class="flex" style="align-items:flex-start;gap:1rem;flex:1">
+            <input type="checkbox" class="step-checkbox" data-guide="beginner-checklist" data-step="4" style="margin-top:4px">
+            <div>
+              <div class="flex" style="align-items:center;gap:0.5rem;flex-wrap:wrap">
+                <h3 style="margin:0">5. Obsidian</h3>
+                <span class="badge badge--productivity">Produktivität</span>
+              </div>
+              <p class="text-secondary mt-sm">Notizen, Ideen und Wissen in einer lokalen Wissensdatenbank organisieren. Deine Gedanken gehören dir — keine Cloud nötig.</p>
+              <div class="flex mt-sm" style="gap:1rem;font-size:0.85rem;color:var(--text-muted)">
+                <span>&#9201; 15 Minuten</span>
+                <span>&#11088; Einfach</span>
+              </div>
+            </div>
+          </div>
+          <span class="btn btn--secondary btn--small" style="opacity:0.5">Bald verfügbar</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- GESCHAFFT -->
+    <section class="guide-section scroll-reveal">
+      <div class="success-section">
+        <div class="success-section__icon">&#x1F3C6;</div>
+        <h2 class="success-section__title">Was du jetzt hast</h2>
+        <p>Wenn du alle 5 Tools eingerichtet hast, bist du bereits gut aufgestellt:</p>
+        <ul style="list-style:none;text-align:left;max-width:500px;margin:1rem auto 0">
+          <li class="mb-sm">&#x2705; <strong>Passwörter</strong> sicher offline gespeichert</li>
+          <li class="mb-sm">&#x2705; <strong>Wikipedia</strong> jederzeit ohne Internet verfügbar</li>
+          <li class="mb-sm">&#x2705; <strong>Eigene KI</strong> die dir lokal Fragen beantwortet</li>
+          <li class="mb-sm">&#x2705; <strong>Dateiaustausch</strong> zwischen Geräten ohne Cloud</li>
+          <li class="mb-sm">&#x2705; <strong>Notizen</strong> in einer lokalen Wissensdatenbank</li>
+        </ul>
+      </div>
+
+      <h3 class="mt-xl text-center">Bereit für mehr?</h3>
+      <div class="next-guides mt-md">
+        <a href="#" class="next-guide">
+          <span>&#x1F4CB;</span>
+          <div><strong>Intermediate-Checkliste</strong><br><span class="text-small text-muted">Vollständiges Offline-Setup aufbauen</span></div>
+        </a>
+        <a href="../../index.html#kategorien" class="next-guide">
+          <span>&#x1F4DA;</span>
+          <div><strong>Alle Kategorien</strong><br><span class="text-small text-muted">Entdecke alle 36 Guides</span></div>
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with &#10084;&#65039; für die digitale Unabhängigkeit</span>
+        <a href="../../index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="../../assets/js/app.js"></script>
+</body>
+</html>

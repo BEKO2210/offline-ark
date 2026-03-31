@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="de" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Glossar — Alle wichtigen Begriffe rund um Offline-Tools, KI und digitale Unabhängigkeit verständlich erklärt.">
+  <meta name="theme-color" content="#0f1117">
+  <title>Glossar | Offline Ark</title>
+  <link rel="stylesheet" href="assets/css/fonts.css">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <script>(function(){var t=localStorage.getItem('theme');if(t)document.documentElement.setAttribute('data-theme',t);else if(window.matchMedia('(prefers-color-scheme:light)').matches)document.documentElement.setAttribute('data-theme','light');})();</script>
+</head>
+<body>
+
+  <header class="header">
+    <div class="container flex--between">
+      <a href="index.html" class="logo"><span class="logo__icon">&#x1F6E1;</span><span>Offline Ark</span></a>
+      <nav class="nav" id="main-nav">
+        <a href="index.html" class="nav__link">Start</a>
+        <a href="index.html#kategorien" class="nav__link">Kategorien</a>
+        <a href="glossary.html" class="nav__link nav__link--active">Glossar</a>
+      </nav>
+      <div class="nav__actions flex" style="gap:0.5rem">
+        <button class="theme-toggle" id="theme-toggle" aria-label="Farbschema wechseln">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menü öffnen"><span></span></button>
+      </div>
+    </div>
+    <div class="nav-overlay" id="nav-overlay"></div>
+  </header>
+
+  <main class="container container--narrow">
+    <div class="guide-header reveal">
+      <h1 class="guide-header__title">Glossar</h1>
+      <p class="text-secondary">Alle wichtigen Begriffe verständlich erklärt — von A bis Z.</p>
+    </div>
+
+    <!-- Alphabet-Navigation -->
+    <nav class="flex flex--wrap mb-xl scroll-reveal" aria-label="Alphabet-Navigation" style="gap:0.25rem">
+      <a href="#A" class="btn btn--small btn--secondary">A</a>
+      <a href="#B" class="btn btn--small btn--secondary">B</a>
+      <a href="#C" class="btn btn--small btn--secondary">C</a>
+      <a href="#D" class="btn btn--small btn--secondary">D</a>
+      <a href="#E" class="btn btn--small btn--secondary">E</a>
+      <a href="#F" class="btn btn--small btn--secondary">F</a>
+      <a href="#G" class="btn btn--small btn--secondary">G</a>
+      <a href="#H" class="btn btn--small btn--secondary">H</a>
+      <a href="#J" class="btn btn--small btn--secondary">J</a>
+      <a href="#K" class="btn btn--small btn--secondary">K</a>
+      <a href="#L" class="btn btn--small btn--secondary">L</a>
+      <a href="#M" class="btn btn--small btn--secondary">M</a>
+      <a href="#N" class="btn btn--small btn--secondary">N</a>
+      <a href="#O" class="btn btn--small btn--secondary">O</a>
+      <a href="#P" class="btn btn--small btn--secondary">P</a>
+      <a href="#Q" class="btn btn--small btn--secondary">Q</a>
+      <a href="#R" class="btn btn--small btn--secondary">R</a>
+      <a href="#S" class="btn btn--small btn--secondary">S</a>
+      <a href="#T" class="btn btn--small btn--secondary">T</a>
+      <a href="#U" class="btn btn--small btn--secondary">U</a>
+      <a href="#V" class="btn btn--small btn--secondary">V</a>
+      <a href="#W" class="btn btn--small btn--secondary">W</a>
+      <a href="#Y" class="btn btn--small btn--secondary">Y</a>
+      <a href="#Z" class="btn btn--small btn--secondary">Z</a>
+    </nav>
+
+    <!-- GLOSSAR EINTRÄGE -->
+
+    <h2 id="A" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">A</h2>
+
+    <article class="card mb-md scroll-reveal" id="aes-256">
+      <h3 class="card__title">AES-256</h3>
+      <p class="card__desc">Ein extrem sicherer Verschlüsselungsstandard. Wird von KeePassXC und VeraCrypt genutzt, um deine Daten zu schützen. Selbst die schnellsten Computer der Welt könnten die Verschlüsselung nicht knacken.</p>
+      <details><summary>Technisch</summary><div class="details-content">Advanced Encryption Standard mit 256-Bit Schlüssellänge. Symmetrische Blockchiffre, vom NIST standardisiert. 2^256 mögliche Schlüssel.</div></details>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="api">
+      <h3 class="card__title">API (Application Programming Interface)</h3>
+      <p class="card__desc">Eine Schnittstelle, über die Programme miteinander reden können. Zum Beispiel kann ein Chat-Programm über die Ollama-API mit der KI sprechen.</p>
+      <details><summary>Technisch</summary><div class="details-content">Definierte Endpunkte für Programm-zu-Programm-Kommunikation. Ollama bietet eine REST-API auf Port 11434 mit JSON-Anfragen/Antworten.</div></details>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="appimage">
+      <h3 class="card__title">AppImage</h3>
+      <p class="card__desc">Ein Dateiformat für Linux-Programme, die du einfach herunterladen und starten kannst — ohne Installation. Wie eine .exe für Linux.</p>
+      <details><summary>Technisch</summary><div class="details-content">Portable Linux-Anwendung, die alle Abhängigkeiten in einer Datei bündelt. Benötigt nur chmod +x zum Ausführen. Distributionsunabhängig.</div></details>
+    </article>
+
+    <h2 id="B" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">B</h2>
+
+    <article class="card mb-md scroll-reveal" id="backup">
+      <h3 class="card__title">Backup</h3>
+      <p class="card__desc">Eine Sicherungskopie deiner Daten. Wenn dein Computer kaputt geht, hast du noch eine Kopie. Die 3-2-1-Regel: 3 Kopien, 2 verschiedene Medien, 1 außer Haus.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="bluetooth">
+      <h3 class="card__title">Bluetooth</h3>
+      <p class="card__desc">Eine Funktechnik für kurze Distanzen (bis ca. 10 Meter). Wird von Briar Messenger genutzt, um ohne Internet zu kommunizieren.</p>
+    </article>
+
+    <h2 id="C" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">C</h2>
+
+    <article class="card mb-md scroll-reveal" id="cli">
+      <h3 class="card__title">CLI (Command Line Interface)</h3>
+      <p class="card__desc">Die Kommandozeile — ein Textfenster, in das du Befehle eingibst. Sieht altmodisch aus, ist aber oft der schnellste Weg, etwas zu erledigen.</p>
+      <details><summary>Technisch</summary><div class="details-content">Textbasierte Benutzerschnittstelle. Windows: PowerShell/CMD. Linux/macOS: Terminal/Bash/Zsh. Viele Offline-Tools werden über CLI gesteuert.</div></details>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="cloud">
+      <h3 class="card__title">Cloud</h3>
+      <p class="card__desc">Computer anderer Leute, auf denen deine Daten gespeichert werden. Google Drive, iCloud, Dropbox — das ist alles "Cloud". Offline Ark zeigt dir Alternativen, bei denen deine Daten bei dir bleiben.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="container">
+      <h3 class="card__title">Container / Docker</h3>
+      <p class="card__desc">Eine Art "virtueller Karton", in dem ein Programm mit allen Dingen läuft, die es braucht. Macht Installation einfacher, weil alles fertig gepackt ist.</p>
+      <details><summary>Technisch</summary><div class="details-content">OS-Level-Virtualisierung. Docker-Container teilen sich den Host-Kernel, sind aber voneinander isoliert. Images werden von Docker Hub oder eigenen Registries gezogen.</div></details>
+    </article>
+
+    <h2 id="D" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">D</h2>
+
+    <article class="card mb-md scroll-reveal" id="datenbank">
+      <h3 class="card__title">Datenbank</h3>
+      <p class="card__desc">Ein strukturierter Speicher für Daten. Deine KeePassXC-Datei ist eine verschlüsselte Datenbank. Webseiten nutzen Datenbanken, um Inhalte zu speichern.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="dns">
+      <h3 class="card__title">DNS (Domain Name System)</h3>
+      <p class="card__desc">Das "Telefonbuch des Internets". Wandelt Adressen wie "wikipedia.org" in Nummern um, die Computer verstehen. Offline brauchst du kein DNS.</p>
+    </article>
+
+    <h2 id="E" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">E</h2>
+
+    <article class="card mb-md scroll-reveal" id="encryption">
+      <h3 class="card__title">Encryption / Verschlüsselung</h3>
+      <p class="card__desc">Daten so umwandeln, dass nur du sie lesen kannst. Wie ein Geheimcode — ohne den Schlüssel sieht alles aus wie Kauderwelsch.</p>
+    </article>
+
+    <h2 id="F" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">F</h2>
+
+    <article class="card mb-md scroll-reveal" id="flatpak">
+      <h3 class="card__title">Flatpak</h3>
+      <p class="card__desc">Ein System, um Programme unter Linux zu installieren. Funktioniert auf jeder Linux-Version gleich. Ähnlich wie ein App Store.</p>
+    </article>
+
+    <h2 id="G" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">G</h2>
+
+    <article class="card mb-md scroll-reveal" id="gguf">
+      <h3 class="card__title">GGUF</h3>
+      <p class="card__desc">Ein Dateiformat für KI-Modelle, das von Ollama und anderen Tools verwendet wird. Steht für "GPT-Generated Unified Format".</p>
+      <details><summary>Technisch</summary><div class="details-content">Nachfolger von GGML. Optimiert für Inference auf Consumer-Hardware. Unterstützt verschiedene Quantisierungsstufen (Q4, Q5, Q8, F16).</div></details>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="gpu">
+      <h3 class="card__title">GPU (Grafikkarte)</h3>
+      <p class="card__desc">Der Chip in deinem Computer, der normalerweise Bilder und Spiele berechnet. KI-Modelle laufen auf GPUs viel schneller als auf dem normalen Prozessor.</p>
+      <details><summary>Technisch</summary><div class="details-content">Graphics Processing Unit. NVIDIA GPUs nutzen CUDA, AMD nutzt ROCm, Apple Silicon nutzt Metal. VRAM (Video-RAM) bestimmt, wie große Modelle geladen werden können.</div></details>
+    </article>
+
+    <h2 id="H" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">H</h2>
+
+    <article class="card mb-md scroll-reveal" id="homelab">
+      <h3 class="card__title">Homelab</h3>
+      <p class="card__desc">Ein kleines "Rechenzentrum" bei dir zu Hause. Kann so einfach sein wie ein Raspberry Pi, der als Server läuft.</p>
+    </article>
+
+    <h2 id="J" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">J</h2>
+
+    <article class="card mb-md scroll-reveal" id="json">
+      <h3 class="card__title">JSON</h3>
+      <p class="card__desc">Ein Textformat, in dem Programme Daten austauschen. Sieht aus wie eine strukturierte Liste mit geschweiften Klammern.</p>
+    </article>
+
+    <h2 id="K" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">K</h2>
+
+    <article class="card mb-md scroll-reveal" id="ki">
+      <h3 class="card__title">KI / AI (Künstliche Intelligenz)</h3>
+      <p class="card__desc">Programme, die "intelligent" reagieren können — Texte schreiben, Fragen beantworten, Bilder erstellen. Mit Ollama kannst du KI komplett offline nutzen.</p>
+    </article>
+
+    <h2 id="L" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">L</h2>
+
+    <article class="card mb-md scroll-reveal" id="lan">
+      <h3 class="card__title">LAN (Local Area Network)</h3>
+      <p class="card__desc">Dein lokales Netzwerk zu Hause — alle Geräte, die an deinem Router hängen. Funktioniert auch ohne Internet!</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="llm">
+      <h3 class="card__title">LLM (Large Language Model)</h3>
+      <p class="card__desc">Die "Gehirne" hinter KI-Chatbots wie ChatGPT. Große Sprachmodelle, die auf riesigen Textmengen trainiert wurden. Ollama lässt sie auf deinem Computer laufen.</p>
+      <details><summary>Technisch</summary><div class="details-content">Transformer-basierte neuronale Netzwerke mit Milliarden von Parametern. Beispiele: Llama 3, Mistral, Gemma, Phi. Werden für lokale Nutzung quantisiert (z.B. auf 4-Bit).</div></details>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="lora">
+      <h3 class="card__title">LoRa</h3>
+      <p class="card__desc">Eine Funktechnik für sehr weite Strecken (bis 10+ km) bei niedrigem Stromverbrauch. Wird von Meshtastic genutzt für Kommunikation ohne Internet.</p>
+    </article>
+
+    <h2 id="M" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">M</h2>
+
+    <article class="card mb-md scroll-reveal" id="mesh">
+      <h3 class="card__title">Mesh-Netzwerk</h3>
+      <p class="card__desc">Ein Netzwerk, bei dem jedes Gerät auch als Weiterleiter fungiert. Wenn ein Gerät ausfällt, finden die Daten einen anderen Weg. Perfekt für Kommunikation ohne Infrastruktur.</p>
+    </article>
+
+    <h2 id="N" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">N</h2>
+
+    <article class="card mb-md scroll-reveal" id="nas">
+      <h3 class="card__title">NAS (Network Attached Storage)</h3>
+      <p class="card__desc">Eine Festplatte, die an dein Netzwerk angeschlossen ist. Alle Geräte im Haushalt können darauf zugreifen — deine eigene private Cloud.</p>
+    </article>
+
+    <h2 id="O" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">O</h2>
+
+    <article class="card mb-md scroll-reveal" id="offline-first">
+      <h3 class="card__title">Offline-First</h3>
+      <p class="card__desc">Ein Konzept bei dem eine App zuerst offline funktioniert und das Internet nur als Bonus nutzt. Das Gegenteil von "Cloud-First". Genau das Prinzip von Offline Ark!</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="open-source">
+      <h3 class="card__title">Open Source</h3>
+      <p class="card__desc">Software, deren Programmcode öffentlich ist. Jeder kann sie prüfen, verbessern und kostenlos nutzen. Alle Tools in Offline Ark sind Open Source.</p>
+    </article>
+
+    <h2 id="P" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">P</h2>
+
+    <article class="card mb-md scroll-reveal" id="p2p">
+      <h3 class="card__title">P2P (Peer-to-Peer)</h3>
+      <p class="card__desc">Direkte Verbindung zwischen zwei Geräten, ohne Server dazwischen. LocalSend nutzt P2P um Dateien zu teilen.</p>
+    </article>
+
+    <h2 id="Q" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">Q</h2>
+
+    <article class="card mb-md scroll-reveal" id="quantisierung">
+      <h3 class="card__title">Quantisierung</h3>
+      <p class="card__desc">Ein Verfahren, das KI-Modelle kleiner und schneller macht, mit minimalem Qualitätsverlust. Wie MP3 vs. WAV — kleiner, aber klingt fast gleich.</p>
+      <details><summary>Technisch</summary><div class="details-content">Reduktion der Fließkomma-Präzision (z.B. von FP16 auf INT4). Q4_K_M ist ein guter Kompromiss. Q8_0 ist nahezu verlustfrei. GGUF-Format unterstützt verschiedene Quantisierungsstufen.</div></details>
+    </article>
+
+    <h2 id="R" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">R</h2>
+
+    <article class="card mb-md scroll-reveal" id="ram">
+      <h3 class="card__title">RAM (Arbeitsspeicher)</h3>
+      <p class="card__desc">Der "Kurzzeitgedächtnis" deines Computers. Je mehr RAM, desto größere KI-Modelle kannst du laden. 8 GB ist Minimum, 16 GB ist komfortabel, 32 GB ist ideal.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="repo">
+      <h3 class="card__title">Repository / Repo</h3>
+      <p class="card__desc">Ein Speicherort für Programmcode, meistens auf GitHub. Das Offline Ark Repository enthält den gesamten Code dieser Webseite.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="rest-api">
+      <h3 class="card__title">REST API</h3>
+      <p class="card__desc">Eine verbreitete Art, wie Programme über das Netzwerk miteinander kommunizieren. Ollama bietet eine REST API, damit andere Programme die KI nutzen können.</p>
+    </article>
+
+    <h2 id="S" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">S</h2>
+
+    <article class="card mb-md scroll-reveal" id="server">
+      <h3 class="card__title">Server</h3>
+      <p class="card__desc">Ein Computer, der Dienste für andere bereitstellt. Dein Raspberry Pi kann ein Server sein, der Wikipedia für alle Geräte in deinem WLAN bereitstellt.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="service-worker">
+      <h3 class="card__title">Service Worker</h3>
+      <p class="card__desc">Ein kleines Programm im Browser, das Webseiten offline verfügbar macht. Diese Webseite (Offline Ark) nutzt einen Service Worker!</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="ssh">
+      <h3 class="card__title">SSH (Secure Shell)</h3>
+      <p class="card__desc">Eine sichere Verbindung zu einem anderen Computer über das Netzwerk. Wird oft genutzt, um einen Raspberry Pi ohne Bildschirm zu steuern.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="systemd">
+      <h3 class="card__title">Systemd</h3>
+      <p class="card__desc">Das "Management-System" von Linux, das Programme automatisch startet und überwacht. Damit kann Kiwix oder Ollama beim Computerstart automatisch laufen.</p>
+    </article>
+
+    <h2 id="T" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">T</h2>
+
+    <article class="card mb-md scroll-reveal" id="terminal">
+      <h3 class="card__title">Terminal</h3>
+      <p class="card__desc">Das Programm, in dem du die Kommandozeile (CLI) nutzt. Windows: PowerShell oder Terminal. macOS: Terminal. Linux: Terminal, Konsole, etc.</p>
+    </article>
+
+    <article class="card mb-md scroll-reveal" id="token">
+      <h3 class="card__title">Token (KI)</h3>
+      <p class="card__desc">Die "Wortstücke", in die ein KI-Modell Text zerlegt. Ein Token ist ungefähr 3/4 eines Wortes. Mehr Tokens = längere Antworten = mehr Rechenzeit.</p>
+    </article>
+
+    <h2 id="U" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">U</h2>
+
+    <article class="card mb-md scroll-reveal" id="usb">
+      <h3 class="card__title">USB</h3>
+      <p class="card__desc">Der universelle Anschluss für Geräte und Speicher. USB-Sticks sind perfekt, um Offline-Daten wie Wikipedia-ZIM-Dateien oder KeePassXC-Datenbanken mitzunehmen.</p>
+    </article>
+
+    <h2 id="V" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">V</h2>
+
+    <article class="card mb-md scroll-reveal" id="vpn">
+      <h3 class="card__title">VPN (Virtual Private Network)</h3>
+      <p class="card__desc">Ein verschlüsselter "Tunnel" durchs Internet. Schützt deine Verbindung, wenn du doch mal online bist. Offline brauchst du kein VPN.</p>
+    </article>
+
+    <h2 id="W" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">W</h2>
+
+    <article class="card mb-md scroll-reveal" id="woff2">
+      <h3 class="card__title">WOFF2</h3>
+      <p class="card__desc">Ein komprimiertes Schriftart-Format für Webseiten. Offline Ark nutzt WOFF2-Dateien, damit die Schriften auch ohne Internet geladen werden.</p>
+    </article>
+
+    <h2 id="Y" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">Y</h2>
+
+    <article class="card mb-md scroll-reveal" id="yaml">
+      <h3 class="card__title">YAML</h3>
+      <p class="card__desc">Ein Textformat für Konfigurationsdateien. Wird oft bei Docker und anderen Tools verwendet. Ähnlich wie JSON, aber einfacher zu lesen.</p>
+    </article>
+
+    <h2 id="Z" class="mt-xl mb-md scroll-reveal" style="color:var(--accent-primary)">Z</h2>
+
+    <article class="card mb-md scroll-reveal" id="zim">
+      <h3 class="card__title">ZIM (Dateiformat)</h3>
+      <p class="card__desc">Das Dateiformat, das Kiwix nutzt, um komplette Webseiten offline zu speichern. Eine einzige ZIM-Datei kann die ganze Wikipedia enthalten!</p>
+      <details><summary>Technisch</summary><div class="details-content">Zeno IMproved format. LZMA/Zstd-komprimiert. Enthält HTML, Bilder, Metadaten und einen Volltextindex. Unterstützt Cluster-basierte Kompression für effiziente Speicherung.</div></details>
+    </article>
+
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__bottom">
+        <span>Made with &#10084;&#65039; für die digitale Unabhängigkeit</span>
+        <a href="index.html">Zurück zur Startseite</a>
+      </div>
+    </div>
+  </footer>
+
+  <script defer src="assets/js/app.js"></script>
+</body>
+</html>
