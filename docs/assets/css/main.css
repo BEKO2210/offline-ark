@@ -903,14 +903,20 @@ tbody tr:hover { background: rgba(var(--accent-primary-rgb), 0.03); }
   .callout { padding: var(--space-md) var(--space-lg); gap: var(--space-md); }
 }
 
-.callout__icon { 
-  flex-shrink: 0; 
-  font-size: 1.125rem; 
-  margin-top: 2px; 
+.callout__icon {
+  flex-shrink: 0;
+  font-size: 1.125rem;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.callout__icon svg { width: 20px; height: 20px; }
 
 @media (min-width: 640px) {
   .callout__icon { font-size: 1.25rem; }
+  .callout__icon svg { width: 22px; height: 22px; }
 }
 
 .callout__content { flex: 1; }
@@ -1170,8 +1176,9 @@ details .details-content {
   }
 }
 
-.guide-section__icon { font-size: 1.125rem; }
-@media (min-width: 640px) { .guide-section__icon { font-size: 1.25rem; } }
+.guide-section__icon { font-size: 1.125rem; display: inline-flex; align-items: center; vertical-align: -0.15em; }
+.guide-section__icon svg { width: 22px; height: 22px; }
+@media (min-width: 640px) { .guide-section__icon { font-size: 1.25rem; } .guide-section__icon svg { width: 24px; height: 24px; } }
 
 /* Steps - Mobile First */
 .step {
@@ -1375,13 +1382,19 @@ details .details-content {
   .success-section { padding: var(--space-xl); }
 }
 
-.success-section__icon { 
-  font-size: 2.5rem; 
-  margin-bottom: var(--space-sm); 
+.success-section__icon {
+  font-size: 2.5rem;
+  margin-bottom: var(--space-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
+
+.success-section__icon svg { width: 48px; height: 48px; }
 
 @media (min-width: 640px) {
   .success-section__icon { font-size: 3rem; margin-bottom: var(--space-md); }
+  .success-section__icon svg { width: 56px; height: 56px; }
 }
 
 .success-section__title { color: var(--success); margin-bottom: var(--space-xs); }
@@ -1424,6 +1437,46 @@ details .details-content {
 }
 
 .next-guide:hover { border-color: var(--accent-primary); transform: translateX(4px); text-decoration: none; }
+
+.next-guide__icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 40px;
+  height: 40px;
+  border-radius: 10px;
+  background: rgba(99,102,241,0.1);
+  color: var(--accent-primary);
+}
+
+.next-guide__icon svg { width: 22px; height: 22px; }
+
+.next-guide--disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+
+.card--coming-soon {
+  opacity: 0.55;
+  pointer-events: none;
+  position: relative;
+}
+
+.badge--coming-soon {
+  background: rgba(156,163,175,0.2);
+  color: var(--text-muted);
+  font-size: 0.7rem;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.difficulty-star { display: inline-flex; vertical-align: -0.1em; color: var(--warning); }
+.difficulty-star svg { width: 14px; height: 14px; }
+
+.time-icon { display: inline-flex; vertical-align: -0.15em; }
+.time-icon svg { width: 14px; height: 14px; }
 
 /* --- Footer - Mobile First --- */
 .footer {
